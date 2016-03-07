@@ -1,0 +1,6 @@
+<map id="include/defines.hpp" name="include/defines.hpp">
+<area shape="rect" id="node2" href="$all_8hpp.html" title="Including all libraries in the project. " alt="" coords="137,80,241,107"/>
+<area shape="rect" id="node3" href="$main_8cpp.html" title="Main programm. " alt="" coords="5,155,101,181"/>
+<area shape="rect" id="node4" href="$monomial_8cpp.html" title="Implementing not inline functions of the monomial.hpp. " alt="" coords="127,155,252,181"/>
+<area shape="rect" id="node5" href="$polynomial_8cpp.html" title="Polynomial implementation of the fuctions wich are not inline. " alt="" coords="276,155,405,181"/>
+</map>

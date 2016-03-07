@@ -1,0 +1,5 @@
+<map id="include/all.hpp" name="include/all.hpp">
+<area shape="rect" id="node2" href="$main_8cpp.html" title="Main programm. " alt="" coords="5,80,101,107"/>
+<area shape="rect" id="node3" href="$monomial_8cpp.html" title="Implementing not inline functions of the monomial.hpp. " alt="" coords="127,80,252,107"/>
+<area shape="rect" id="node4" href="$polynomial_8cpp.html" title="Polynomial implementation of the fuctions wich are not inline. " alt="" coords="276,80,405,107"/>
+</map>

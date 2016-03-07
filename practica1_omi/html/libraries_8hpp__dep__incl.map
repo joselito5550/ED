@@ -1,0 +1,10 @@
+<map id="include/libraries.hpp" name="include/libraries.hpp">
+<area shape="rect" id="node2" href="$all_8hpp.html" title="Including all libraries in the project. " alt="" coords="137,379,241,405"/>
+<area shape="rect" id="node6" href="$interfaceMonomial_8hpp.html" title="Interface of the Monomial where some methods are implemented. " alt="" coords="117,80,288,107"/>
+<area shape="rect" id="node7" href="$monomial_8hpp.html" title="Monomial class where some methods are implemented. " alt="" coords="180,155,300,181"/>
+<area shape="rect" id="node8" href="$interfacePolynomial_8hpp.html" title="Interface of the Polynomial where some methods are implemented. " alt="" coords="277,229,456,256"/>
+<area shape="rect" id="node9" href="$polynomial_8hpp.html" title="Polynomial and some methods implemented inline. " alt="" coords="227,304,353,331"/>
+<area shape="rect" id="node3" href="$main_8cpp.html" title="Main programm. " alt="" coords="5,453,101,480"/>
+<area shape="rect" id="node4" href="$monomial_8cpp.html" title="Implementing not inline functions of the monomial.hpp. " alt="" coords="127,453,252,480"/>
+<area shape="rect" id="node5" href="$polynomial_8cpp.html" title="Polynomial implementation of the fuctions wich are not inline. " alt="" coords="276,453,405,480"/>
+</map>

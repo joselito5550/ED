@@ -1,0 +1,9 @@
+<map id="lib/interfaceMonomial.hpp" name="lib/interfaceMonomial.hpp">
+<area shape="rect" id="node2" href="$all_8hpp.html" title="Including all libraries in the project. " alt="" coords="137,304,241,331"/>
+<area shape="rect" id="node6" href="$monomial_8hpp.html" title="Monomial class where some methods are implemented. " alt="" coords="191,80,311,107"/>
+<area shape="rect" id="node3" href="$main_8cpp.html" title="Main programm. " alt="" coords="5,379,101,405"/>
+<area shape="rect" id="node4" href="$monomial_8cpp.html" title="Implementing not inline functions of the monomial.hpp. " alt="" coords="127,379,252,405"/>
+<area shape="rect" id="node5" href="$polynomial_8cpp.html" title="Polynomial implementation of the fuctions wich are not inline. " alt="" coords="276,379,405,405"/>
+<area shape="rect" id="node7" href="$interfacePolynomial_8hpp.html" title="Interface of the Polynomial where some methods are implemented. " alt="" coords="201,155,380,181"/>
+<area shape="rect" id="node8" href="$polynomial_8hpp.html" title="Polynomial and some methods implemented inline. " alt="" coords="253,229,379,256"/>
+</map>
