@@ -1,0 +1,27 @@
+CFLAGS := -g -std=c++11# -Wall
+OBJECTMAIN := ./build/main.o ./build/monomio.o ./build/polinomio.o
+
+all: ./bin/main clean
+# MAIN FILE
+./build/main.o : ./src/main.cpp
+	@echo "\0033[93m Main.o";
+	@echo "\0033[93m Creating the main.o file.";
+	g++ $(CFLAGS) ./src/main.cpp -c -o ./build/main.o
+
+./build/monomio.o : ./src/Monomio.cpp
+	@echo "\0033[93m Monomio.o";
+	@echo "\0033[93m Creating the Monomio.o file.";
+	g++ $(CFLAGS) ./src/Monomio.cpp -c -o ./build/monomio.o
+
+./build/polinomio.o : ./src/Polinomio.cpp
+	@echo "\0033[93m Polinomio.o";
+	@echo "\0033[93m Creating the Polinomio.o file.";
+	g++ $(CFLAGS) ./src/Polinomio.cpp -c -o ./build/polinomio.o
+
+./bin/main: $(OBJECTMAIN)
+	@echo "\033[92m Compiling into main executable."
+	g++ $(CFLAGS) $(OBJECTMAIN) -o ./bin/main
+
+clean: $(OBJECTMAIN)
+	@echo "\033[91m Removing objects files."
+	rm $(OBJECTMAIN)

@@ -1,0 +1,331 @@
+\hypertarget{classed_1_1Monomio}{}\section{ed\+:\+:Monomio Class Reference}
+\label{classed_1_1Monomio}\index{ed\+::\+Monomio@{ed\+::\+Monomio}}
+
+
+Clase \hyperlink{classed_1_1Monomio}{Monomio} hereda de \hyperlink{classed_1_1MonomioInterfaz}{Monomio\+Interfaz}.  
+
+
+
+
+{\ttfamily \#include $<$Monomio.\+hpp$>$}
+
+
+
+Inheritance diagram for ed\+:\+:Monomio\+:
+% FIG 0
+
+
+Collaboration diagram for ed\+:\+:Monomio\+:
+% FIG 1
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classed_1_1Monomio_ac4d5082a7918cd436090855a729337d9}{Monomio} ()
+\begin{DoxyCompactList}\small\item\em Constructor usado cuando se crea un nuevo monomio. \end{DoxyCompactList}\item 
+\hyperlink{classed_1_1Monomio_a2c3fdd06374813306e45f2b81af4c64e}{Monomio} (const int \&exp, const double \&coef)
+\begin{DoxyCompactList}\small\item\em Constructor usado cuando se crea un nuevo polinomio. \end{DoxyCompactList}\item 
+\hyperlink{classed_1_1Monomio_a1a40fcd30108ec98eaec208150455337}{Monomio} (const \hyperlink{classed_1_1Monomio}{Monomio} \&m)
+\begin{DoxyCompactList}\small\item\em Constructor usado cuando se crea un nuevo polinomio. \end{DoxyCompactList}\item 
+int \hyperlink{classed_1_1Monomio_aac34c36d80ca652b93d9aee5e230a466}{get\+Exp} () const 
+\begin{DoxyCompactList}\small\item\em Devuelve el exponente del monomio. \end{DoxyCompactList}\item 
+double \hyperlink{classed_1_1Monomio_a854e70095390390529cb8dc9e452b8b7}{get\+Coef} () const 
+\begin{DoxyCompactList}\small\item\em Devuelve el coeficiente del monomio. \end{DoxyCompactList}\item 
+void \hyperlink{classed_1_1Monomio_a1bd02f016ac38b1ffaadf4955f91264b}{set\+Exp} (const int \&exp)
+\begin{DoxyCompactList}\small\item\em Establece el exponente pasado por parametro al monomio. \end{DoxyCompactList}\item 
+void \hyperlink{classed_1_1Monomio_aace55ae66423fd9cc0dfcfbf302db635}{set\+Coef} (const double \&coef)
+\begin{DoxyCompactList}\small\item\em Establece el coeficiente al monomio. \end{DoxyCompactList}\item 
+void \hyperlink{classed_1_1Monomio_a1d3ec4190c5e23d93eff79ad8e9486c0}{leer\+Monomio} ()
+\begin{DoxyCompactList}\small\item\em Leer \hyperlink{classed_1_1Monomio}{Monomio} por teclado. \end{DoxyCompactList}\item 
+void \hyperlink{classed_1_1Monomio_a42484a47d0d877232ee7775b97b1d480}{escribir\+Monomio} ()
+\begin{DoxyCompactList}\small\item\em Escribir el monomio por pantalla. \end{DoxyCompactList}\item 
+\hyperlink{classed_1_1Monomio}{Monomio} \& \hyperlink{classed_1_1Monomio_a6f885cf0a8265950e32a6ba961396d98}{operator=} (const \hyperlink{classed_1_1Monomio}{Monomio} \&monomio)
+\begin{DoxyCompactList}\small\item\em Sobrecarga del operador =. \end{DoxyCompactList}\item 
+\hyperlink{classed_1_1Monomio}{Monomio} \& \hyperlink{classed_1_1Monomio_aa79bb8b7f4772edc68a8c3039d0c9b08}{operator$\ast$} (const \hyperlink{classed_1_1Monomio}{Monomio} \&monomio)
+\begin{DoxyCompactList}\small\item\em Sobrecarga del operador $\ast$. \end{DoxyCompactList}\item 
+int \hyperlink{classed_1_1Monomio_ab8aea4be110c9f196b3248111eb5962c}{calcular\+\_\+monomio} (const int \&x)
+\begin{DoxyCompactList}\small\item\em Calcular \hyperlink{classed_1_1Monomio}{Monomio} para un valor de x. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+std\+::istream \& \hyperlink{classed_1_1Monomio_aa16ccd4e02c94bb3a7e8c1d56aca0ddc}{operator$>$$>$} (std\+::istream \&stream, \hyperlink{classed_1_1Monomio}{ed\+::\+Monomio} \&m)
+\begin{DoxyCompactList}\small\item\em Sobrecarga del operador $>$$>$ \end{DoxyCompactList}\item 
+std\+::ostream \& \hyperlink{classed_1_1Monomio_a0db976a91d041c1813e775cc5ecd070d}{operator$<$$<$} (std\+::ostream \&stream, \hyperlink{classed_1_1Monomio}{ed\+::\+Monomio} const \&m)
+\begin{DoxyCompactList}\small\item\em Sobrecarga del operador $<$$<$. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Clase \hyperlink{classed_1_1Monomio}{Monomio} hereda de \hyperlink{classed_1_1MonomioInterfaz}{Monomio\+Interfaz}. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classed_1_1Monomio_ac4d5082a7918cd436090855a729337d9}{}\index{ed\+::\+Monomio@{ed\+::\+Monomio}!Monomio@{Monomio}}
+\index{Monomio@{Monomio}!ed\+::\+Monomio@{ed\+::\+Monomio}}
+\subsubsection[{Monomio}]{\setlength{\rightskip}{0pt plus 5cm}ed\+::\+Monomio\+::\+Monomio (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classed_1_1Monomio_ac4d5082a7918cd436090855a729337d9}
+
+
+Constructor usado cuando se crea un nuevo monomio. 
+
+\begin{DoxyPostcond}{Postcondition}
+Valores a 1 
+\end{DoxyPostcond}
+\hypertarget{classed_1_1Monomio_a2c3fdd06374813306e45f2b81af4c64e}{}\index{ed\+::\+Monomio@{ed\+::\+Monomio}!Monomio@{Monomio}}
+\index{Monomio@{Monomio}!ed\+::\+Monomio@{ed\+::\+Monomio}}
+\subsubsection[{Monomio}]{\setlength{\rightskip}{0pt plus 5cm}ed\+::\+Monomio\+::\+Monomio (
+\begin{DoxyParamCaption}
+\item[{const int \&}]{exp, }
+\item[{const double \&}]{coef}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classed_1_1Monomio_a2c3fdd06374813306e45f2b81af4c64e}
+
+
+Constructor usado cuando se crea un nuevo polinomio. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Exponente} & y Coeficiente \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPostcond}{Postcondition}
+El monomio tendra los valores pasados por parametro 
+\end{DoxyPostcond}
+\hypertarget{classed_1_1Monomio_a1a40fcd30108ec98eaec208150455337}{}\index{ed\+::\+Monomio@{ed\+::\+Monomio}!Monomio@{Monomio}}
+\index{Monomio@{Monomio}!ed\+::\+Monomio@{ed\+::\+Monomio}}
+\subsubsection[{Monomio}]{\setlength{\rightskip}{0pt plus 5cm}ed\+::\+Monomio\+::\+Monomio (
+\begin{DoxyParamCaption}
+\item[{const {\bf Monomio} \&}]{m}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classed_1_1Monomio_a1a40fcd30108ec98eaec208150455337}
+
+
+Constructor usado cuando se crea un nuevo polinomio. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \hyperlink{classed_1_1Monomio}{Monomio}} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPostcond}{Postcondition}
+El monomio sera una copia del parametro 
+\end{DoxyPostcond}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classed_1_1Monomio_ab8aea4be110c9f196b3248111eb5962c}{}\index{ed\+::\+Monomio@{ed\+::\+Monomio}!calcular\+\_\+monomio@{calcular\+\_\+monomio}}
+\index{calcular\+\_\+monomio@{calcular\+\_\+monomio}!ed\+::\+Monomio@{ed\+::\+Monomio}}
+\subsubsection[{calcular\+\_\+monomio}]{\setlength{\rightskip}{0pt plus 5cm}int Monomio\+::calcular\+\_\+monomio (
+\begin{DoxyParamCaption}
+\item[{const int \&}]{x}
+\end{DoxyParamCaption}
+)}\label{classed_1_1Monomio_ab8aea4be110c9f196b3248111eb5962c}
+
+
+Calcular \hyperlink{classed_1_1Monomio}{Monomio} para un valor de x. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Valor} & de x \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Valor del monomio para un valro de x 
+\end{DoxyReturn}
+\hypertarget{classed_1_1Monomio_a42484a47d0d877232ee7775b97b1d480}{}\index{ed\+::\+Monomio@{ed\+::\+Monomio}!escribir\+Monomio@{escribir\+Monomio}}
+\index{escribir\+Monomio@{escribir\+Monomio}!ed\+::\+Monomio@{ed\+::\+Monomio}}
+\subsubsection[{escribir\+Monomio}]{\setlength{\rightskip}{0pt plus 5cm}void Monomio\+::escribir\+Monomio (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classed_1_1Monomio_a42484a47d0d877232ee7775b97b1d480}
+
+
+Escribir el monomio por pantalla. 
+
+\begin{DoxyPostcond}{Postcondition}
+El monomio debera de aparecer por pantalla 
+\end{DoxyPostcond}
+\hypertarget{classed_1_1Monomio_a854e70095390390529cb8dc9e452b8b7}{}\index{ed\+::\+Monomio@{ed\+::\+Monomio}!get\+Coef@{get\+Coef}}
+\index{get\+Coef@{get\+Coef}!ed\+::\+Monomio@{ed\+::\+Monomio}}
+\subsubsection[{get\+Coef}]{\setlength{\rightskip}{0pt plus 5cm}double ed\+::\+Monomio\+::get\+Coef (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{classed_1_1Monomio_a854e70095390390529cb8dc9e452b8b7}
+
+
+Devuelve el coeficiente del monomio. 
+
+\begin{DoxyReturn}{Returns}
+coeficiente 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classed_1_1MonomioInterfaz}{ed\+::\+Monomio\+Interfaz}.
+
+\hypertarget{classed_1_1Monomio_aac34c36d80ca652b93d9aee5e230a466}{}\index{ed\+::\+Monomio@{ed\+::\+Monomio}!get\+Exp@{get\+Exp}}
+\index{get\+Exp@{get\+Exp}!ed\+::\+Monomio@{ed\+::\+Monomio}}
+\subsubsection[{get\+Exp}]{\setlength{\rightskip}{0pt plus 5cm}int ed\+::\+Monomio\+::get\+Exp (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{classed_1_1Monomio_aac34c36d80ca652b93d9aee5e230a466}
+
+
+Devuelve el exponente del monomio. 
+
+\begin{DoxyReturn}{Returns}
+Exponente 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classed_1_1MonomioInterfaz}{ed\+::\+Monomio\+Interfaz}.
+
+\hypertarget{classed_1_1Monomio_a1d3ec4190c5e23d93eff79ad8e9486c0}{}\index{ed\+::\+Monomio@{ed\+::\+Monomio}!leer\+Monomio@{leer\+Monomio}}
+\index{leer\+Monomio@{leer\+Monomio}!ed\+::\+Monomio@{ed\+::\+Monomio}}
+\subsubsection[{leer\+Monomio}]{\setlength{\rightskip}{0pt plus 5cm}void Monomio\+::leer\+Monomio (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classed_1_1Monomio_a1d3ec4190c5e23d93eff79ad8e9486c0}
+
+
+Leer \hyperlink{classed_1_1Monomio}{Monomio} por teclado. 
+
+\begin{DoxyPostcond}{Postcondition}
+El monomio sera el leido por teclado 
+\end{DoxyPostcond}
+\hypertarget{classed_1_1Monomio_aa79bb8b7f4772edc68a8c3039d0c9b08}{}\index{ed\+::\+Monomio@{ed\+::\+Monomio}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!ed\+::\+Monomio@{ed\+::\+Monomio}}
+\subsubsection[{operator$\ast$}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Monomio} \& Monomio\+::operator$\ast$ (
+\begin{DoxyParamCaption}
+\item[{const {\bf Monomio} \&}]{monomio}
+\end{DoxyParamCaption}
+)}\label{classed_1_1Monomio_aa79bb8b7f4772edc68a8c3039d0c9b08}
+
+
+Sobrecarga del operador $\ast$. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \hyperlink{classed_1_1Monomio}{Monomio}} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Devuelve el producto de los monomios 
+\end{DoxyReturn}
+\hypertarget{classed_1_1Monomio_a6f885cf0a8265950e32a6ba961396d98}{}\index{ed\+::\+Monomio@{ed\+::\+Monomio}!operator=@{operator=}}
+\index{operator=@{operator=}!ed\+::\+Monomio@{ed\+::\+Monomio}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Monomio} \& Monomio\+::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Monomio} \&}]{monomio}
+\end{DoxyParamCaption}
+)}\label{classed_1_1Monomio_a6f885cf0a8265950e32a6ba961396d98}
+
+
+Sobrecarga del operador =. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \hyperlink{classed_1_1Monomio}{Monomio}} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{classed_1_1Monomio}{Monomio} 
+\end{DoxyReturn}
+\hypertarget{classed_1_1Monomio_aace55ae66423fd9cc0dfcfbf302db635}{}\index{ed\+::\+Monomio@{ed\+::\+Monomio}!set\+Coef@{set\+Coef}}
+\index{set\+Coef@{set\+Coef}!ed\+::\+Monomio@{ed\+::\+Monomio}}
+\subsubsection[{set\+Coef}]{\setlength{\rightskip}{0pt plus 5cm}void ed\+::\+Monomio\+::set\+Coef (
+\begin{DoxyParamCaption}
+\item[{const double \&}]{coef}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{classed_1_1Monomio_aace55ae66423fd9cc0dfcfbf302db635}
+
+
+Establece el coeficiente al monomio. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Coeficiente} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPostcond}{Postcondition}
+El monomio debera de tener dicho Coeficiente 
+\end{DoxyPostcond}
+
+
+Implements \hyperlink{classed_1_1MonomioInterfaz}{ed\+::\+Monomio\+Interfaz}.
+
+\hypertarget{classed_1_1Monomio_a1bd02f016ac38b1ffaadf4955f91264b}{}\index{ed\+::\+Monomio@{ed\+::\+Monomio}!set\+Exp@{set\+Exp}}
+\index{set\+Exp@{set\+Exp}!ed\+::\+Monomio@{ed\+::\+Monomio}}
+\subsubsection[{set\+Exp}]{\setlength{\rightskip}{0pt plus 5cm}void ed\+::\+Monomio\+::set\+Exp (
+\begin{DoxyParamCaption}
+\item[{const int \&}]{exp}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{classed_1_1Monomio_a1bd02f016ac38b1ffaadf4955f91264b}
+
+
+Establece el exponente pasado por parametro al monomio. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Exponente} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPostcond}{Postcondition}
+El monomio debera de tener dicho Exponente 
+\end{DoxyPostcond}
+
+
+Implements \hyperlink{classed_1_1MonomioInterfaz}{ed\+::\+Monomio\+Interfaz}.
+
+
+
+\subsection{Friends And Related Function Documentation}
+\hypertarget{classed_1_1Monomio_a0db976a91d041c1813e775cc5ecd070d}{}\index{ed\+::\+Monomio@{ed\+::\+Monomio}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!ed\+::\+Monomio@{ed\+::\+Monomio}}
+\subsubsection[{operator$<$$<$}]{\setlength{\rightskip}{0pt plus 5cm}std\+::ostream\& operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{std\+::ostream \&}]{stream, }
+\item[{{\bf ed\+::\+Monomio} const \&}]{m}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}\label{classed_1_1Monomio_a0db976a91d041c1813e775cc5ecd070d}
+
+
+Sobrecarga del operador $<$$<$. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Ostream,\hyperlink{classed_1_1Monomio}{Monomio}} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Stream 
+\end{DoxyReturn}
+\hypertarget{classed_1_1Monomio_aa16ccd4e02c94bb3a7e8c1d56aca0ddc}{}\index{ed\+::\+Monomio@{ed\+::\+Monomio}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!ed\+::\+Monomio@{ed\+::\+Monomio}}
+\subsubsection[{operator$>$$>$}]{\setlength{\rightskip}{0pt plus 5cm}std\+::istream\& operator$>$$>$ (
+\begin{DoxyParamCaption}
+\item[{std\+::istream \&}]{stream, }
+\item[{{\bf ed\+::\+Monomio} \&}]{m}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}\label{classed_1_1Monomio_aa16ccd4e02c94bb3a7e8c1d56aca0ddc}
+
+
+Sobrecarga del operador $>$$>$ 
+
+
+\begin{DoxyParams}{Parameters}
+{\em istream,monomio} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Stream 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+includes/\hyperlink{Monomio_8hpp}{Monomio.\+hpp}\item 
+src/\hyperlink{Monomio_8cpp}{Monomio.\+cpp}\end{DoxyCompactItemize}

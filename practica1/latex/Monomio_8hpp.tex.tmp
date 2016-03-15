@@ -1,0 +1,25 @@
+\hypertarget{Monomio_8hpp}{}\section{includes/\+Monomio.hpp File Reference}
+\label{Monomio_8hpp}\index{includes/\+Monomio.\+hpp@{includes/\+Monomio.\+hpp}}
+
+
+Clase Monomio.  
+
+
+{\ttfamily \#include \char`\"{}../includes/librerias.\+hpp\char`\"{}}\\*
+Include dependency graph for Monomio.\+hpp\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classed_1_1Monomio}{ed\+::\+Monomio}
+\begin{DoxyCompactList}\small\item\em Clase \hyperlink{classed_1_1Monomio}{Monomio} hereda de \hyperlink{classed_1_1MonomioInterfaz}{Monomio\+Interfaz}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Clase Monomio. 
+
+\begin{DoxyAuthor}{Author}
+Jose M. Márquez Matarín 
+\end{DoxyAuthor}
