@@ -26,4 +26,4 @@ OBJECTMAIN := ./build/main.o ./build/monomial.o ./build/polynomial.o
 	@echo "\033[92m Compiling into main executable."; g++ $(CFLAGS) $(OBJECTMAIN) -o ./bin/main
 
 clean: $(OBJECTMAIN)
-	@echo "\033[91m Removing objects files.";rm $(OBJECTMAIN)
+	@echo "\033[91m Removing objects files.";rm -f $(OBJECTMAIN)
