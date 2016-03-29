@@ -1,5 +1,5 @@
 CFLAGS := -g -std=c++11# -Wall
-OBJECTMAIN := ./build/main.o ./build/Donante.o
+OBJECTMAIN := ./build/main.o
 
 
  all: ./bin/main  clean
@@ -7,10 +7,6 @@ OBJECTMAIN := ./build/main.o ./build/Donante.o
 ./build/main.o : ./src/main.cpp
 	@echo "\033[93m Main.o";
 	@echo "\033[95m Creating the main.o file.";g++ $(CFLAGS) ./src/main.cpp -c -o ./build/main.o
-
-./build/Donante.o : ./includes/Donante.hpp
-	@echo "\033[93m Donante.o";
-	@echo "\033[95m Creating the Donante.o file.";g++ $(CFLAGS) ./includes/Donante.hpp -c -o ./build/Donante.o
 
 ./bin/main : $(OBJECTMAIN)
 	@echo "\033[92m Compiling into main executable."; g++ $(CFLAGS) $(OBJECTMAIN) -o ./bin/main

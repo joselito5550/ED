@@ -74,16 +74,15 @@ namespace ed{
 
     //read and write
     void writeDonante(){
-        BORRAR;
         LUGAR(6,10);
-        std::cout<<"Nombre:"<<getName();
+        std::cout<<"Nombre:"<<this->getName();
         LUGAR(7,10);
-        std::cout<<"Second Name:"<<getSecondName();
+        std::cout<<"Second Name:"<<this->getSecondName();
         LUGAR(8,10);
 
-        std::cout<<"Group:"<<getGroup();
+        std::cout<<"Group:"<<this->getGroup();
         LUGAR(9,10);
-        if(RH){
+        if(this->RH){
           std::cout<<"RH: Positivo";
         }
         else {
@@ -120,25 +119,27 @@ namespace ed{
       std::string aux;
       BORRAR;
       LUGAR(6,10);
+      std::cout<<"Deja el campo en blanco para no modificar";
+      LUGAR(7,10);
       std::cout<<"Name:";
       getchar();
       getline(std::cin,aux);
       if(!aux.empty()){
         this->Name = aux;
       }
-      LUGAR(7,10);
+      LUGAR(8,10);
       std::cout<<"Second Name:";
       getline(std::cin,aux, '\n');
       if(!aux.empty()){
         this->SecondName= aux;
       }
-      LUGAR(8,10);
+      LUGAR(9,10);
       std::cout<<"Group:";
       getline(std::cin,aux);
       if(!aux.empty()){
         this->Group=aux;
       }
-      LUGAR(9,10);
+      LUGAR(10,10);
       std::cout<<"RH(P=Positivo,N=Negativo):";
       getline(std::cin,aux);
       if(!aux.empty()){
@@ -170,23 +171,39 @@ namespace ed{
     }
 
 
-    //Revisarlo mas adelante
+    //Perfe
     bool operator<=(const Donante& don1){
       bool result;
-      if(getSecondName()==don1.getSecondName()){
-        result = true;
+      if(this->getSecondName().compare(don1.getSecondName())<0){
+        result = false;
       }
-      else if(getSecondName()<don1.getSecondName()){
+      else if(this->getSecondName().compare(don1.getSecondName())>0){
         result = true;
       }
       else{
-        result = false;
+        result = true;
       }
       return result;
     }
 
 
+    //friends function
+    friend std::istream &operator>>(std::istream &stream, Donante &d){
 
+    }
+
+    friend std::ostream &operator<<(std::ostream &stream, Donante const &d){
+      BORRAR;
+      stream<<LUGAR(6,10);
+      stream<<"Nombre: "<<d.getName();
+      stream<<LUGAR(7,10);
+      stream<<"Second Name: "<<d.getSecondName();
+      LUGAR(8,10);
+      stream<<"Group: "<<d.getGroup();
+      LUGAR(9,10);
+      stream<<"RH: "<<d.getRH();
+      return stream;
+    }
 
   };
 }

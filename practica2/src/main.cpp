@@ -45,16 +45,19 @@ int main(){
         std::cin>>donante;
         switch (donante) {
           case 1:
+            BORRAR;
             don1.writeDonante();
             std::cout<<"\nIntroduzca un numero para continuar...\n";
             std::cin>>donante;
             break;
           case 2:
+          BORRAR;
           don2.writeDonante();
           std::cout<<"\nIntroduzca un numero para continuar...\n";
           std::cin>>donante;
           break;
           case 3:
+          BORRAR;
           don2.writeDonante();
           std::cout<<"\nIntroduzca un numero para continuar...\n";
           std::cin>>donante;
@@ -80,7 +83,28 @@ int main(){
         }
         break;
 
-        //Case 4
+        //Comprobar operator <=
+        case 4:
+        BORRAR;
+        LUGAR(5,10);
+        std::cout<<"Se comparará el primer donante con el segundo.";
+        LUGAR(7,10);
+        if(don1<=don2){
+          BORRAR;
+          don2.writeDonante();
+          std::cin>>donante;
+          BORRAR;
+          don1.writeDonante();
+          std::cin>>donante;
+        }
+        else{
+          BORRAR;
+          don1.writeDonante();
+          std::cin>>donante;
+          BORRAR;
+          don2.writeDonante();
+          std::cin>>donante;
+        }
       }
     }while(opcion!=5);
 
