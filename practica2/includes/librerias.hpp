@@ -12,5 +12,8 @@
 #include "colors.hpp"
 #include "macros.hpp"
 #include "Donante.hpp"
+#include "Donantes.hpp"
+#include "Lista.hpp"
+#include "DonantesInterfaz.hpp"
 #include "DonanteInterfaz.hpp"
 #endif

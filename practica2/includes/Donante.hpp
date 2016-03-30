@@ -189,7 +189,7 @@ namespace ed{
 
     //friends function
     friend std::istream &operator>>(std::istream &stream, Donante &d){
-
+      return stream;
     }
 
     friend std::ostream &operator<<(std::ostream &stream, Donante const &d){
