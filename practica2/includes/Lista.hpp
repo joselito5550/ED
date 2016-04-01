@@ -22,7 +22,7 @@ public:
 
   bool isValid(int pos){
     bool ret;
-    if(pos<numNodos){
+    if(pos<=numNodos || pos == 0){
       ret = true;
     }
     else ret = false;
@@ -32,7 +32,7 @@ public:
   bool cursor_to(int pos){
     cur=head;
     if(isValid(pos)){
-      for(int i=0;i<pos;){
+      for(int i=0;i<pos;i++){
         cur=cur->next;
       }
       return true;
@@ -50,36 +50,180 @@ public:
   //return the element
   Donante item(int pos){
     bool aux = cursor_to(pos);
+    Donante d;
     if(aux){
-      return cur->d;
+      d= cur->d;
+      return d;
     }
     else{
-      Donante d;
       return d;
     }
   }
 
   int findItem(const Donante& d,int pos){
       bool aux = cursor_to(0);
+      bool encontrado = false;
       if(aux){
-      while(cur->d.getName() != d.getName() && cur->d.getSecondName()!=d.getSecondName() && cur!=NULL){
+      while(  !encontrado  && cur!=NULL){
+        if(cur->d.getName() == d.getName() && cur->d.getSecondName()==d.getSecondName()){
+          encontrado = true;
+        }
+        else{
+          cur = cur->next;
+          pos++;
+        }
+      }
+      }
+      if(encontrado){
+        return pos;}
+      else return -1;
+  }
+
+//CUIDADO
+  void insert(int pos, const Donante &d){
+    bool ok = isValid(pos);
+    if(numNodos==0){
+      Nodo *nuevo = new Nodo;
+      nuevo->d = d;
+      nuevo->next=NULL;
+      nuevo->pre=NULL;
+      head = nuevo;
+      numNodos++;
+    }
+    else{
+    if(ok){
+      if(pos==0){
+        Nodo *nuevo = new Nodo;
+        nuevo->d=d;
+        nuevo->next = head;
+        nuevo->pre = NULL;
+        head->pre = nuevo;
+        head = nuevo;
+        numNodos++;
+      }
+      else if(pos==numNodos){
+        Nodo* aux = new Nodo;
+        aux->d = d;
+        ok=cursor_to(pos-1);
+        aux->pre = cur;
+
+        aux->next = NULL;
+        cur->next =aux;
+        numNodos++;
+
+      }
+      else{
+
+    Nodo* aux = new Nodo;
+    aux->d = d;
+    ok=cursor_to(pos-1);
+    aux->pre = cur;
+
+    aux->next = cur->next;
+    cur->next->pre = aux;
+    cur->next =aux;
+    numNodos++;
+    }
+    }
+  }
+  }
+
+  void remove(int pos){
+    bool ok = cursor_to(pos);
+    Nodo *aux;
+    if(ok){
+      if(cur->pre==NULL){
+        head = cur->next;
+        delete cur;
+        numNodos--;
+      }
+      else if(cur->next==NULL){
+        aux = cur;
+        cur = cur->pre;
+        cur->next = NULL;
+        delete aux;
+        numNodos--;
+      }
+      else{
+        aux = cur;
+        cur = cur->pre;
+        cur -> next = aux-> next;
+        aux -> next -> pre = cur;
+        delete aux;
+        numNodos--;
+      }
+    }
+  }
+
+//La comparacion pasarla todas a mayusculas o minusculas
+  int findPos(const Donante &d){
+    int pos=0;
+    if(numNodos==0){
+      return pos;
+    }
+    else{
+
+    bool ok = cursor_to(0);
+    if(ok){
+      while(cur!=NULL && cur->d>=d ){
         cur = cur->next;
         pos++;
       }
-      }
-      return pos;
-  }
-
-  void insert(int pos, const Donante &d){
-
-  }
-  void remove(int pos){
-
-  }
-
-  int findPos(const Donante &d){
-    int pos=0;
+    }
     return pos;
+  }
+  }
+
+  void showlist(){
+    cur = head;
+    Donante d;
+    LUGAR(6,0);
+    for(int i=0;i<numNodos;i++){
+      d=cur->d;
+      std::cout<<"Name: "<<d.getName();
+std::cout<<"\n";
+      std::cout<<"SecondName: "<<d.getSecondName();
+std::cout<<"\n";
+      std::cout<<"Group: "<<d.getGroup();
+std::cout<<"\n";
+      std::cout<<"RH: "<<d.getRH();
+      std::cout<<"\n";
+      std::cout<<"\n";
+      std::cout<<"\n";
+      cur = cur->next;
+    }
+    getchar();
+  }
+
+  int exist(Donante &d){
+    int pos=0;
+    cursor_to(0);
+    bool encontrado = false;
+    while(cur!=NULL && !encontrado && cur->d>=d){
+      if(cur->d == d){
+        encontrado = true;
+      }
+      else{
+        cur = cur->next;
+        pos++;
+      }
+    }
+    if(encontrado){
+      return pos;
+    }
+    else {
+      return -1;
+    }
+  }
+
+  ~Lista(){
+    for(int i=0;i<numNodos;i++){
+      if(head->next!=NULL){
+        cur=head->next;
+      }
+      delete head;
+      head = cur;
+    }
   }
 
 };

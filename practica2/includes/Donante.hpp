@@ -185,7 +185,19 @@ namespace ed{
       }
       return result;
     }
-
+    bool operator>=(const Donante& don1){
+      bool result;
+      if(this->getSecondName().compare(don1.getSecondName())<0){
+        result = true;
+      }
+      else if(this->getSecondName().compare(don1.getSecondName())>0){
+        result = false;
+      }
+      else{
+        result = true;
+      }
+      return result;
+    }
 
     //friends function
     friend std::istream &operator>>(std::istream &stream, Donante &d){

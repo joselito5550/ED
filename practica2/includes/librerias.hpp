@@ -8,6 +8,7 @@
 #include <string>
 #include <vector>
 #include <list>
+#include <ctype.h> //<---aqui se encuentran las funciones toupper y tolower
 #include <cmath>
 #include "colors.hpp"
 #include "macros.hpp"

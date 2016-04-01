@@ -56,7 +56,17 @@ namespace ed{
       if(pos!=-1)
       _l.remove(pos);
       else std::cout<<"No existe el elemento introducido a borrar";
+      numDonantes--;
     }
+
+    int exist(Donante &d){
+      return  _l.exist(d);
+    }
+    void showlist(){
+      BORRAR;
+      _l.showlist();
+      }
+
   };
 }
 
