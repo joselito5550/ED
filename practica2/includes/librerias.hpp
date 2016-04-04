@@ -11,6 +11,9 @@
 #include <ctype.h> //<---aqui se encuentran las funciones toupper y tolower
 #include <cmath>
 #include "colors.hpp"
+#include <fstream>
+#include <cassert>
+#include <sstream>
 #include "macros.hpp"
 #include "Donante.hpp"
 #include "Donantes.hpp"

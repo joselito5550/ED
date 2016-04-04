@@ -177,15 +177,14 @@ public:
   void showlist(){
     cur = head;
     Donante d;
-    LUGAR(6,0);
     for(int i=0;i<numNodos;i++){
       d=cur->d;
       std::cout<<"Name: "<<d.getName();
-std::cout<<"\n";
+      std::cout<<"\n";
       std::cout<<"SecondName: "<<d.getSecondName();
-std::cout<<"\n";
+      std::cout<<"\n";
       std::cout<<"Group: "<<d.getGroup();
-std::cout<<"\n";
+      std::cout<<"\n";
       std::cout<<"RH: "<<d.getRH();
       std::cout<<"\n";
       std::cout<<"\n";
@@ -194,6 +193,28 @@ std::cout<<"\n";
     }
     getchar();
   }
+
+void showlistRH(bool RH){
+  cur = head;
+  Donante d;
+  for(int i=0;i<numNodos;i++){
+    if(cur->d.getRH()==RH){
+      d = cur->d;
+      std::cout<<"Name: "<<d.getName();
+      std::cout<<"\n";
+      std::cout<<"SecondName: "<<d.getSecondName();
+      std::cout<<"\n";
+      std::cout<<"Group: "<<d.getGroup();
+      std::cout<<"\n";
+      std::cout<<"RH: "<<d.getRH();
+      std::cout<<"\n";
+      std::cout<<"\n";
+      std::cout<<"\n";
+    }
+    cur = cur->next;
+  }
+  getchar();
+}
 
   int exist(Donante &d){
     int pos=0;
@@ -216,14 +237,17 @@ std::cout<<"\n";
     }
   }
 
-  ~Lista(){
-    for(int i=0;i<numNodos;i++){
-      if(head->next!=NULL){
-        cur=head->next;
-      }
-      delete head;
-      head = cur;
+void borrarLista(){
+  for(int i=0;i<numNodos;i++){
+    if(head->next!=NULL){
+      cur=head->next;
     }
+    delete head;
+    head = cur;
+  }
+}
+  ~Lista(){
+  borrarLista();
   }
 
 };

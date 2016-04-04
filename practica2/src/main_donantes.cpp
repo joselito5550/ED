@@ -23,7 +23,9 @@ int menu(){
     LUGAR(13,10);
     std::cout<<"8. Borrar un donante de una lista";
     LUGAR(14,10);
-    std::cout<<"9. Salir";
+    std::cout<<"9. Modificar";
+    LUGAR(15,10);
+    std::cout<<"10. Salir";
     std::cout<<"\n";
     std::cin>>opcion;
   return opcion;
@@ -32,6 +34,7 @@ int menu(){
 
 int main(){
     int opcion;
+    std::string file;
     std::string Name;
     std::string SecondName;
     Donantes donantes;
@@ -41,10 +44,30 @@ int main(){
       opcion = menu();
       switch (opcion) {
         case 1:
+        BORRAR;
+        LUGAR(6,10);
+        if(donantes.empty()){
+          std::cout<<"La lista SI esta vacia";
+        }
+        else{
+          std::cout<<"La lista NO esta vacia";
+        }
+        getchar();
+        getchar();
           break;
         case 2:
+        BORRAR;
+        LUGAR(6,10);
+        std::cout<<"Introduce el nombre del fichero:";
+        getchar();
+        getline(std::cin,file);
+        donantes.borrarLista();
+        donantes.cargar_fichero(file);
           break;
         case 3:
+        getchar();
+          getline(std::cin,file);
+          donantes.to_file(file);
           break;
         case 4:
           d.readDonante();
@@ -75,7 +98,19 @@ int main(){
           break;
 
           case 7:
-
+          BORRAR;
+            char rh_aux;
+            bool RH;
+            std::cout<<"RH positivo o negativo(P/N):";
+            std::cin>>rh_aux;
+            if(rh_aux=='P' || rh_aux=='p'){
+              RH = true;
+            }
+            else{
+              RH = false;
+            }
+            donantes.showlistRH(RH);
+            getchar();
           break;
 
           case 8:
@@ -95,8 +130,25 @@ int main(){
               getchar();
             }
           break;
+          case 9:
+          BORRAR;
+          LUGAR(6,10);
+          std::cout<<"Introduce el nombre del donante que desea modificar:";
+          getchar();
+          getline(std::cin,Name);
+          std::cout<<"Introduce el apellido del donante que desea modificar:";
+          getline(std::cin,SecondName);
+          d = donantes.findItem(Name,SecondName);
+          if(d.getName()!="No encontrado"){
+              donantes.deleteDonante(d);
+              d.modify();
+              donantes.insertDonante(d);
+          }
+          else{
+            std::cout<<"No encontrado";
+          }
       }
-    }while(opcion!=9);
+    }while(opcion!=10);
 
     return 0;
 }

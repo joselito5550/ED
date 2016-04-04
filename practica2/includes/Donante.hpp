@@ -122,7 +122,6 @@ namespace ed{
       std::cout<<"Deja el campo en blanco para no modificar";
       LUGAR(7,10);
       std::cout<<"Name:";
-      getchar();
       getline(std::cin,aux);
       if(!aux.empty()){
         this->Name = aux;
