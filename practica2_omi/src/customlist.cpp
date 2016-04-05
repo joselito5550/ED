@@ -1,4 +1,9 @@
-#ifndef __CUSTOMLIST_CPP_
+/*!
+   \file customlist.cpp
+   \brief Implemented methods of custom list
+   \author Omar Sotillo
+ */
+ #ifndef __CUSTOMLIST_CPP_
 #define __CUSTOMLIST_CPP_
 #include "../include/all.hpp"
 

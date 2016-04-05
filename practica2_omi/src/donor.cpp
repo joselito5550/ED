@@ -1,3 +1,9 @@
+/*!
+   \file donor.cpp
+   \brief Donor methods implemented
+   \author Omar Sotillo
+ */
+
 #ifndef __DONOR_CPP_
 #define __DONOR_CPP_
 #include "../include/all.hpp"

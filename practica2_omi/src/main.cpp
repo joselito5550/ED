@@ -1,9 +1,17 @@
+/*!
+   \file main.cpp
+   \brief Main of the program.
+   \author Omar Sotillo
+ */
 #ifndef __MAIN_CPP_
 #define __MAIN_CPP_
 
 #include "../include/all.hpp"
 void printmenu();
 
+/*!
+   \brief Main function of the program
+ */
 int  main(int argc, char const *argv[]) {
   int option = 0;
   Donors donors;
@@ -72,6 +80,9 @@ int  main(int argc, char const *argv[]) {
   return 0;
 }
 
+/*!
+   \brief Fuction to print a menu
+ */
 void printmenu() {
   BORRAR;
 

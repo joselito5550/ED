@@ -27,7 +27,7 @@ private:
 
 public:
 
-  // ! \name Constructors.
+  //! \name Constructors.
 
   /*!
      \brief When a new Polynomial is set a constructor is init.
