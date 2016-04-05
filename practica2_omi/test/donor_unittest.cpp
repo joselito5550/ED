@@ -127,8 +127,8 @@ TEST(Operator, OperatorComparation) {
 
 // Operator <=
 TEST(Operator, OperatorComparationOrBigger) {
-  Donor copyDonor("a", "Sotillo", "AB", true);
-  Donor copiedDonor("b", "Sotillo", "AB", true);
+  Donor copyDonor("a", "a", "AB", true);
+  Donor copiedDonor("b", "b", "AB", true);
   Donor auxDonor;
 
   EXPECT_TRUE(copyDonor <= copiedDonor);

@@ -15,6 +15,7 @@
 #include <cmath>
 #include <unistd.h>
 #include <stdio.h>
-
+#include <fstream>
+#include <sstream>
 
 #endif // ifndef __LIBRARIES_HPP_

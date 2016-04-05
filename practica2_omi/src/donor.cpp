@@ -71,6 +71,8 @@ void Donor::setRhFactor(const bool& rhFactor)          {
 void Donor::readDonor()                            {
   std::string auxString;
 
+  LUGAR(6, 10);
+
   // Getting the name of the donor.
   std::cout << HEADER << "Introduce the name of the donor: " << ENDC;
   std::getline(std::cin, auxString);
@@ -79,6 +81,8 @@ void Donor::readDonor()                            {
     this->setName(auxString);
   }
   auxString.clear();
+
+  LUGAR(7, 10);
 
   // Getting the surname of the donor.
   std::cout << HEADER << "Introduce the surname of the donor: " << ENDC;
@@ -89,6 +93,8 @@ void Donor::readDonor()                            {
   }
   auxString.clear();
 
+  LUGAR(8, 10);
+
   // Getting the bloodType of the donor.
   std::cout << HEADER << "Introduce the blood type of the donor: " << ENDC;
   std::getline(std::cin, auxString);
@@ -97,6 +103,9 @@ void Donor::readDonor()                            {
     this->setBloodType(auxString);
   }
   auxString.clear();
+
+  LUGAR(9, 10);
+
   // Getting the Rh Factor of the Donor.
   std::cout << HEADER <<
   "Introduce 1 if positive or 0 if negative Rh Factor: " <<
@@ -140,8 +149,8 @@ bool Donor::operator==(const Donor& comparedDonor) {
 }
 
 bool Donor::operator<=(const Donor& comparedDonor) {
-  std::string auxDonor1 = this->getName() + this->getSurname();
-  std::string auxDonor2 = comparedDonor.getName() + this->getSurname();
+  std::string auxDonor1 = this->getSurname();
+  std::string auxDonor2 = comparedDonor.getSurname();
 
   if (auxDonor1.compare(auxDonor2) <= 0) {
     return true;
