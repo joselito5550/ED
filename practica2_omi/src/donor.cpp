@@ -36,10 +36,12 @@ Donor::Donor(const Donor& copyDonor) {
   this->setRhFactor(copyDonor.getRhFactor());
 }
 
+// Getname of a name
 std::string Donor::getName() const {
   return this->name_; // Returning the value name of the class.
 }
 
+// get of the surname
 std::string Donor::getSurname() const {
   return this->surname_;
 }
@@ -48,18 +50,22 @@ std::string Donor::getBloodType() const {
   return this->bloodType_;
 }
 
+// get of the rhfactor
 bool Donor::getRhFactor() const {
   return this->rhFactor_;
 }
 
+// set of the name
 void Donor::setName(const std::string& name)           {
   this->name_ = name;
 }
 
+// Set of the surname
 void Donor::setSurname(const std::string& surname)     {
   this->surname_ = surname;
 }
 
+// set the bloodType_
 bool Donor::setBloodType(const std::string& bloodType) {
   if ((bloodType == "AB") || (bloodType == "0") || (bloodType == "A") ||
       (bloodType == "B")) {
@@ -70,10 +76,12 @@ bool Donor::setBloodType(const std::string& bloodType) {
   }
 }
 
+// Set the rhfactor
 void Donor::setRhFactor(const bool& rhFactor)          {
   this->rhFactor_ = rhFactor;
 }
 
+// Reading a donor
 void Donor::readDonor()                            {
   std::string auxString;
 
@@ -134,6 +142,7 @@ void Donor::printDonor()                           {
   " RhFactor: " << OKBLUE <<  this->getRhFactor() << std::endl << ENDC;
 }
 
+// Operator = overloaded
 // We set a new donor
 Donor& Donor::operator=(const Donor& copiedDonor)    {
   this->setName(copiedDonor.getName());
@@ -143,6 +152,7 @@ Donor& Donor::operator=(const Donor& copiedDonor)    {
   return *this;
 }
 
+// Operator == overloaded
 // Comparing two donors. If the same return true
 bool Donor::operator==(const Donor& comparedDonor) {
   if ((this->getName().compare(comparedDonor.getName()) == 0) &&
@@ -154,6 +164,7 @@ bool Donor::operator==(const Donor& comparedDonor) {
   }
 }
 
+// Operator <= overloaded
 bool Donor::operator<=(const Donor& comparedDonor) {
   std::string auxDonor1 = this->getSurname();
   std::string auxDonor2 = comparedDonor.getSurname();
@@ -165,6 +176,7 @@ bool Donor::operator<=(const Donor& comparedDonor) {
   }
 }
 
+// Operator >> overloaded
 std::istream& operator>>(std::istream& stream, Donor& d) {
   std::cout << "Introduce values for  ( Name, Surname, BloodType, RhFactor) : ";
   stream >> d.name_ >> d.surname_ >> d.bloodType_ >> d.rhFactor_;
@@ -172,6 +184,7 @@ std::istream& operator>>(std::istream& stream, Donor& d) {
   return stream;
 }
 
+// Operator << overloaded
 std::ostream& operator<<(std::ostream& stream,
                          Donor const & d) {
   stream << HEADER << "Donor: " << OKBLUE << d.getName() << " " <<

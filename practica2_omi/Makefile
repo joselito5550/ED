@@ -6,13 +6,17 @@
 #  */
 CFLAGS := -g -std=c++11 -Wall
 OBJECTMAIN := ./build/customlist.o ./build/donor.o ./build/donors.o ./build/main.o
+OBJECTMAINDONANTE := ./build/customlist.o ./build/donor.o ./build/donors.o ./build/main_donante.o
 
-
- all: ./bin/main  clean
+ all: ./bin/main ./bin/main_donantes clean
 # MAIN FILE
 ./build/main.o : ./src/main.cpp
 	@echo "\033[93m Main.o";
 	@echo "\033[95m Creating the main.o file.";g++ $(CFLAGS) ./src/main.cpp -c -o ./build/main.o
+
+./build/main_donante.o : ./src/main_donante.cpp
+	@echo "\033[93m Main.o";
+	@echo "\033[95m Creating the main_donante.o file.";g++ $(CFLAGS) ./src/main_donante.cpp -c -o ./build/main_donante.o
 
 ./build/donor.o : ./src/donor.cpp
 	@echo "\033[93m donor.o";
@@ -29,5 +33,8 @@ OBJECTMAIN := ./build/customlist.o ./build/donor.o ./build/donors.o ./build/main
 ./bin/main : $(OBJECTMAIN)
 	@echo "\033[92m Compiling into main executable."; g++ $(CFLAGS) $(OBJECTMAIN) -o ./bin/main
 
-clean: $(OBJECTMAIN)
-	@echo "\033[91m Removing objects files.";rm -f $(OBJECTMAIN)
+./bin/main_donantes : $(OBJECTMAINDONANTE)
+	@echo "\033[92m Compiling into main_donantes executable."; g++ $(CFLAGS) $(OBJECTMAINDONANTE) -o ./bin/main_donantes
+
+clean: $(OBJECTMAIN) $(OBJECTMAINDONANTE)
+	@echo "\033[91m Removing objects files.";rm -f $(OBJECTMAIN) $(OBJECTMAINDONANTE)

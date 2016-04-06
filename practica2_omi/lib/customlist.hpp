@@ -13,7 +13,7 @@
    \brief A structure representing a element.
  */
 struct Node {
-  Donor donor; /*!< A donor instance */
+  Donor donor;   /*!< A donor instance */
   Node *forward; /*!< A node reference to the following node */
 };
 
@@ -24,8 +24,8 @@ class CustomList {
 private:
 
   int   numberOfNodes_; /*!< Number of nodes */
-  Node *head_; /*!< Node head of the list */
-  Node *current_; /*!< Node actual of the list */
+  Node *head_;          /*!< Node head of the list */
+  Node *current_;       /*!< Node actual of the list */
 
 public:
 
@@ -37,11 +37,15 @@ public:
    */
   CustomList();
 
+  //! \name Gets.
+
   /*!
      \brief Get the number of nodes.
      \return numberOfNodes_.
    */
-  int  getNumberOfNodes();
+  int getNumberOfNodes();
+
+  //! \name Sets.
 
   /*!
      \brief Set the number of nodes.
@@ -55,6 +59,8 @@ public:
      \param node a node structure.
    */
   void setCurrent(Node *node);
+
+  // ! \name Othe fuctions.
 
   /*!
      \brief Print all the donors

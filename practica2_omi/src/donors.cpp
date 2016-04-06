@@ -6,28 +6,33 @@
 #ifndef __DONORS_CPP_
 #define __DONORS_CPP_
 #include "../include/all.hpp"
+
+// COnstructor
 Donors::Donors() {
   list_.setNumberOfNodes(0);
 }
 
+// Constructor
 Donors::Donors(CustomList list) {
   this->setCustomList(list);
 }
 
+// Get of custom list
 CustomList Donors::getCustomList()                {
   return list_;
 }
 
+// Set of CustomList
 void Donors::setCustomList(CustomList list) {
   this->list_ = list;
 }
 
-void Donors::readDonors() {}
-
+// Printing all list
 void Donors::printDonors() {
   this->list_.printDonors();
 }
 
+// Check if a list is empty
 bool Donors::isListEmpty()                  {
   return this->getCustomList().isEmpty();
 }
@@ -36,15 +41,22 @@ bool Donors::findDonor() {
   return true;
 }
 
+// Insert new donor
+// This is a interface to the method implemented in CustomList
 void Donors::insertNewDonor()               {
   Donor auxDonor;
 
   std::cin.ignore();
   auxDonor.readDonor();
+
+  // We call the method.
+  // The way insert is implemented can be change when want.
   this->list_.insert(auxDonor);
   this->list_.setNumberOfNodes((this->list_.getNumberOfNodes() + 1));
 }
 
+// Editing a donor
+// This is a interface to the method implemented in CustomList
 void Donors::editDonor()               {
   Donor auxDonor;
 
@@ -66,6 +78,8 @@ void Donors::editDonor()               {
   }
 }
 
+// Delete a deleteDonor
+// This is a interface to the method implemented in CustomList
 void Donors::deleteDonor() {
   Donor auxDonor;
 
@@ -88,12 +102,15 @@ void Donors::deleteDonor() {
   }
 }
 
+// Load a list from a file
+// This is a interface to the method implemented in CustomList
+void Donors::loadFromFile() {
+  list_.loadFromFile();
+}
 
-  void Donors::loadFromFile(){
-    list_.loadFromFile();
-  }
-  void Donors::saveToFile(){
-    list_.saveToFile();
-  }
+// Load a list from a file.
+void Donors::saveToFile() {
+  list_.saveToFile();
+}
 
 #endif // ifndef __DONORS_CPP_
