@@ -1,3 +1,8 @@
+/*!
+	\file colors.hpp
+	\brief Colores para la terminal
+	\author Jose Manuel Marquez Matarin
+*/
 #ifndef __DEFINES_HPP_
 # define __DEFINES_HPP_
 

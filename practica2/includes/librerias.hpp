@@ -1,3 +1,8 @@
+/*!
+	\file librerias.hpp
+	\brief Librerias incluidas en los hpp
+	\author Jose Manuel Marquez Matarin
+*/
 #ifndef __LIBRERIAS__
 #define __LIBRERIAS__
 

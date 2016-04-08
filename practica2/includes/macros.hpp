@@ -2,7 +2,6 @@
 	\file  macros.hpp
 	\brief Macros para el diseño de pantallas
 */
-
 #ifndef MACROS_HPP
 #define MACROS_HPP
 

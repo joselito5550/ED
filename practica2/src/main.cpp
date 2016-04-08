@@ -58,7 +58,7 @@ int main(){
           break;
           case 3:
           BORRAR;
-          don2.writeDonante();
+          don3.writeDonante();
           std::cout<<"\nIntroduzca un numero para continuar...\n";
           std::cin>>donante;
           break;

@@ -1,19 +1,32 @@
+/*!
+	\file Donante.hpp
+	\brief Clase Donante, hereda de DonanteInterfaz
+	\author Jose Manuel Marquez Matarin
+*/
 #ifndef __DONANTE__
 #define __DONANTE__
 #include "librerias.hpp"
 #include "DonanteInterfaz.hpp"
+/*!
+	\brief Espacio de nombres ED
+*/
 namespace ed{
+/*!
+	\brief Clase Donante
+*/
   class Donante: public DonanteInterfaz{
+//! \name Atributos privados de la clase Donante
   private:
     std::string Name;
     std::string SecondName;
     std::string Group;
     bool RH;
-
+//! \name Funciones publicas de la Clase Donante
   public:
 
 
     //Constructors
+//! \name Constructores
     Donante(){
       Name = "";
       SecondName = "";
@@ -37,42 +50,84 @@ namespace ed{
 
 
     //Getters
+//! \name Observadores
 
+	/*!
+		\brief Devuelve el nombre del Donante
+		\return String, nombre del donante
+	*/
     std::string getName()const{
       return Name;
     }
 
+	/*!
+		\brief Devuelve el apellido del Donante
+		\return String, apellido del donante
+	*/
     std::string getSecondName()const{
       return SecondName;
     }
-
+	/*!
+		\brief Devuelve el grupo del Donante
+		\return String, grupo del donante
+	*/
     std::string getGroup()const{
       return Group;
     }
-
+	/*!
+		\brief Devuelve el factor RH del Donante
+		\return Bool, factor RH del donante
+	*/
     bool getRH()const{
       return RH;
     }
 
     //Setters
-
+//! \name Modificadores
+	/*!
+		\brief Establece como nombre el string pasado por parametro
+		\param String Name
+		\post El donante debera de tener el nombre de la variable Name
+	*/
     void setName(const std::string& Name){
       this->Name = Name;
     }
 
+	/*!
+		\brief Establece como apellido el string pasado por parametro
+		\param String SecondName
+		\post El donante debera de tener el apellido de la variable Name
+	*/
     void setSecondName(const std::string& SecondName){
       this->SecondName = SecondName;
     }
 
+	/*!
+		\brief Establece como grupo Sanguineo el string pasado por parametro
+		\param String Group
+		\post El donante debera de tener el grupo de la variable Group
+
+	*/
     void setGroup(const std::string& Group){
       this->Group = Group;
     }
 
+	/*!
+		\brief Establece como apellido el string pasado por parametro
+		\param String SecondName
+		\post El donante debera de tener el apellido de la variable SecondName
+
+	*/
     void setRH(const bool& RH){
       this->RH = RH;
     }
 
+//! \name Otras funciones de la clase
     //read and write
+
+	/*!
+		\brief Escribe por pantalla la informacion del Donante
+	*/
     void writeDonante(){
         LUGAR(6,10);
         std::cout<<"Nombre:"<<this->getName();
@@ -89,7 +144,9 @@ namespace ed{
           std::cout<<"RH: Negativo";
         }
     }
-
+	/*!
+		\brief Lee por pantalla la informacion del Donante
+	*/
     void readDonante(){
       char rh;
       BORRAR;
@@ -115,12 +172,16 @@ namespace ed{
 
     //Igual que readDonante pero comprobando los campos vacios
     // para no modificarlos
+	/*!
+		\brief Modificar los datos de un donante
+	*/
     void modify(){
       std::string aux;
       BORRAR;
       LUGAR(6,10);
       std::cout<<"Deja el campo en blanco para no modificar";
       LUGAR(7,10);
+      getchar();
       std::cout<<"Name:";
       getline(std::cin,aux);
       if(!aux.empty()){
@@ -152,6 +213,13 @@ namespace ed{
 
     //Overloaded operators
 
+//! \name Sobrecarga de operadores
+
+	/*!
+		\brief Sobrecarga del operador =
+		\param Donante al que se iguala
+		\post Deberan de ser iguales
+	*/
     Donante& operator=(Donante don){
       this->Name = don.Name;
       this->SecondName = don.SecondName;
@@ -160,6 +228,10 @@ namespace ed{
       return *this;
     }
 
+	/*!
+		\brief Devuelve true si ambos donantes son iguales
+		\param Donante don1
+	*/
     bool operator==(const Donante& don1){
       bool result;
       if(don1.getName()==this->getName() && don1.getSecondName()==this->getSecondName()){
@@ -171,6 +243,10 @@ namespace ed{
 
 
     //Perfe
+	/*!
+		\brief Operador <=, nos sera util para el ordenado alfabetico
+		\param Donante don1
+	*/
     bool operator<=(const Donante& don1){
       bool result;
       if(this->getSecondName().compare(don1.getSecondName())<0){
@@ -184,6 +260,11 @@ namespace ed{
       }
       return result;
     }
+
+	/*!
+		\brief Operador >=, nos sera util para el ordenado en la lista
+		\param Donante don1
+	*/
     bool operator>=(const Donante& don1){
       bool result;
       if(this->getSecondName().compare(don1.getSecondName())<0){
@@ -198,11 +279,37 @@ namespace ed{
       return result;
     }
 
+//! \name Funciones amigas
+
     //friends function
+	/*!
+		\brief Sobrecarga del operador >>
+		\param Stream, Donante d
+	*/
     friend std::istream &operator>>(std::istream &stream, Donante &d){
-      return stream;
+      std::cout << "Introduce los siguientes datos del donante\n";
+	  std::cout << "Nombre:";
+      stream >> d.Name;
+      stream.ignore();
+	  std::cout << "Apellidos:";
+      stream >> d.SecondName;
+      stream.ignore();
+
+	  std::cout << "Grupo:";
+      stream >> d.Group;
+      stream.ignore();
+
+	  std::cout << "RH:";
+      stream >> d.RH;
+      stream.ignore();
+
+  	  return stream;
     }
 
+	/*!
+		\brief Sobrecarga del operador <<
+		\param stream, Donante d
+	*/
     friend std::ostream &operator<<(std::ostream &stream, Donante const &d){
       BORRAR;
       stream<<LUGAR(6,10);

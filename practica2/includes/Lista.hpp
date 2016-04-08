@@ -1,25 +1,48 @@
+/*!
+	\file Lista.hpp
+	\brief Clase Lista
+	\author Jose Manuel Marquez Matarin
+*/
 #ifndef __LISTA__
 #define __LISTA__
 #include "librerias.hpp"
 using namespace ed;
+
+/*!
+	\brief Estructura para los Nodos de la lista
+*/
 struct Nodo{
   Donante d;
   Nodo* next;
   Nodo* pre;
 };
 
+/*!
+	\brief Clase Lista
+*/
 class Lista{
+
+//! \name Atributos privados de la clase Lista
 private:
   int numNodos;
   Nodo* head;
   Nodo* cur;  //Cursor
+
+//! \name Funciones publicas de la Clase Lista
 public:
+//! \name Constructores
   Lista(){
     head = NULL;
     cur = NULL;
     numNodos = 0;
   }
 
+//! \name Observadores
+
+	/*!
+		\brief Devuelve True si la posicion es valida
+		\return Bool
+	*/
   bool isValid(int pos){
     bool ret;
     if(pos<=numNodos || pos == 0){
@@ -28,18 +51,10 @@ public:
     else ret = false;
     return ret;
   }
-
-  bool cursor_to(int pos){
-    cur=head;
-    if(isValid(pos)){
-      for(int i=0;i<pos;i++){
-        cur=cur->next;
-      }
-      return true;
-    }
-    else return false;
-  }
-
+	/*!
+		\brief Devuelve True si lista esta vacia
+		\return Bool
+	*/
   bool empty()const{
     if(head==NULL){
       return true;
@@ -47,7 +62,11 @@ public:
     else return false;
   }
 
-  //return the element
+	/*!
+		\brief Devuelve el elemento de la posicion indicada
+		\param Posicion
+		\return Donante
+	*/
   Donante item(int pos){
     bool aux = cursor_to(pos);
     Donante d;
@@ -60,6 +79,10 @@ public:
     }
   }
 
+	/*!
+		\brief Devuelve la posicion del donante pasado por parametro
+		\return int 
+	*/
   int findItem(const Donante& d,int pos){
       bool aux = cursor_to(0);
       bool encontrado = false;
@@ -79,7 +102,26 @@ public:
       else return -1;
   }
 
+//! \name Modificadores
+	/*!
+		\brief Devuelve true si no ha habido problemas al mover el cursor
+		\return Bool
+	*/
+  bool cursor_to(int pos){
+    cur=head;
+    if(isValid(pos)){
+      for(int i=0;i<pos;i++){
+        cur=cur->next;
+      }
+      return true;
+    }
+    else return false;
+  }
 //CUIDADO
+	/*!
+		\brief Inserta el donante en la lista
+		\param Posicion a insertar y el donante
+	*/
   void insert(int pos, const Donante &d){
     bool ok = isValid(pos);
     if(numNodos==0){
@@ -128,6 +170,10 @@ public:
   }
   }
 
+	/*!
+		\brief Eliminar el donante de la posicion pasada por parametro
+		\param Int, Posicion que se desea eliminar
+	*/
   void remove(int pos){
     bool ok = cursor_to(pos);
     Nodo *aux;
@@ -156,6 +202,10 @@ public:
   }
 
 //La comparacion pasarla todas a mayusculas o minusculas
+	/*!
+		\brief Devuelve la posicion donde se deberia de insertar el donante
+		\return Int
+	*/
   int findPos(const Donante &d){
     int pos=0;
     if(numNodos==0){
@@ -173,7 +223,9 @@ public:
     return pos;
   }
   }
-
+	/*!
+		\brief Muestra por pantalla la lista de Donantes
+	*/
   void showlist(){
     cur = head;
     Donante d;
@@ -194,6 +246,9 @@ public:
     getchar();
   }
 
+	/*!
+		\brief Muestra la lista de donantes segun su RH
+	*/
 void showlistRH(bool RH){
   cur = head;
   Donante d;
@@ -216,6 +271,10 @@ void showlistRH(bool RH){
   getchar();
 }
 
+	/*!
+		\brief Devuelve la posicion del donante si existe, si no, devolvera -1
+		\return Int
+	*/
   int exist(Donante &d){
     int pos=0;
     cursor_to(0);
@@ -237,6 +296,9 @@ void showlistRH(bool RH){
     }
   }
 
+	/*!
+		\brief Eliminar todos los nodos de la lista
+	*/
 void borrarLista(){
   for(int i=0;i<numNodos;i++){
     if(head->next!=NULL){
