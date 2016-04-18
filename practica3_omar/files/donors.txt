@@ -1,0 +1,6 @@
+omar,omar,AB,1
+pepe,pepe,AB,1
+antonio,antonio,AB,1
+juan,sotillo,AB,1
+omar,perico,AB,1
+madriles,jefe,AB,1

@@ -1,0 +1,9 @@
+<map id="include/all.hpp" name="include/all.hpp">
+<area shape="rect" id="node2" href="$defines_8hpp.html" title="Definition of some things in the program. " alt="" coords="5,80,93,107"/>
+<area shape="rect" id="node3" href="$libraries_8hpp.html" title="Including al libraries of the system. " alt="" coords="338,379,429,405"/>
+<area shape="rect" id="node13" href="$interfaceDonor_8hpp.html" title="Class Interface for Donor. " alt="" coords="245,304,405,331"/>
+<area shape="rect" id="node14" href="$donor_8hpp.html" title="Class for donor. " alt="" coords="343,229,451,256"/>
+<area shape="rect" id="node15" href="$customlist_8hpp.html" title="Custom list of nodes. " alt="" coords="220,155,355,181"/>
+<area shape="rect" id="node16" href="$interfaceDonors_8hpp.html" title="Class Interface for Donors. " alt="" coords="532,155,700,181"/>
+<area shape="rect" id="node17" href="$donors_8hpp.html" title="Donors class . " alt="" coords="431,80,545,107"/>
+</map>
