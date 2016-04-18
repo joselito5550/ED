@@ -1,21 +1,22 @@
 #include "../includes/librerias.hpp"
 #include <string>
-using namespace ed;
 int menu(){
   int opcion;
     BORRAR;
     LUGAR(5,10);
     std::cout<<"Menú donantes";
     LUGAR(6,10);
-    std::cout<<"1. Leer un donante desde teclado";
+    std::cout<<"1. Comprobar si el monticulo esta vacio";
     LUGAR(7,10);
-    std::cout<<"2. Escribir un donante por pantalla";
+    std::cout<<"2. Crear un monticulo de donantes a partir de un fichero";
     LUGAR(8,10);
-    std::cout<<"3. Modificar los datos de un donante";
+    std::cout<<"3. Grabar un monticulo de donantes en un fichero";
     LUGAR(9,10);
-    std::cout<<"4. Comparar lexicograficamente dos donantes";
+    std::cout<<"4. Mostrar el donante que se encuentra en la cima del monticulo";
     LUGAR(10,10);
-    std::cout<<"5. Fin del programa";
+    std::cout<<"5. Simular la realizacion de una o mas donaciones";
+    LUGAR(11,10);
+    std::cout<<"6. Salir";
     std::cout<<"\n";
     std::cin>>opcion;
   return opcion;
@@ -23,90 +24,57 @@ int menu(){
 
 
 int main(){
-    Donante don1;
-    std::string Name = "Jose";
-    std::string SecondName = "Marquez";
-    std::string Group = "A";
-    Donante don2(Name,SecondName,Group,false);
-    Donante don3(don1);
-
+    ed::Donantes donantes;
     int opcion,donante;
 
     do{
       opcion = menu();
       switch (opcion) {
         case 1:
-          don1.readDonante();
-          break;
+        BORRAR;
+        if(donantes.empty()){
+            LUGAR(6,10);
+            std::cout<<"El monticulo de donantes esta vacío";
+        }
+        else{
+            LUGAR(6,10);
+            std::cout<<"El monticulo de donantes no esta vacío";
+        }
+        //Darle a enter para continuar
+        break;
+
         case 2:
         BORRAR;
         LUGAR(6,10);
-        std::cout<<"¿Que donante desea mostrar por pantalla? (1,2,3)";
-        std::cin>>donante;
-        switch (donante) {
-          case 1:
-            BORRAR;
-            don1.writeDonante();
-            std::cout<<"\nIntroduzca un numero para continuar...\n";
-            std::cin>>donante;
-            break;
-          case 2:
-          BORRAR;
-          don2.writeDonante();
-          std::cout<<"\nIntroduzca un numero para continuar...\n";
-          std::cin>>donante;
-          break;
-          case 3:
-          BORRAR;
-          don3.writeDonante();
-          std::cout<<"\nIntroduzca un numero para continuar...\n";
-          std::cin>>donante;
-          break;
-        }
+        std::cout<<"Introduce el nombre del fichero del cual desea cargar los donantes:";
+        getchar();
+        getline(std::cin,file);
+        donantes.borrarDonantes();
+        donantes.cargar_fichero(file);
+
         break;
 
         case 3:
         BORRAR;
         LUGAR(6,10);
-        std::cout<<"¿Que donante desea modificar?(1,2,3)";
-        std::cin>>donante;
-        switch (donante) {
-          case 1:
-          don1.modify();
-          break;
-          case 2:
-          don2.modify();
-          break;
-          case 3:
-          don3.modify();
-          break;
-        }
+        std::cout<<"Introduce el nombre del fichero donde desea salvar los donantes:";
+        getchar();
+        getline(std::cin,file);
+        donantes.to_file(file);
         break;
 
-        //Comprobar operator <=
         case 4:
         BORRAR;
-        LUGAR(5,10);
-        std::cout<<"Se comparará el primer donante con el segundo.";
-        LUGAR(7,10);
-        if(don1<=don2){
-          BORRAR;
-          don2.writeDonante();
-          std::cin>>donante;
-          BORRAR;
-          don1.writeDonante();
-          std::cin>>donante;
+        std::cout<<donantes.getCima();
+        break;
+
+        case 5:
+
+        break;
+
+        default:
         }
-        else{
-          BORRAR;
-          don1.writeDonante();
-          std::cin>>donante;
-          BORRAR;
-          don2.writeDonante();
-          std::cin>>donante;
-        }
-      }
-    }while(opcion!=5);
+    }while(opcion!=6);
 
     return 0;
 }

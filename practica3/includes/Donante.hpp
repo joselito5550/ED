@@ -3,6 +3,7 @@
 	\brief Clase Donante, hereda de DonanteInterfaz
 	\author Jose Manuel Marquez Matarin
 */
+
 #ifndef __DONANTE__
 #define __DONANTE__
 #include "librerias.hpp"
