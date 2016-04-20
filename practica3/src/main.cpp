@@ -24,8 +24,9 @@ int menu(){
 
 
 int main(){
-    ed::Donantes donantes;
+    ed::Monticulo donantes;
     int opcion,donante;
+    std::string file;
 
     do{
       opcion = menu();
@@ -49,7 +50,7 @@ int main(){
         std::cout<<"Introduce el nombre del fichero del cual desea cargar los donantes:";
         getchar();
         getline(std::cin,file);
-        donantes.borrarDonantes();
+        donantes.borrarMonticulo();
         donantes.cargar_fichero(file);
 
         break;
@@ -65,14 +66,13 @@ int main(){
 
         case 4:
         BORRAR;
-        std::cout<<donantes.getCima();
+        std::cout<<donantes.cima();
         break;
 
         case 5:
 
         break;
 
-        default:
         }
     }while(opcion!=6);
 
