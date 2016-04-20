@@ -81,13 +81,13 @@ namespace ed{
             v[hijo_menor] = v[n];
             v[n] = aux;
             n = hijo_menor;
-        }
-        else{
-          posicionado = true;
+          }
+          else{
+           posicionado = true;
+          }
         }
       }
     }
-
     void borrarMonticulo(){
 
     }
