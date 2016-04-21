@@ -16,7 +16,9 @@ int menu(){
     LUGAR(10,10);
     std::cout<<"5. Simular la realizacion de una o mas donaciones";
     LUGAR(11,10);
-    std::cout<<"6. Salir";
+    std::cout<<"6. Borrar donante de la cima";
+    LUGAR(12,10);
+    std::cout<<"7. Salir";
     std::cout<<"\n";
     std::cin>>opcion;
   return opcion;
@@ -25,7 +27,8 @@ int menu(){
 
 int main(){
     ed::Monticulo donantes;
-    int opcion,donante;
+    ed::Donante d;
+    int opcion;
     std::string file;
 
     do{
@@ -66,15 +69,23 @@ int main(){
 
         case 4:
         BORRAR;
-        std::cout<<donantes.cima();
+        if(donantes.cima().getName()!="NoHay")
+        donantes.cima().writeDonante();
+        getchar();
         break;
 
         case 5:
-
+        BORRAR;
+        d.readDonante();
+        donantes.insertar(d);
+        break;
+        
+        case 6:
+        donantes.deleteCima();
         break;
 
         }
-    }while(opcion!=6);
+    }while(opcion!=7);
 
     return 0;
 }

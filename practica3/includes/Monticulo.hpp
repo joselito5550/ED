@@ -9,11 +9,11 @@ namespace ed{
   class Monticulo: public MonticuloInterfaz{
 //! \name Atributos privados de la clase Monticulo
   private:
-    //Lista de Donantes
+    //Vector de Donantes
     std::vector<Donante> _v;
     int num_element;
 
-    int rigth_son(int i){
+    int right_son(int i){
       return i*2+2;
     }
 
@@ -30,28 +30,38 @@ namespace ed{
     }
 
     Donante cima()const{
+      if(num_element!=0)
       return _v.front();
+      else{
+          Donante d("NoHay","","",true);
+          return d;
+      }
+      
     }
 
-    void insertar(Donante &d){
+    void insertar(const Donante& d){
       //Si no hay elementos
       if(num_element==0){
         //Elemento raiz
-        _v[0]=d;
+        _v.push_back(d);
         num_element++;
+        std::cout<<_v[0].getName()<<d.getDonaciones();
       }
       //Si hay elementos
       else{
+        std::vector<Donante>::iterator it=_v.begin();
+        for(int i=0;i<num_element;i++){
+            it++;
+        }
         //Lo insertamos al final
-        _v[num_element]=d;
+        _v.insert(it,d);
         int n = num_element;
         Donante aux;
         //Mientras que el hijo sea menor que el padre lo vamos intercambiando
-        while(_v[(n-1)/2]>_v[n]){
+        std::cout<<_v[(n-1)/2].getDonaciones();
+        while(_v[((n-1)/2)].getDonaciones()>_v[n].getDonaciones()){
           //hacemos el intercambio
-          aux = v[n];
-          v[n] = v[(n-1)/2];
-          v[(n-1)/2] = aux;
+          std::swap(_v[n],_v[(n-1)/2]);
           //Miramos al nuevo padre
           n = ((n-1)/2);
         }
@@ -64,31 +74,63 @@ namespace ed{
         //El ultimo elemento lo ponemos de raiz, y hundimos
         int n = 0;
         bool posicionado = false;
-        _v[0] = _v[num_element];
-        Donante aux;
         num_element--;
-        int hijo_menor;
+        std::swap(_v[0],_v[num_element]);
+        Donante aux;
+        int hijo_menor; //Guardaremos la posicion del hijo 
+        int hijo_derecho;
+        int hijo_izquierdo;
         while(n<num_element && !posicionado){
-          if(_v[rigth_son(n)].getDonaciones()<_v[left_son(n)].getDonaciones()){
-            hijo_menor = rigth_son(n);
-          }
-          else if(_v[rigth_son(n)].getDonaciones()>_v[left_son(n)].getDonaciones()){
+          //Con posicionado controlamos si tiene algun hijo menor aun o ya hemos encontrado su posicion
+          hijo_derecho = right_son(n);
+          hijo_izquierdo = left_son(n);
+          //Si existen los dos hijos
+          if(hijo_derecho<num_element && hijo_izquierdo<num_element){
+            if(_v[hijo_derecho].getDonaciones()<_v[hijo_izquierdo].getDonaciones()){
+            hijo_menor = right_son(n);
+            }
+            else if(_v[hijo_derecho].getDonaciones()>_v[hijo_izquierdo].getDonaciones()){
             hijo_menor = left_son(n);
-          }
-          if(_v[hijo_menor] < _v[n]){
-          //Intercambiamos
-            aux = v[hijo_menor];
-            v[hijo_menor] = v[n];
-            v[n] = aux;
+            }
+            if(_v[hijo_menor].getDonaciones() < _v[n].getDonaciones()){
+            //Intercambiamos
+            std::swap(_v[hijo_menor],_v[n]);
             n = hijo_menor;
+            }
+            else{
+            posicionado = true;
+            }
           }
-          else{
-           posicionado = true;
+          //si solo existe el hijo derecho
+          else if(hijo_derecho<num_element && hijo_izquierdo>=num_element){
+            if(_v[hijo_derecho].getDonaciones() < _v[n].getDonaciones()){
+                std::swap(_v[hijo_derecho],_v[n]);
+                n = hijo_derecho;
+                posicionado = true;
+            }    
+            else{
+                posicionado = true;
+            }
           }
+          //si solo existe el hijo izquierdo
+          else if(hijo_derecho>=num_element && hijo_izquierdo<num_element){
+              if(_v[hijo_izquierdo].getDonaciones() < _v[n].getDonaciones()){
+                  std::swap(_v[hijo_izquierdo],_v[n]);
+                  posicionado = true;
+              }
+              else{
+                  posicionado = true;
+              }
+          }
+          else posicionado = true;
         }
       }
     }
     void borrarMonticulo(){
+        int n = num_element;
+        for(int i=0;i<n;i++){
+            deleteCima();
+        }
 
     }
     void to_file(std::string file){

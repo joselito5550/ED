@@ -49,6 +49,7 @@ namespace ed{
       this->SecondName = don.SecondName;
       this->Group = don.Group;
       this->RH = don.RH;
+      this->donaciones = don.donaciones;
     }
 
 
@@ -138,7 +139,7 @@ namespace ed{
       \param int donaciones
       \post El donante debera de tener las donaciones pasadas por parametro
   */
-    void setDonaciones(const int &donacioens){
+    void setDonaciones(const int &donaciones){
       this->donaciones = donaciones;
     }
 
@@ -163,6 +164,8 @@ namespace ed{
         else {
           std::cout<<"RH: Negativo";
         }
+        LUGAR(10,10);
+        std::cout<<"Donaciones:"<<this->getDonaciones();
     }
 	/*!
 		\brief Lee por pantalla la informacion del Donante
@@ -187,6 +190,9 @@ namespace ed{
         this->RH = true;
       }
       else this->RH = false;
+      LUGAR(10,10);
+      std::cout<<"Donaciones:";
+      std::cin>>this->donaciones;
 
     }
 
@@ -245,6 +251,7 @@ namespace ed{
       this->SecondName = don.SecondName;
       this->Group = don.Group;
       this->RH = don.RH;
+      this->donaciones = don.donaciones;
       return *this;
     }
 
@@ -340,6 +347,8 @@ namespace ed{
       stream<<"Group: "<<d.getGroup();
       LUGAR(9,10);
       stream<<"RH: "<<d.getRH();
+      LUGAR(10,10);
+      stream<<"Donaciones:"<<d.getDonaciones();
       return stream;
     }
 
