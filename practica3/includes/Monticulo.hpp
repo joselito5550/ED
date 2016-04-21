@@ -134,10 +134,50 @@ namespace ed{
 
     }
     void to_file(std::string file){
-
+        std::ofstream f;
+        Donante aux;
+        f.open(file,std::ofstream::out);
+        if(f.fail()){
+          std::cout<<"Error al abrir el fichero";
+        }
+        for(int i=0;i<num_element;i++){
+          aux = _v[i];
+          f<<aux.getSecondName()<<";"<<aux.getName()<<";"<<aux.getGroup()<<";"<<aux.getRH()<<";"<<aux.getDonaciones()<<"\n";
+        }
+        f.close();
     }
 
     void cargar_fichero(std::string file){
+        std::ifstream f;
+        Donante aux;
+        std::string line;
+        std::string apellido, name, group, rh_aux, donaciones;
+        bool rh;
+        f.open(file.c_str());
+        if(f.fail()) std::cout<<"Error al abrir el fichero";
+        else{
+          while(getline(f,line)){
+            std::stringstream line_aux(line);
+            getline(line_aux, apellido,';');
+            getline(line_aux,name,';');
+            getline(line_aux, group,';');
+            getline(line_aux, rh_aux,';');
+            getline(line_aux, donaciones,';');
+
+            aux.setName(name);
+            aux.setSecondName(apellido);
+            aux.setGroup(group);
+            if(rh_aux=="1"){
+              rh = true;
+            }
+            else{
+              rh = false;
+            }
+            aux.setRH(rh);
+            aux.setDonaciones(atoi(donaciones.c_str()));
+            insertar(aux);
+          }
+        }
 
     }
 

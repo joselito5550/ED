@@ -72,6 +72,7 @@ int main(){
         if(donantes.cima().getName()!="NoHay")
         donantes.cima().writeDonante();
         getchar();
+        getchar();
         break;
 
         case 5:
