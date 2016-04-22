@@ -76,6 +76,11 @@ namespace ed{
         bool posicionado = false;
         num_element--;
         std::swap(_v[0],_v[num_element]);
+        std::vector<Donante>::iterator it = _v.begin();
+        for(int i = 0;i<(num_element+1);i++){
+            it++;
+        }
+        _v.erase(it);
         Donante aux;
         int hijo_menor; //Guardaremos la posicion del hijo 
         int hijo_derecho;
