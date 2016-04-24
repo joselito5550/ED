@@ -11,8 +11,7 @@
 #include "libraries.hpp"
 #include "../lib/interfaceDonor.hpp"
 #include "../lib/donor.hpp"
-#include "../lib/customlist.hpp"
-#include "../lib/interfaceDonors.hpp"
-#include "../lib/donors.hpp"
+#include "../lib/heap.hpp"
+#include "../lib/heapInterface.hpp"
 
 #endif // ifndef __ALL_HPP_

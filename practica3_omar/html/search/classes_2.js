@@ -1,5 +1,0 @@
-var searchData=
-[
-  ['interfacedonor',['InterfaceDonor',['../classed_1_1InterfaceDonor.html',1,'ed']]],
-  ['interfacedonors',['InterfaceDonors',['../classed_1_1InterfaceDonors.html',1,'ed']]]
-];

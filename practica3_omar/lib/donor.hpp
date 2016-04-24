@@ -22,6 +22,7 @@ private:
   std::string surname_;   /*!< Surname of the donor */
   std::string bloodType_; /*!< BloodType of the donor*/
   bool rhFactor_;         /*!< Rhfactor of a donor */
+  int  donations_;
 
 public:
 
@@ -44,7 +45,8 @@ public:
   Donor(const std::string& name,
         const std::string& surname,
         const std::string& bloodType,
-        const bool       & rhFactor);
+        const bool       & rhFactor,
+        const int        & donaciones);
 
   /*!
      \brief When a new donor is set a constructor is init.
@@ -86,6 +88,20 @@ public:
    */
   bool        getRhFactor() const;
 
+  /*!
+     \brief Getting the donations made by a donor
+     \pre There must exist a object
+     \post We get the donations of a donor
+     \return a integer.
+   */
+  int         getDonations() const;
+
+  /*!
+     \brief Setting the donations of a donors
+     \param donations is a integer
+   */
+  void        setDonations(const int& donations);
+ 
   /*!
      \brief Fuction to set the bloodType of the donor
      \pre None

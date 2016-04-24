@@ -15,17 +15,20 @@ Donor::Donor() {
   this->setSurname("");
   this->setBloodType("");
   this->setRhFactor(false);
+  this->setDonations(0);
 }
 
 // Constructor with params
 Donor::Donor(const std::string& name,
              const std::string& surname,
              const std::string& bloodType,
-             const bool       & rhFactor) {
+             const bool       & rhFactor,
+             const int        & donations) {
   this->setName(name);
   this->setSurname(surname);
   this->setBloodType(bloodType);
   this->setRhFactor(rhFactor);
+  this->setDonations(donations);
 }
 
 // Constructor of copy.
@@ -34,6 +37,7 @@ Donor::Donor(const Donor& copyDonor) {
   this->setSurname(copyDonor.getSurname());
   this->setBloodType(copyDonor.getBloodType());
   this->setRhFactor(copyDonor.getRhFactor());
+  this->setDonations(copyDonor.getDonations());
 }
 
 // Getname of a name
@@ -53,6 +57,14 @@ std::string Donor::getBloodType() const {
 // get of the rhfactor
 bool Donor::getRhFactor() const {
   return this->rhFactor_;
+}
+
+int Donor::getDonations() const {
+  return this->donations_;
+}
+
+void Donor::setDonations(const int& donations) {
+  this->donations_ = donations;
 }
 
 // set of the name
@@ -84,6 +96,7 @@ void Donor::setRhFactor(const bool& rhFactor)          {
 // Reading a donor
 void Donor::readDonor()                            {
   std::string auxString;
+  int auxInteger;
 
   LUGAR(6, 10);
 
@@ -120,6 +133,14 @@ void Donor::readDonor()                            {
 
   LUGAR(9, 10);
 
+  // Getting the donations of the donor.
+  std::cout << HEADER << "Introduce the donations of the donor: " << ENDC;
+  std::cin >> auxInteger;
+
+  this->setDonations(auxInteger);
+
+  LUGAR(10, 10);
+
   // Getting the Rh Factor of the Donor.
   std::cout << HEADER <<
   "Introduce 1 if positive or 0 if negative Rh Factor: " <<
@@ -139,7 +160,9 @@ void Donor::printDonor()                           {
   std::cout << HEADER << "Donor: " << OKBLUE << this->getName() << " " <<
   this->getSurname() << HEADER << " BloodType: " << OKBLUE <<
   this->getBloodType() << HEADER <<
-  " RhFactor: " << OKBLUE <<  this->getRhFactor() << std::endl << ENDC;
+  " RhFactor: " << OKBLUE <<  this->getRhFactor() << HEADER << " Donations: " <<
+  OKBLUE <<
+  this->getDonations() << std::endl << ENDC;
 }
 
 // Operator = overloaded

@@ -26,6 +26,22 @@ public:
   virtual std::string getName() const = 0;
 
   /*!
+     \brief Get the donations of a donor.
+     \return integer name.
+     \pre There must exists the object.
+     \post We get the rhfactor of a donor in a stream.
+   */
+  virtual int         getDonations() const = 0;
+
+  /*!
+     \brief Fuction to set the rhFactor of the donor
+     \pre None
+     \param rhFactor a boolean
+     \post New rhfactor is set
+   */
+  virtual void        setDonations(const int& donations) = 0;
+
+  /*!
      \brief Get the surnames of a donor.
      \return string name.
      \pre There must exists the object.
