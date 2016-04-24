@@ -36,7 +36,7 @@ namespace ed{
           Donante d("NoHay","","",true);
           return d;
       }
-      
+
     }
 
     void insertar(const Donante& d){
@@ -82,7 +82,7 @@ namespace ed{
         }
         _v.erase(it);
         Donante aux;
-        int hijo_menor; //Guardaremos la posicion del hijo 
+        int hijo_menor; //Guardaremos la posicion del hijo
         int hijo_derecho;
         int hijo_izquierdo;
         while(n<num_element && !posicionado){
@@ -112,7 +112,7 @@ namespace ed{
                 std::swap(_v[hijo_derecho],_v[n]);
                 n = hijo_derecho;
                 posicionado = true;
-            }    
+            }
             else{
                 posicionado = true;
             }

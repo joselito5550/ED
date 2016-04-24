@@ -14,7 +14,6 @@ void printmenu();
  */
 int  main(int argc, char const *argv[]) {
   int option = 0;
-  Donors donors;
 
   do {
     printmenu();

@@ -5,8 +5,8 @@
    \date 21/April/2016
  */
 
-#ifndef __HEAP_HPP_
-#define __HEAP_HPP_
+#ifndef __HEAPINTERFACE_HPP_
+#define __HEAPINTERFACE_HPP_
 
 #include "../include/libraries.hpp"
 #include "donor.hpp"
