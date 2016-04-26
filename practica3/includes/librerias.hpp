@@ -21,7 +21,6 @@
 #include <sstream>
 #include "macros.hpp"
 #include "Donante.hpp"
-#include "DonantesInterfaz.hpp"
 #include "DonanteInterfaz.hpp"
 #include "MonticuloInterfaz.hpp"
 #include "Monticulo.hpp"

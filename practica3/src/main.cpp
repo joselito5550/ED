@@ -1,5 +1,5 @@
 #include "../includes/librerias.hpp"
-#include <string>
+
 int menu(){
   int opcion;
     BORRAR;
@@ -14,11 +14,13 @@ int menu(){
     LUGAR(9,10);
     std::cout<<"4. Mostrar el donante que se encuentra en la cima del monticulo";
     LUGAR(10,10);
-    std::cout<<"5. Simular la realizacion de una o mas donaciones";
+    std::cout<<"5. Insertar un donante nuevo";
     LUGAR(11,10);
     std::cout<<"6. Borrar donante de la cima";
     LUGAR(12,10);
-    std::cout<<"7. Salir";
+    std::cout<<"7. Simular dos donacioness al donante de la cima";
+    LUGAR(13,10);
+    std::cout<<"8. Salir";
     std::cout<<"\n";
     std::cin>>opcion;
   return opcion;
@@ -85,8 +87,14 @@ int main(){
         donantes.deleteCima();
         break;
 
+        case 7:
+        d = donantes.cima();
+        d.setDonaciones(d.getDonaciones()+2);
+        donantes.deleteCima();
+        donantes.insertar(d);
+        break;
         }
-    }while(opcion!=7);
+    }while(opcion!=8);
 
     return 0;
 }

@@ -18,10 +18,19 @@ namespace ed{
   class Donante: public DonanteInterfaz{
 //! \name Atributos privados de la clase Donante
   private:
-    std::string Name;
+  /*! Nombre del donante*/
+    std::string Name; 
+    
+  /*! Apellidos del donante*/    
     std::string SecondName;
+    
+  /*! Grupo sanguineo del donante*/
     std::string Group;
+    
+  /*! Factor RH del donante*/    
     bool RH;
+    
+  /*! Donaciones realizadas por el donante*/    
     int donaciones;
 //! \name Funciones publicas de la Clase Donante
   public:
@@ -98,7 +107,7 @@ namespace ed{
 //! \name Modificadores
 	/*!
 		\brief Establece como nombre el string pasado por parametro
-		\param String Name
+		\param const std::string& Name
 		\post El donante debera de tener el nombre de la variable Name
 	*/
     void setName(const std::string& Name){
@@ -107,7 +116,7 @@ namespace ed{
 
 	/*!
 		\brief Establece como apellido el string pasado por parametro
-		\param String SecondName
+		\param const std::string& SecondName
 		\post El donante debera de tener el apellido de la variable Name
 	*/
     void setSecondName(const std::string& SecondName){
@@ -116,7 +125,7 @@ namespace ed{
 
 	/*!
 		\brief Establece como grupo Sanguineo el string pasado por parametro
-		\param String Group
+		\param const std::string& Group
 		\post El donante debera de tener el grupo de la variable Group
 
 	*/
@@ -126,7 +135,7 @@ namespace ed{
 
 	/*!
 		\brief Establece como apellido el string pasado por parametro
-		\param String SecondName
+		\param const bool& RH
 		\post El donante debera de tener el apellido de la variable SecondName
 
 	*/
@@ -136,7 +145,7 @@ namespace ed{
 
     /*
       \brief Establece el numero de donaciones realizadas por el donante
-      \param int donaciones
+      \param const int &donaciones
       \post El donante debera de tener las donaciones pasadas por parametro
   */
     void setDonaciones(const int &donaciones){
@@ -243,8 +252,9 @@ namespace ed{
 
 	/*!
 		\brief Sobrecarga del operador =
-		\param Donante al que se iguala
+		\param Donante don
 		\post Deberan de ser iguales
+        \return Donante& 
 	*/
     Donante& operator=(Donante don){
       this->Name = don.Name;
@@ -257,7 +267,8 @@ namespace ed{
 
 	/*!
 		\brief Devuelve true si ambos donantes son iguales
-		\param Donante don1
+		\param const Donante& don1
+        \return bool true si son iguales
 	*/
     bool operator==(const Donante& don1){
       bool result;
@@ -272,7 +283,8 @@ namespace ed{
     //Perfe
 	/*!
 		\brief Operador <=, nos sera util para el ordenado alfabetico
-		\param Donante don1
+		\param const Donante& don1
+        \return bool si <= por apellidos
 	*/
     bool operator<=(const Donante& don1){
       bool result;
@@ -290,7 +302,8 @@ namespace ed{
 
 	/*!
 		\brief Operador >=, nos sera util para el ordenado en la lista
-		\param Donante don1
+		\param const Donante& don1
+        \return bool true si son >= por apellido
 	*/
     bool operator>=(const Donante& don1){
       bool result;
@@ -311,7 +324,8 @@ namespace ed{
     //friends function
 	/*!
 		\brief Sobrecarga del operador >>
-		\param Stream, Donante d
+		\param std::istream &stream, Donante &d
+        \return std::istream
 	*/
     friend std::istream &operator>>(std::istream &stream, Donante &d){
       std::cout << "Introduce los siguientes datos del donante\n";
@@ -335,7 +349,8 @@ namespace ed{
 
 	/*!
 		\brief Sobrecarga del operador <<
-		\param stream, Donante d
+		\param std::ostream &stream, Donante const &d
+        \return std::ostream
 	*/
     friend std::ostream &operator<<(std::ostream &stream, Donante const &d){
       BORRAR;

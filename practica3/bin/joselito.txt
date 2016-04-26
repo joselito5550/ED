@@ -1,0 +1,3 @@
+Carmona;Paola;A;1;2
+Sotillo;Omar;A;1;5
+Marquez;Jose;A;0;3
