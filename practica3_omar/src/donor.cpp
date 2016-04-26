@@ -15,20 +15,18 @@ Donor::Donor() {
   this->setSurname("");
   this->setBloodType("");
   this->setRhFactor(false);
-  this->setDonations(0);
+  donations_=0;
 }
 
 // Constructor with params
 Donor::Donor(const std::string& name,
              const std::string& surname,
              const std::string& bloodType,
-             const bool       & rhFactor,
-             const int        & donations) {
+             const bool       & rhFactor) {
   this->setName(name);
   this->setSurname(surname);
   this->setBloodType(bloodType);
   this->setRhFactor(rhFactor);
-  this->setDonations(donations);
 }
 
 // Constructor of copy.

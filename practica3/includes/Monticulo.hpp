@@ -68,7 +68,7 @@ namespace ed{
           Donante d("NoHay","","",true);
           return d;
       }
-      
+
     }
 
     //! \name Modificadores
@@ -117,7 +117,11 @@ namespace ed{
         std::vector<Donante>::iterator it = _v.end();
         _v.erase(it);
         Donante aux;
+<<<<<<< HEAD
+        int hijo_menor; //Guardaremos la posicion del hijo
+=======
         int hijo_menor; //Guardaremos la posicion del hijo menor 
+>>>>>>> master
         int hijo_derecho;
         int hijo_izquierdo;
         
@@ -153,7 +157,7 @@ namespace ed{
                 std::swap(_v[hijo_derecho],_v[n]);
                 n = hijo_derecho;
                 posicionado = true;
-            }    
+            }
             else{
                 posicionado = true;
             }

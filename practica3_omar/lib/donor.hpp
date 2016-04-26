@@ -45,8 +45,7 @@ public:
   Donor(const std::string& name,
         const std::string& surname,
         const std::string& bloodType,
-        const bool       & rhFactor,
-        const int        & donaciones);
+        const bool       & rhFactor);
 
   /*!
      \brief When a new donor is set a constructor is init.
@@ -101,7 +100,7 @@ public:
      \param donations is a integer
    */
   void        setDonations(const int& donations);
- 
+
   /*!
      \brief Fuction to set the bloodType of the donor
      \pre None
