@@ -135,6 +135,9 @@ namespace ed{
             else if(_v[hijo_derecho].getDonaciones()>_v[hijo_izquierdo].getDonaciones()){
             hijo_menor = left_son(n);
             }
+            else if(_v[hijo_derecho].getDonaciones()==_v[hijo_izquierdo].getDonaciones()){
+              hijo_menor = left_son(n);
+            }
             if(_v[hijo_menor].getDonaciones() < _v[n].getDonaciones()){
             //Intercambiamos
             std::swap(_v[hijo_menor],_v[n]);
