@@ -5,7 +5,7 @@
 #  *  @github: https://github.com/omarsotillo/software-engineering-omar
 #  */
 CFLAGS := -g -std=c++11 -Wall
-OBJECTMAIN :=  ./build/donor.o  ./build/main.o
+OBJECTMAIN :=  ./build/donor.o ./build/heap.o  ./build/main.o
 
 
  all: ./bin/main  clean
@@ -18,6 +18,9 @@ OBJECTMAIN :=  ./build/donor.o  ./build/main.o
 	@echo "\033[93m donor.o";
 	@echo "\033[95m Creating the donor.o file.";g++ $(CFLAGS) ./src/donor.cpp -c -o ./build/donor.o
 
+./build/heap.o : ./src/heap.cpp
+	@echo "\033[93m heap.o";
+	@echo "\033[95m Creating the heap.o file.";g++ $(CFLAGS) ./src/heap.cpp -c -o ./build/heap.o
 ./bin/main : $(OBJECTMAIN)
 	@echo "\033[92m Compiling into main executable."; g++ $(CFLAGS) $(OBJECTMAIN) -o ./bin/main
 

@@ -14,62 +14,62 @@ void printmenu();
  */
 int  main(int argc, char const *argv[]) {
   int option = 0;
+  ed::Heap auxHeap;
+  Donor    auxDonor;
 
   do {
     printmenu();
-        LUGAR(18, 10);
+    LUGAR(18, 10);
     std::cin >> option;
 
-    // Check emptyness of the list.
+    // Check emptyness of the heap.
     if (option == 1) {
       BORRAR;
 
-      if (donors.isListEmpty()) {
-        LUGAR(6, 11);
-        INTENSIDAD;
-        std::cout << FAIL << "The current list is Empty" << std::endl << ENDC;
-        sleep(3);
+      if (auxHeap.isEmpty()) {
+        std::cout << FAIL << "The heap is empty. No elements found." << ENDC <<
+        std::endl;
+      } else {
+        std::cout << OKGREEN << "The heap is not empty." << ENDC << std::endl;
       }
-      else {
-        LUGAR(6, 11);
-        INTENSIDAD;
-        std::cout << OKGREEN << "The current list has " << WARNING <<
-        donors.getCustomList().getNumberOfNodes() << OKGREEN << " values" <<
-        std::endl << ENDC;
-
-        sleep(3);
-      }
+      getchar();
+      getchar();
     }
 
     if (option == 2) {
-      donors.loadFromFile();
+      BORRAR;
+      auxHeap.deleteHeap();
+      std::cout << "DENTRO DE LA FUNCIÓN " << std::endl;
+      auxHeap.loadFromFile();
+      std::cout << "LO QUE SE RECIBE EN EL MAIN" << std::endl;
+      auxHeap.printDonors();
+      LUGAR(6, 10);
+      std::cout << OKGREEN << "New heap loaded" << std::endl;
+      getchar();
+      getchar();
     }
 
     if (option == 3) {
-      donors.saveToFile();
+      BORRAR;
+      auxHeap.saveToFile();
+      LUGAR(6, 10);
+      std::cout << OKGREEN << "New heap saved" << std::endl;
+      getchar();
+      getchar();
     }
 
     if (option == 4) {
       BORRAR;
-      donors.insertNewDonor();
+
+      if (auxHeap.top().getName() != "No") auxHeap.top().printDonor();
+      getchar();
+      getchar();
     }
 
     if (option == 5) {
       BORRAR;
-      donors.editDonor();
     }
-
-    if (option == 6) {
-      BORRAR;
-      donors.deleteDonor();
-    }
-
-    if (option == 7) {
-      BORRAR;
-      donors.printDonors();
-        sleep(5);
-    }
-  } while (option != 8);
+  } while (option != 6);
 
   LUGAR(19, 11);
   INTENSIDAD;
@@ -89,7 +89,7 @@ void printmenu() {
   LUGAR(4, 10);
   INTENSIDAD;
   SUBRAYADO;
-  std::cout << HEADER << "Welcome to the 2º Work of ED!" << std::endl << ENDC;
+  std::cout << HEADER << "Welcome to the 3º Work of ED!" << std::endl << ENDC;
 
   // Showing the menu
   LUGAR(6, 10);
@@ -101,54 +101,42 @@ void printmenu() {
   INTENSIDAD;
   std::cout << "1.- ";
   APAGA;
-  std::cout << WARNING << "Check if there are Donors." <<
+  std::cout << WARNING << "Check if a heap is empty." <<
   std::endl << ENDC;
   LUGAR(9, 11);
   INTENSIDAD;
   std::cout << "2.- ";
   APAGA;
-  std::cout << WARNING << "Load a list of donors from a file." <<
+  std::cout << WARNING << "Load from a file a heap" <<
   std::endl << ENDC;
   LUGAR(10, 11);
   INTENSIDAD;
   std::cout << "3.- ";
   APAGA;
-  std::cout << WARNING << "Save a list to the file." <<
+  std::cout << WARNING << "Save a heap to a file." <<
   std::endl << ENDC;
   LUGAR(11, 11);
   INTENSIDAD;
   std::cout << "4.- ";
   APAGA;
-  std::cout << WARNING << "Insert a new donor to current list." <<
+  std::cout << WARNING << "Show the donor in the top of the heap." <<
   std::endl << ENDC;
   LUGAR(12, 11);
   INTENSIDAD;
   std::cout << "5.- ";
   APAGA;
-  std::cout << WARNING << "Modify the information of a donor." <<
+  std::cout << WARNING << "Simulate a donation." <<
   std::endl << ENDC;
   LUGAR(13, 11);
   INTENSIDAD;
   std::cout << "6.- ";
   APAGA;
-  std::cout << WARNING << "Delete a donor from the current list." <<
-  std::endl << ENDC;
-  LUGAR(14, 11);
-  INTENSIDAD;
-  std::cout << "7.- ";
-  APAGA;
-  std::cout << WARNING << "Print all donors of the current list" <<
-  std::endl << ENDC;
-  LUGAR(15, 11);
-  INTENSIDAD;
-  std::cout << "8.- ";
-  APAGA;
   std::cout << WARNING << "Exit" <<
   std::endl << ENDC;
 
-  LUGAR(17, 11);
+  LUGAR(15, 11);
   INTENSIDAD;
-  std::cout << "Introduce the option: " << std::endl;
+  std::cout << "Introduce an option: " << std::endl;
   APAGA;
 }
 

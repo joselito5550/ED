@@ -1,6 +1,6 @@
-omar,omar,AB,1
-pepe,pepe,AB,1
-antonio,antonio,AB,1
-juan,sotillo,AB,1
-omar,perico,AB,1
-madriles,jefe,AB,1
+Marquez;Jose;A;1;8
+Carmona;Paola;A;1;2
+Romero;Pepe;A;0;3
+Luis;Antonio;A;0;5
+Mata;Valle;A;0;10
+Matarin;Conchi;A;1;1

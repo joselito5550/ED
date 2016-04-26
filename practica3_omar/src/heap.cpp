@@ -25,156 +25,181 @@ bool Heap::isEmpty() const {
 }
 
 Donor Heap::top() const {
-  if (numberOfElements_ != 0) { // No way of get
-    return v_.front();
-  }
+  if (numberOfElements_ != 0) return v_.front();
   else {
-    Donor donor("NO", "", "", true, 0);
-    return donor;
+    Donor d("No", "", "", true);
+    return d;
   }
 }
 
 void Heap::insert(const Donor& auxDonor) {
-  if (this->getNumberOfElements() == 0) {
+  // Si no hay elementos
+  if (numberOfElements_ == 0) {
+    // Elemento raiz
     v_.push_back(auxDonor);
-    this->setNumberOfElements(this->getNumberOfElements() + 1);
+    numberOfElements_++;
   }
+
+  // Si hay elementos
   else {
-    std::vector<Donor>::iterator it = v_.begin();
+    std::vector<Donor>::iterator it = v_.end();
 
-    for (int i = 0; i < this->getNumberOfElements(); i++) {
-      it++;
-    }
-    Donor aux;
-    int   n = this->getNumberOfElements();
+    // Lo insertamos al final
     v_.insert(it, auxDonor);
+    int n = numberOfElements_;
 
-    // While the child is smaller than the parent
+    // Mientras que el hijo sea menor que el padre lo vamos intercambiando
     while (v_[((n - 1) / 2)].getDonations() > v_[n].getDonations()) {
+      // hacemos el intercambio
       std::swap(v_[n], v_[(n - 1) / 2]);
+
+      // Volvemos a observar el nuevo padre
       n = ((n - 1) / 2);
     }
-    this->setNumberOfElements(this->getNumberOfElements() + 1);
+    numberOfElements_++;
   }
 }
 
 void Heap::deleteTop()    {
-  if (this->getNumberOfElements() != 0) {
-    Donor aux;
-    int   rightSon, leftSon, smallerSon;
-
-    int  n        = 0;
-    bool position = false;
+  if(numberOfElements_!=0){
+    //El ultimo elemento lo ponemos de raiz, y hundimos
+    int n = 0;
+    bool posicionado = false;
     numberOfElements_--;
-    std::swap(v_[0], v_[numberOfElements_]);
-    std::vector<Donor>::iterator it = v_.begin();
+    std::swap(v_[0],v_[numberOfElements_]);
 
-    for (int i = 0; i < (numberOfElements_ + 1); i++) {
-      it++;
-    }
+    //Borramos el ultimo elemento una vez hemos hecho el intercambio
+    std::vector<Donor>::iterator it = v_.end();
     v_.erase(it);
+    Donor aux;
+    int hijo_menor; //Guardaremos la posicion del hijo
 
-    while (n < numberOfElements_ && !position) {
-      rightSon = right_son(n);
-      leftSon  = left_son(n);
+    int hijo_derecho;
+    int hijo_izquierdo;
 
-      if ((rightSon < numberOfElements_) && (leftSon < numberOfElements_)) {
-        if (v_[rightSon].getDonations() < v_[leftSon].getDonations()) {
-          smallerSon = right_son(n);
+    //Mientras que no nos pasemos y no este aun colocado el elemento en su posicion
+    while(n<numberOfElements_ && !posicionado){
+      //Con posicionado controlamos si tiene algun hijo menor aun o ya hemos encontrado su posicion
+      hijo_derecho = right_son(n);
+      hijo_izquierdo = left_son(n);
+      //Si existen los dos hijos
+      if(hijo_derecho<numberOfElements_ && hijo_izquierdo<numberOfElements_){
+          //Comprobamos que hijo es el menor
+        if(v_[hijo_derecho].getDonations()<v_[hijo_izquierdo].getDonations()){
+        hijo_menor = right_son(n);
         }
-        else if (v_[rightSon].getDonations() > v_[leftSon].getDonations()) {
-          smallerSon = left_son(n);
+        else if(v_[hijo_derecho].getDonations()>v_[hijo_izquierdo].getDonations()){
+        hijo_menor = left_son(n);
         }
-
-        if (v_[smallerSon].getDonations() < v_[n].getDonations()) {
-          std::swap(v_[smallerSon], v_[n]);
-          n = smallerSon;
+        else if(v_[hijo_derecho].getDonations()==v_[hijo_izquierdo].getDonations()){
+          hijo_menor = left_son(n);
         }
-        else {
-          position = true;
+        if(v_[hijo_menor].getDonations() < v_[n].getDonations()){
+        //Intercambiamos
+        std::swap(v_[hijo_menor],v_[n]);
+        n = hijo_menor;
+        }
+        else{
+        posicionado = true;
         }
       }
-      else if ((rightSon < numberOfElements_) &&
-               (leftSon >= numberOfElements_)) {
-        if (v_[rightSon].getDonations() < v_[n].getDonations()) {
-          std::swap(v_[rightSon], v_[n]);
-          n        = rightSon;
-          position = true;
+      //si solo existe el hijo derecho
+      else if(hijo_derecho<numberOfElements_ && hijo_izquierdo>=numberOfElements_){
+        if(v_[hijo_derecho].getDonations() < v_[n].getDonations()){
+            std::swap(v_[hijo_derecho],v_[n]);
+            n = hijo_derecho;
+            posicionado = true;
         }
-        else position = true;
-      }
-      else if ((rightSon >= numberOfElements_) &&
-               (leftSon < numberOfElements_)) {
-        if (v_[leftSon].getDonations() < v_[n].getDonations()) {
-          std::swap(v_[leftSon], v_[n]);
-          position = true;
+        else{
+            posicionado = true;
         }
-        else position = true;
       }
+      //si solo existe el hijo izquierdo
+      else if(hijo_derecho>=numberOfElements_ && hijo_izquierdo<numberOfElements_){
+          if(v_[hijo_izquierdo].getDonations() < v_[n].getDonations()){
+              std::swap(v_[hijo_izquierdo],v_[n]);
+              posicionado = true;
+          }
+          else{
+              posicionado = true;
+          }
+      }
+      else posicionado = true;
     }
   }
 }
 
-void Heap::saveToFile()   {
-  Donor aux;
-  std::string   auxString;
-  std::ofstream myfile;
+void Heap::deleteHeap() {
+  int n = numberOfElements_;
 
-  // Opening file.
-  myfile.open("../files/donors.txt");
-
-  // Looping through item list.
-  for (int  i = 0; i < numberOfElements_; i++) {
-    // AuxString new value to be printed.
-    aux       = v_[i];
-    auxString = aux.getName() + "," += aux.getName() + "," +=
-                                         aux.getBloodType()  + ","+= aux.getDonations()  + ",";
-
-    if (aux.getRhFactor()) {
-      auxString = auxString + "1\n";
-    }
-    else {
-      auxString = auxString + "0\n";
-    }
-    myfile << auxString;
+  for (int i = 0; i < n; i++) {
+    deleteTop();
   }
+}
+
+void Heap::printDonors(){
+  int n = numberOfElements_;
+
+  for (int i = 0; i < n; i++) {
+    v_[i].printDonor();
+  }
+
+}
+
+
+void Heap::saveToFile()   {
+  std::ofstream f;
+  Donor aux;
+
+  f.open("../files/donors.txt");
+
+  if (f.fail()) {
+    std::cout << "Error al abrir el fichero";
+  }
+
+  for (int i = 0; i < numberOfElements_; i++) {
+    aux = v_[i];
+    f << aux.getSurname() << ";" << aux.getName() << ";" << aux.getBloodType() <<
+    ";" << aux.getRhFactor() << ";" << aux.getDonations() << "\n";
+  }
+  f.close();
 }
 
 void Heap::loadFromFile() {
   std::ifstream f;
-  Donor aux;
 
   std::string line;
-  std::string surname, name, blood,donations, rh_aux;
+  std::string apellido, name, group, rh_aux, donaciones;
   bool rh;
 
   f.open("../files/donors.txt");
 
-  while (getline(f, line)) {
-    std::stringstream line_aux(line);
+  if (f.fail()) std::cout << "Error al abrir el fichero";
+  else {
+    while (getline(f, line)) {
+      Donor aux;
+      std::stringstream line_aux(line);
+      getline(line_aux, apellido,   ';');
+      getline(line_aux, name,       ';');
+      getline(line_aux, group,      ';');
+      getline(line_aux, rh_aux,     ';');
+      getline(line_aux, donaciones, ';');
 
-    // Changing value of the stream
-    getline(line_aux, name,    ',');
-    getline(line_aux, surname, ',');
-    getline(line_aux, blood,   ',');
-    getline(line_aux, donations,   ',');
-    getline(line_aux, rh_aux,  '\n');
+      aux.setName(name);
+      aux.setSurname(apellido);
+      aux.setBloodType(group);
 
-    // Setting the values.
-    aux.setName(name);
-    aux.setSurname(surname);
-    aux.setDonations(atoi(donations.c_str()));
-    aux.setBloodType(blood);
-
-    if (rh_aux == "1") {
-      rh = true;
+      if (rh_aux == "1") {
+        rh = true;
+      }
+      else {
+        rh = false;
+      }
+      aux.setRhFactor(rh);
+      aux.setDonations(atoi(donaciones.c_str()));
+      aux.printDonor();
+      insert(aux);
     }
-    else {
-      rh = false;
-    }
-    aux.setRhFactor(rh);
-
-    this->insert(aux);
   }
 }
 

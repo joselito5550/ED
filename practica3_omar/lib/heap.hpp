@@ -30,12 +30,14 @@ private:
 public:
 
   Heap();
-  void setNumberOfElements(int aux);
-  int getNumberOfElements();
+  void  setNumberOfElements(int aux);
+  int   getNumberOfElements();
   bool  isEmpty() const;
   Donor top() const;
-  void  insert(const Donor& auxDonor) = 0;
-  void  deleteTop()                   = 0;
+  void  insert(const Donor& auxDonor);
+  void deleteHeap();
+  void  deleteTop();
+  void printDonors();
   void  saveToFile();
   void  loadFromFile();
 };
