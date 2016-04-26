@@ -1,0 +1,9 @@
+<map id="src/main.cpp" name="src/main.cpp">
+<area shape="rect" id="node2" href="$all_8hpp.html" title="Including all libraries in the project. " alt="" coords="211,80,327,107"/>
+<area shape="rect" id="node3" href="$defines_8hpp.html" title="Definition of some things in the program. " alt="" coords="13,155,101,181"/>
+<area shape="rect" id="node4" href="$libraries_8hpp.html" title="Including al libraries of the system. " alt="" coords="331,453,423,480"/>
+<area shape="rect" id="node14" href="$interfaceDonor_8hpp.html" title="Class Interface for Donor. " alt="" coords="178,379,339,405"/>
+<area shape="rect" id="node15" href="$donor_8hpp.html" title="Class for donor. " alt="" coords="282,304,389,331"/>
+<area shape="rect" id="node16" href="$heap_8hpp.html" title="Prototypes of the class heap. " alt="" coords="337,155,441,181"/>
+<area shape="rect" id="node17" href="$heapInterface_8hpp.html" title="Prototypes of the class heapInterface. " alt="" coords="434,229,560,256"/>
+</map>

@@ -36,7 +36,7 @@ namespace ed{
 
 	/*!
 		\brief Devuelve la posicion del hijo izquierdo
-        \param int i posicion del elemento
+    \param int i posicion del elemento
 		\return int  posicion del hijo izquierdo
 	*/
     int left_son(int i){
@@ -74,7 +74,7 @@ namespace ed{
     //! \name Modificadores
 	/*!
 		\brief Inserta el donante pasado por parametro
-        \param const Donante& d :Donante a insertar
+    \param const Donante& d :Donante a insertar
 	*/
     void insertar(const Donante& d){
       //Si no hay elementos
@@ -190,7 +190,7 @@ namespace ed{
     
 	/*!
 		\brief Salvar en un fichero el monticulo
-        \param std::string file nombre del fichero donde se guardara
+    \param std::string file nombre del fichero donde se guardara
 	*/    
     void to_file(std::string file){
         std::ofstream f;
@@ -208,7 +208,7 @@ namespace ed{
 
 	/*!
 		\brief Cargar el monticulo desde un fichero
-        \param std::string file nombre del fichero desde el que se cargara
+    \param std::string file nombre del fichero desde el que se cargara
 	*/
     void cargar_fichero(std::string file){
         std::ifstream f;
@@ -242,7 +242,6 @@ namespace ed{
           }
         }
     }
-
   };
 }
 

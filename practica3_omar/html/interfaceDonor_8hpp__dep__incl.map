@@ -1,0 +1,9 @@
+<map id="lib/interfaceDonor.hpp" name="lib/interfaceDonor.hpp">
+<area shape="rect" id="node2" href="$all_8hpp.html" title="Including all libraries in the project. " alt="" coords="127,304,232,331"/>
+<area shape="rect" id="node6" href="$donor_8hpp.html" title="Class for donor. " alt="" coords="133,80,229,107"/>
+<area shape="rect" id="node3" href="$donor_8cpp.html" title="Donor methods implemented. " alt="" coords="5,379,107,405"/>
+<area shape="rect" id="node4" href="$heap_8cpp.html" title="Implementation of the heap function. " alt="" coords="131,379,228,405"/>
+<area shape="rect" id="node5" href="$main_8cpp.html" title="Main of the program. " alt="" coords="253,379,349,405"/>
+<area shape="rect" id="node7" href="$heap_8hpp.html" title="Prototypes of the class heap. " alt="" coords="177,229,268,256"/>
+<area shape="rect" id="node8" href="$heapInterface_8hpp.html" title="Prototypes of the class heapInterface. " alt="" coords="227,155,369,181"/>
+</map>
