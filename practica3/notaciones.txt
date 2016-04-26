@@ -1,2 +1,0 @@
-Modificar el operador <= para que lo haga segun las donaciones
-

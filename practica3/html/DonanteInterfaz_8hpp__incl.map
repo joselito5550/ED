@@ -1,8 +1,8 @@
 <map id="includes/DonanteInterfaz.hpp" name="includes/DonanteInterfaz.hpp">
-<area shape="rect" id="node2" href="$librerias_8hpp.html" title="Librerias incluidas en los hpp. " alt="" coords="899,80,991,107"/>
+<area shape="rect" id="node2" href="$librerias_8hpp.html" title="Librerias incluidas en los hpp. " alt="" coords="854,80,946,107"/>
 <area shape="rect" id="node12" href="$colors_8hpp.html" title="Colores para la terminal. " alt="" coords="760,155,843,181"/>
 <area shape="rect" id="node16" href="$macros_8hpp.html" title="Macros para el diseño de pantallas. " alt="" coords="1141,155,1232,181"/>
-<area shape="rect" id="node17" href="$Donante_8hpp.html" title="Clase Donante, hereda de DonanteInterfaz. " alt="" coords="1725,155,1821,181"/>
-<area shape="rect" id="node19" href="$MonticuloInterfaz_8hpp_source.html" title="MonticuloInterfaz.hpp" alt="" coords="1427,155,1573,181"/>
-<area shape="rect" id="node20" href="$Monticulo_8hpp.html" title="Clase Monticulo, hereda de MonticuloInterfaz. " alt="" coords="1598,155,1701,181"/>
+<area shape="rect" id="node17" href="$Donante_8hpp.html" title="Clase Donante, hereda de DonanteInterfaz. " alt="" coords="1555,155,1651,181"/>
+<area shape="rect" id="node18" href="$MonticuloInterfaz_8hpp_source.html" title="MonticuloInterfaz.hpp" alt="" coords="1256,155,1403,181"/>
+<area shape="rect" id="node19" href="$Monticulo_8hpp.html" title="Clase Monticulo, hereda de MonticuloInterfaz. " alt="" coords="1427,155,1530,181"/>
 </map>
