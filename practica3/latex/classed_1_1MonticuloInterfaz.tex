@@ -1,0 +1,105 @@
+\hypertarget{classed_1_1MonticuloInterfaz}{}\section{ed\+:\+:Monticulo\+Interfaz Class Reference}
+\label{classed_1_1MonticuloInterfaz}\index{ed\+::\+Monticulo\+Interfaz@{ed\+::\+Monticulo\+Interfaz}}
+
+
+Clase \hyperlink{classed_1_1MonticuloInterfaz}{Monticulo\+Interfaz}.  
+
+
+
+
+{\ttfamily \#include $<$Monticulo\+Interfaz.\+hpp$>$}
+
+
+
+Inheritance diagram for ed\+:\+:Monticulo\+Interfaz\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=188pt]{classed_1_1MonticuloInterfaz__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{Indent}{\bf Observadores}\par
+\begin{DoxyCompactItemize}
+\item 
+virtual bool \hyperlink{classed_1_1MonticuloInterfaz_a05c64243f7062b1cf9cf38813e5c1e70}{empty} () const =0
+\begin{DoxyCompactList}\small\item\em Devuelve True si no hay donantes. \end{DoxyCompactList}\item 
+virtual \hyperlink{classed_1_1Donante}{Donante} \hyperlink{classed_1_1MonticuloInterfaz_a2c30c4a9cb2f95fb14e19cca895a75b6}{cima} () const =0
+\begin{DoxyCompactList}\small\item\em Devuelve el donante que se encuentre en la cima. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf Modificadores}\par
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{classed_1_1MonticuloInterfaz_a3800d68ce174f398a3ab0c6eca4e855f}{insertar} (const \hyperlink{classed_1_1Donante}{Donante} \&d)=0
+\begin{DoxyCompactList}\small\item\em Inserta un \hyperlink{classed_1_1Donante}{Donante} en el monticulo siguiendo el criterio de ordenacion. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classed_1_1MonticuloInterfaz_a27f0c644317d820494a28459d913bc8f}{delete\+Cima} ()=0\hypertarget{classed_1_1MonticuloInterfaz_a27f0c644317d820494a28459d913bc8f}{}\label{classed_1_1MonticuloInterfaz_a27f0c644317d820494a28459d913bc8f}
+
+\begin{DoxyCompactList}\small\item\em Elimina el donante que se encuentre en la cima. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+
+
+\subsection{Detailed Description}
+Clase \hyperlink{classed_1_1MonticuloInterfaz}{Monticulo\+Interfaz}. 
+
+\subsection{Member Function Documentation}
+\index{ed\+::\+Monticulo\+Interfaz@{ed\+::\+Monticulo\+Interfaz}!cima@{cima}}
+\index{cima@{cima}!ed\+::\+Monticulo\+Interfaz@{ed\+::\+Monticulo\+Interfaz}}
+\subsubsection[{\texorpdfstring{cima() const =0}{cima() const =0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Donante} ed\+::\+Monticulo\+Interfaz\+::cima (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{classed_1_1MonticuloInterfaz_a2c30c4a9cb2f95fb14e19cca895a75b6}{}\label{classed_1_1MonticuloInterfaz_a2c30c4a9cb2f95fb14e19cca895a75b6}
+
+
+Devuelve el donante que se encuentre en la cima. 
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{classed_1_1Donante}{Donante} 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classed_1_1Monticulo_a0eb6ea094e966a797dc8234ec2c8d924}{ed\+::\+Monticulo}.
+
+\index{ed\+::\+Monticulo\+Interfaz@{ed\+::\+Monticulo\+Interfaz}!empty@{empty}}
+\index{empty@{empty}!ed\+::\+Monticulo\+Interfaz@{ed\+::\+Monticulo\+Interfaz}}
+\subsubsection[{\texorpdfstring{empty() const =0}{empty() const =0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool ed\+::\+Monticulo\+Interfaz\+::empty (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{classed_1_1MonticuloInterfaz_a05c64243f7062b1cf9cf38813e5c1e70}{}\label{classed_1_1MonticuloInterfaz_a05c64243f7062b1cf9cf38813e5c1e70}
+
+
+Devuelve True si no hay donantes. 
+
+\begin{DoxyReturn}{Returns}
+Bool 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classed_1_1Monticulo_ac5d5bd797bbac6fc203a70693135e07a}{ed\+::\+Monticulo}.
+
+\index{ed\+::\+Monticulo\+Interfaz@{ed\+::\+Monticulo\+Interfaz}!insertar@{insertar}}
+\index{insertar@{insertar}!ed\+::\+Monticulo\+Interfaz@{ed\+::\+Monticulo\+Interfaz}}
+\subsubsection[{\texorpdfstring{insertar(const Donante \&d)=0}{insertar(const Donante &d)=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void ed\+::\+Monticulo\+Interfaz\+::insertar (
+\begin{DoxyParamCaption}
+\item[{const {\bf Donante} \&}]{d}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{classed_1_1MonticuloInterfaz_a3800d68ce174f398a3ab0c6eca4e855f}{}\label{classed_1_1MonticuloInterfaz_a3800d68ce174f398a3ab0c6eca4e855f}
+
+
+Inserta un \hyperlink{classed_1_1Donante}{Donante} en el monticulo siguiendo el criterio de ordenacion. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \hyperlink{classed_1_1Donante}{Donante}} & d \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \hyperlink{classed_1_1Monticulo_a573f0043ee88445d6b6a61d988703410}{ed\+::\+Monticulo}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+includes/Monticulo\+Interfaz.\+hpp\end{DoxyCompactItemize}

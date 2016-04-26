@@ -1,0 +1,160 @@
+\hypertarget{classed_1_1Monticulo}{}\section{ed\+:\+:Monticulo Class Reference}
+\label{classed_1_1Monticulo}\index{ed\+::\+Monticulo@{ed\+::\+Monticulo}}
+
+
+Clase \hyperlink{classed_1_1Monticulo}{Monticulo}.  
+
+
+
+
+{\ttfamily \#include $<$Monticulo.\+hpp$>$}
+
+
+
+Inheritance diagram for ed\+:\+:Monticulo\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=188pt]{classed_1_1Monticulo__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for ed\+:\+:Monticulo\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=188pt]{classed_1_1Monticulo__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{Indent}{\bf Funciones publicas de la Clase Monticulo}\par
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Monticulo} ()\hypertarget{classed_1_1Monticulo_a1de9bee04b411ae5f9a05f12197877ba}{}\label{classed_1_1Monticulo_a1de9bee04b411ae5f9a05f12197877ba}
+
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf Observadores}\par
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{classed_1_1Monticulo_ac5d5bd797bbac6fc203a70693135e07a}{empty} () const 
+\begin{DoxyCompactList}\small\item\em Saber si esta vacio el montiuclo. \end{DoxyCompactList}\item 
+\hyperlink{classed_1_1Donante}{Donante} \hyperlink{classed_1_1Monticulo_a0eb6ea094e966a797dc8234ec2c8d924}{cima} () const 
+\begin{DoxyCompactList}\small\item\em Devuelve el donante que se encuentre en la cima. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf Modificadores}\par
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classed_1_1Monticulo_a573f0043ee88445d6b6a61d988703410}{insertar} (const \hyperlink{classed_1_1Donante}{Donante} \&d)
+\begin{DoxyCompactList}\small\item\em Inserta el donante pasado por parametro. \end{DoxyCompactList}\item 
+void \hyperlink{classed_1_1Monticulo_a34628b3b1210e6d4f5e240ef0e0c0a42}{delete\+Cima} ()\hypertarget{classed_1_1Monticulo_a34628b3b1210e6d4f5e240ef0e0c0a42}{}\label{classed_1_1Monticulo_a34628b3b1210e6d4f5e240ef0e0c0a42}
+
+\begin{DoxyCompactList}\small\item\em Borrar la cima. \end{DoxyCompactList}\item 
+void \hyperlink{classed_1_1Monticulo_a167e014da42bf6cb97834feb9cb26087}{borrar\+Monticulo} ()\hypertarget{classed_1_1Monticulo_a167e014da42bf6cb97834feb9cb26087}{}\label{classed_1_1Monticulo_a167e014da42bf6cb97834feb9cb26087}
+
+\begin{DoxyCompactList}\small\item\em Eliminar el monticulo por completo. \end{DoxyCompactList}\item 
+void \hyperlink{classed_1_1Monticulo_a476cdc164df729a28969054120dd7fb6}{to\+\_\+file} (std\+::string file)
+\begin{DoxyCompactList}\small\item\em Salvar en un fichero el monticulo. \end{DoxyCompactList}\item 
+void \hyperlink{classed_1_1Monticulo_a036c69560508db95a98ae1e666c40ca4}{cargar\+\_\+fichero} (std\+::string file)
+\begin{DoxyCompactList}\small\item\em Cargar el monticulo desde un fichero. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+
+
+\subsection{Detailed Description}
+Clase \hyperlink{classed_1_1Monticulo}{Monticulo}. 
+
+\subsection{Member Function Documentation}
+\index{ed\+::\+Monticulo@{ed\+::\+Monticulo}!cargar\+\_\+fichero@{cargar\+\_\+fichero}}
+\index{cargar\+\_\+fichero@{cargar\+\_\+fichero}!ed\+::\+Monticulo@{ed\+::\+Monticulo}}
+\subsubsection[{\texorpdfstring{cargar\+\_\+fichero(std\+::string file)}{cargar_fichero(std::string file)}}]{\setlength{\rightskip}{0pt plus 5cm}void ed\+::\+Monticulo\+::cargar\+\_\+fichero (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{file}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classed_1_1Monticulo_a036c69560508db95a98ae1e666c40ca4}{}\label{classed_1_1Monticulo_a036c69560508db95a98ae1e666c40ca4}
+
+
+Cargar el monticulo desde un fichero. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em std\+::string} & file nombre del fichero desde el que se cargara \\
+\hline
+\end{DoxyParams}
+\index{ed\+::\+Monticulo@{ed\+::\+Monticulo}!cima@{cima}}
+\index{cima@{cima}!ed\+::\+Monticulo@{ed\+::\+Monticulo}}
+\subsubsection[{\texorpdfstring{cima() const }{cima() const }}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Donante} ed\+::\+Monticulo\+::cima (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\hypertarget{classed_1_1Monticulo_a0eb6ea094e966a797dc8234ec2c8d924}{}\label{classed_1_1Monticulo_a0eb6ea094e966a797dc8234ec2c8d924}
+
+
+Devuelve el donante que se encuentre en la cima. 
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{classed_1_1Donante}{Donante} que se encuentra en la cima 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classed_1_1MonticuloInterfaz_a2c30c4a9cb2f95fb14e19cca895a75b6}{ed\+::\+Monticulo\+Interfaz}.
+
+\index{ed\+::\+Monticulo@{ed\+::\+Monticulo}!empty@{empty}}
+\index{empty@{empty}!ed\+::\+Monticulo@{ed\+::\+Monticulo}}
+\subsubsection[{\texorpdfstring{empty() const }{empty() const }}]{\setlength{\rightskip}{0pt plus 5cm}bool ed\+::\+Monticulo\+::empty (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\hypertarget{classed_1_1Monticulo_ac5d5bd797bbac6fc203a70693135e07a}{}\label{classed_1_1Monticulo_ac5d5bd797bbac6fc203a70693135e07a}
+
+
+Saber si esta vacio el montiuclo. 
+
+\begin{DoxyReturn}{Returns}
+Devuelve true si esta vacio, false en caso contrario 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classed_1_1MonticuloInterfaz_a05c64243f7062b1cf9cf38813e5c1e70}{ed\+::\+Monticulo\+Interfaz}.
+
+\index{ed\+::\+Monticulo@{ed\+::\+Monticulo}!insertar@{insertar}}
+\index{insertar@{insertar}!ed\+::\+Monticulo@{ed\+::\+Monticulo}}
+\subsubsection[{\texorpdfstring{insertar(const Donante \&d)}{insertar(const Donante &d)}}]{\setlength{\rightskip}{0pt plus 5cm}void ed\+::\+Monticulo\+::insertar (
+\begin{DoxyParamCaption}
+\item[{const {\bf Donante} \&}]{d}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\hypertarget{classed_1_1Monticulo_a573f0043ee88445d6b6a61d988703410}{}\label{classed_1_1Monticulo_a573f0043ee88445d6b6a61d988703410}
+
+
+Inserta el donante pasado por parametro. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em const} & \hyperlink{classed_1_1Donante}{Donante}\& d \+:\hyperlink{classed_1_1Donante}{Donante} a insertar \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classed_1_1MonticuloInterfaz_a3800d68ce174f398a3ab0c6eca4e855f}{ed\+::\+Monticulo\+Interfaz}.
+
+\index{ed\+::\+Monticulo@{ed\+::\+Monticulo}!to\+\_\+file@{to\+\_\+file}}
+\index{to\+\_\+file@{to\+\_\+file}!ed\+::\+Monticulo@{ed\+::\+Monticulo}}
+\subsubsection[{\texorpdfstring{to\+\_\+file(std\+::string file)}{to_file(std::string file)}}]{\setlength{\rightskip}{0pt plus 5cm}void ed\+::\+Monticulo\+::to\+\_\+file (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{file}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classed_1_1Monticulo_a476cdc164df729a28969054120dd7fb6}{}\label{classed_1_1Monticulo_a476cdc164df729a28969054120dd7fb6}
+
+
+Salvar en un fichero el monticulo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em std\+::string} & file nombre del fichero donde se guardara \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+includes/\hyperlink{Monticulo_8hpp}{Monticulo.\+hpp}\end{DoxyCompactItemize}

@@ -1,4 +1,4 @@
-Marquez;Jose;A;1;1
+Marquez;Jose;A;1;8
 Carmona;Paola;A;1;2
 Romero;Pepe;A;0;3
 Luis;Antonio;A;0;5

@@ -1,0 +1,139 @@
+\hypertarget{classed_1_1DonantesInterfaz}{}\section{ed\+:\+:Donantes\+Interfaz Class Reference}
+\label{classed_1_1DonantesInterfaz}\index{ed\+::\+Donantes\+Interfaz@{ed\+::\+Donantes\+Interfaz}}
+
+
+Clase \hyperlink{classed_1_1DonantesInterfaz}{Donantes\+Interfaz}.  
+
+
+
+
+{\ttfamily \#include $<$Donantes\+Interfaz.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{Indent}{\bf Observadores}\par
+\begin{DoxyCompactItemize}
+\item 
+virtual bool \hyperlink{classed_1_1DonantesInterfaz_a135d0f86e8527e293c9a7d54ed7013d1}{empty} () const =0
+\begin{DoxyCompactList}\small\item\em Devuelve True si no hay donantes. \end{DoxyCompactList}\item 
+virtual \hyperlink{classed_1_1Donante}{Donante} \hyperlink{classed_1_1DonantesInterfaz_a572b0a3009679962d1716cf06b84ef58}{find\+Item} (std\+::string name, std\+::string second\+Name)=0
+\begin{DoxyCompactList}\small\item\em Devuelve un objecto \hyperlink{classed_1_1Donante}{Donante} con los mismos nombres y apellidos, en caso de no encontrarlo, devuelve un objecto \hyperlink{classed_1_1Donante}{Donante} con Nombre = \char`\"{}\+No encontrado\char`\"{}. \end{DoxyCompactList}\item 
+virtual int \hyperlink{classed_1_1DonantesInterfaz_a49b0d5aa9dd84645bf26475253af935a}{get\+Num\+Don} () const =0
+\begin{DoxyCompactList}\small\item\em Devuelve el numero de Donantes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf Modificadores}\par
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{classed_1_1DonantesInterfaz_ae31790262c0fb1fe4a6ff04d5b6bb75f}{set\+Num\+Don} (const int num\+Donantes)=0
+\begin{DoxyCompactList}\small\item\em Establece el numero de Donantes num\+Donantes. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classed_1_1DonantesInterfaz_a1ec7e64179b8a22cb47ddc6239b553c9}{insert\+Donante} (const \hyperlink{classed_1_1Donante}{Donante} \&d)=0
+\begin{DoxyCompactList}\small\item\em Insertar un donante en la lista. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classed_1_1DonantesInterfaz_a3f348324623fd2a23f63cd54d8131f9d}{delete\+Donante} (const \hyperlink{classed_1_1Donante}{Donante} \&d)=0
+\begin{DoxyCompactList}\small\item\em Eliminar un donante. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+
+
+\subsection{Detailed Description}
+Clase \hyperlink{classed_1_1DonantesInterfaz}{Donantes\+Interfaz}. 
+
+\subsection{Member Function Documentation}
+\index{ed\+::\+Donantes\+Interfaz@{ed\+::\+Donantes\+Interfaz}!delete\+Donante@{delete\+Donante}}
+\index{delete\+Donante@{delete\+Donante}!ed\+::\+Donantes\+Interfaz@{ed\+::\+Donantes\+Interfaz}}
+\subsubsection[{\texorpdfstring{delete\+Donante(const Donante \&d)=0}{deleteDonante(const Donante &d)=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void ed\+::\+Donantes\+Interfaz\+::delete\+Donante (
+\begin{DoxyParamCaption}
+\item[{const {\bf Donante} \&}]{d}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{classed_1_1DonantesInterfaz_a3f348324623fd2a23f63cd54d8131f9d}{}\label{classed_1_1DonantesInterfaz_a3f348324623fd2a23f63cd54d8131f9d}
+
+
+Eliminar un donante. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em El} & donante a eliminar \\
+\hline
+\end{DoxyParams}
+\index{ed\+::\+Donantes\+Interfaz@{ed\+::\+Donantes\+Interfaz}!empty@{empty}}
+\index{empty@{empty}!ed\+::\+Donantes\+Interfaz@{ed\+::\+Donantes\+Interfaz}}
+\subsubsection[{\texorpdfstring{empty() const =0}{empty() const =0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool ed\+::\+Donantes\+Interfaz\+::empty (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{classed_1_1DonantesInterfaz_a135d0f86e8527e293c9a7d54ed7013d1}{}\label{classed_1_1DonantesInterfaz_a135d0f86e8527e293c9a7d54ed7013d1}
+
+
+Devuelve True si no hay donantes. 
+
+\begin{DoxyReturn}{Returns}
+Bool 
+\end{DoxyReturn}
+\index{ed\+::\+Donantes\+Interfaz@{ed\+::\+Donantes\+Interfaz}!find\+Item@{find\+Item}}
+\index{find\+Item@{find\+Item}!ed\+::\+Donantes\+Interfaz@{ed\+::\+Donantes\+Interfaz}}
+\subsubsection[{\texorpdfstring{find\+Item(std\+::string name, std\+::string second\+Name)=0}{findItem(std::string name, std::string secondName)=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Donante} ed\+::\+Donantes\+Interfaz\+::find\+Item (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{name, }
+\item[{std\+::string}]{second\+Name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{classed_1_1DonantesInterfaz_a572b0a3009679962d1716cf06b84ef58}{}\label{classed_1_1DonantesInterfaz_a572b0a3009679962d1716cf06b84ef58}
+
+
+Devuelve un objecto \hyperlink{classed_1_1Donante}{Donante} con los mismos nombres y apellidos, en caso de no encontrarlo, devuelve un objecto \hyperlink{classed_1_1Donante}{Donante} con Nombre = \char`\"{}\+No encontrado\char`\"{}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em String} & name, String Second\+Name \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{classed_1_1Donante}{Donante}, nombre del donante 
+\end{DoxyReturn}
+\index{ed\+::\+Donantes\+Interfaz@{ed\+::\+Donantes\+Interfaz}!get\+Num\+Don@{get\+Num\+Don}}
+\index{get\+Num\+Don@{get\+Num\+Don}!ed\+::\+Donantes\+Interfaz@{ed\+::\+Donantes\+Interfaz}}
+\subsubsection[{\texorpdfstring{get\+Num\+Don() const =0}{getNumDon() const =0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual int ed\+::\+Donantes\+Interfaz\+::get\+Num\+Don (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{classed_1_1DonantesInterfaz_a49b0d5aa9dd84645bf26475253af935a}{}\label{classed_1_1DonantesInterfaz_a49b0d5aa9dd84645bf26475253af935a}
+
+
+Devuelve el numero de Donantes. 
+
+\begin{DoxyReturn}{Returns}
+Int 
+\end{DoxyReturn}
+\index{ed\+::\+Donantes\+Interfaz@{ed\+::\+Donantes\+Interfaz}!insert\+Donante@{insert\+Donante}}
+\index{insert\+Donante@{insert\+Donante}!ed\+::\+Donantes\+Interfaz@{ed\+::\+Donantes\+Interfaz}}
+\subsubsection[{\texorpdfstring{insert\+Donante(const Donante \&d)=0}{insertDonante(const Donante &d)=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void ed\+::\+Donantes\+Interfaz\+::insert\+Donante (
+\begin{DoxyParamCaption}
+\item[{const {\bf Donante} \&}]{d}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{classed_1_1DonantesInterfaz_a1ec7e64179b8a22cb47ddc6239b553c9}{}\label{classed_1_1DonantesInterfaz_a1ec7e64179b8a22cb47ddc6239b553c9}
+
+
+Insertar un donante en la lista. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em El} & donante a insertar \\
+\hline
+\end{DoxyParams}
+\index{ed\+::\+Donantes\+Interfaz@{ed\+::\+Donantes\+Interfaz}!set\+Num\+Don@{set\+Num\+Don}}
+\index{set\+Num\+Don@{set\+Num\+Don}!ed\+::\+Donantes\+Interfaz@{ed\+::\+Donantes\+Interfaz}}
+\subsubsection[{\texorpdfstring{set\+Num\+Don(const int num\+Donantes)=0}{setNumDon(const int numDonantes)=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void ed\+::\+Donantes\+Interfaz\+::set\+Num\+Don (
+\begin{DoxyParamCaption}
+\item[{const int}]{num\+Donantes}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{classed_1_1DonantesInterfaz_ae31790262c0fb1fe4a6ff04d5b6bb75f}{}\label{classed_1_1DonantesInterfaz_ae31790262c0fb1fe4a6ff04d5b6bb75f}
+
+
+Establece el numero de Donantes num\+Donantes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em int} & num\+Donantes \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+includes/\hyperlink{DonantesInterfaz_8hpp}{Donantes\+Interfaz.\+hpp}\end{DoxyCompactItemize}

@@ -1,22 +1,44 @@
-
+/*!
+	\file Monticulo.hpp
+	\brief Clase Monticulo, hereda de MonticuloInterfaz
+	\author Jose Manuel Marquez Matarin
+*/
 #ifndef __MONTICULO__
 #define __MONTICULO__
 #include "librerias.hpp"
+
+/*!
+    \brief Espacio de nombres ed
+*/
 namespace ed{
 /*!
-	\brief Clase DonanteInterfaz usada por Donante
+	\brief Clase Monticulo 
 */
   class Monticulo: public MonticuloInterfaz{
 //! \name Atributos privados de la clase Monticulo
   private:
     //Vector de Donantes
+    /*! Vector con el que implementaremos el monticulo*/
     std::vector<Donante> _v;
+    
+    /*! Numero de elementos actuales en el monticulo*/
     int num_element;
 
+//! \name Funciones privadas de la clase Monticulo
+	/*!
+		\brief Devuelve la posicion del hijo derecho
+        \param int i posicion del elemento
+		\return int posicion del hijo derecho
+	*/    
     int right_son(int i){
       return i*2+2;
     }
 
+	/*!
+		\brief Devuelve la posicion del hijo izquierdo
+        \param int i posicion del elemento
+		\return int  posicion del hijo izquierdo
+	*/
     int left_son(int i){
       return i*2+1;
     }
@@ -25,10 +47,20 @@ namespace ed{
     Monticulo(){
       num_element=0;
     }
+    
+//! \name Observadores
+	/*!
+		\brief Saber si esta vacio el montiuclo
+		\return Devuelve true si esta vacio, false en caso contrario
+	*/
     bool empty()const{
       return _v.empty();
     }
 
+	/*!
+		\brief Devuelve el donante que se encuentre en la cima
+		\return Donante que se encuentra en la cima
+	*/
     Donante cima()const{
       if(num_element!=0)
       return _v.front();
@@ -39,20 +71,21 @@ namespace ed{
       
     }
 
+    //! \name Modificadores
+	/*!
+		\brief Inserta el donante pasado por parametro
+        \param const Donante& d :Donante a insertar
+	*/
     void insertar(const Donante& d){
       //Si no hay elementos
       if(num_element==0){
         //Elemento raiz
         _v.push_back(d);
         num_element++;
-        std::cout<<_v[0].getName()<<d.getDonaciones();
       }
       //Si hay elementos
       else{
-        std::vector<Donante>::iterator it=_v.begin();
-        for(int i=0;i<num_element;i++){
-            it++;
-        }
+        std::vector<Donante>::iterator it=_v.end();
         //Lo insertamos al final
         _v.insert(it,d);
         int n = num_element;
@@ -62,13 +95,16 @@ namespace ed{
         while(_v[((n-1)/2)].getDonaciones()>_v[n].getDonaciones()){
           //hacemos el intercambio
           std::swap(_v[n],_v[(n-1)/2]);
-          //Miramos al nuevo padre
+          //Volvemos a observar el nuevo padre
           n = ((n-1)/2);
         }
         num_element++;
       }
     }
 
+	/*!
+		\brief Borrar la cima
+	*/
     void deleteCima(){
       if(num_element!=0){
         //El ultimo elemento lo ponemos de raiz, y hundimos
@@ -76,21 +112,23 @@ namespace ed{
         bool posicionado = false;
         num_element--;
         std::swap(_v[0],_v[num_element]);
-        std::vector<Donante>::iterator it = _v.begin();
-        for(int i = 0;i<(num_element+1);i++){
-            it++;
-        }
+        
+        //Borramos el ultimo elemento una vez hemos hecho el intercambio
+        std::vector<Donante>::iterator it = _v.end();
         _v.erase(it);
         Donante aux;
-        int hijo_menor; //Guardaremos la posicion del hijo 
+        int hijo_menor; //Guardaremos la posicion del hijo menor 
         int hijo_derecho;
         int hijo_izquierdo;
+        
+        //Mientras que no nos pasemos y no este aun colocado el elemento en su posicion
         while(n<num_element && !posicionado){
           //Con posicionado controlamos si tiene algun hijo menor aun o ya hemos encontrado su posicion
           hijo_derecho = right_son(n);
           hijo_izquierdo = left_son(n);
           //Si existen los dos hijos
           if(hijo_derecho<num_element && hijo_izquierdo<num_element){
+              //Comprobamos que hijo es el menor
             if(_v[hijo_derecho].getDonaciones()<_v[hijo_izquierdo].getDonaciones()){
             hijo_menor = right_son(n);
             }
@@ -131,6 +169,10 @@ namespace ed{
         }
       }
     }
+    
+	/*!
+		\brief Eliminar el monticulo por completo
+	*/
     void borrarMonticulo(){
         int n = num_element;
         for(int i=0;i<n;i++){
@@ -138,6 +180,11 @@ namespace ed{
         }
 
     }
+    
+	/*!
+		\brief Salvar en un fichero el monticulo
+        \param std::string file nombre del fichero donde se guardara
+	*/    
     void to_file(std::string file){
         std::ofstream f;
         Donante aux;
@@ -152,6 +199,10 @@ namespace ed{
         f.close();
     }
 
+	/*!
+		\brief Cargar el monticulo desde un fichero
+        \param std::string file nombre del fichero desde el que se cargara
+	*/
     void cargar_fichero(std::string file){
         std::ifstream f;
         Donante aux;
@@ -183,7 +234,6 @@ namespace ed{
             insertar(aux);
           }
         }
-
     }
 
   };
