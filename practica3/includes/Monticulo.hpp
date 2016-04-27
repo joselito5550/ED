@@ -117,11 +117,8 @@ namespace ed{
         std::vector<Donante>::iterator it = _v.end();
         _v.erase(it);
         Donante aux;
-<<<<<<< HEAD
         int hijo_menor; //Guardaremos la posicion del hijo
-=======
         int hijo_menor; //Guardaremos la posicion del hijo menor 
->>>>>>> master
         int hijo_derecho;
         int hijo_izquierdo;
         

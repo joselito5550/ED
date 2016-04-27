@@ -22,7 +22,7 @@ private:
   std::string surname_;   /*!< Surname of the donor */
   std::string bloodType_; /*!< BloodType of the donor*/
   bool rhFactor_;         /*!< Rhfactor of a donor */
-  int  donations_;
+  int  donations_;        /*!< Number of donations */
 
 public:
 

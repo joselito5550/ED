@@ -39,10 +39,7 @@ int  main(int argc, char const *argv[]) {
     if (option == 2) {
       BORRAR;
       auxHeap.deleteHeap();
-      std::cout << "DENTRO DE LA FUNCIÓN " << std::endl;
       auxHeap.loadFromFile();
-      std::cout << "LO QUE SE RECIBE EN EL MAIN" << std::endl;
-      auxHeap.printDonors();
       LUGAR(6, 10);
       std::cout << OKGREEN << "New heap loaded" << std::endl;
       getchar();
@@ -68,6 +65,10 @@ int  main(int argc, char const *argv[]) {
 
     if (option == 5) {
       BORRAR;
+      auxDonor=auxHeap.top();
+      auxDonor.setDonations(auxDonor.getDonations()+2);
+      auxHeap.deleteTop();
+      auxHeap.insert(auxDonor);
     }
   } while (option != 6);
 

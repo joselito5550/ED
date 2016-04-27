@@ -27,7 +27,7 @@ public:
 
   /*!
      \brief Get the donations of a donor.
-     \return integer name.
+     \return integer donators.
      \pre There must exists the object.
      \post We get the rhfactor of a donor in a stream.
    */
@@ -36,7 +36,7 @@ public:
   /*!
      \brief Fuction to set the rhFactor of the donor
      \pre None
-     \param rhFactor a boolean
+     \param donations a boolean
      \post New rhfactor is set
    */
   virtual void        setDonations(const int& donations) = 0;
