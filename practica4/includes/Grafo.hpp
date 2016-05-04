@@ -23,6 +23,7 @@ namespace ed{
           return _dirigido;
       }
       
+      
       bool isEmpty(){
           return getNumVertices()==0;
       }
