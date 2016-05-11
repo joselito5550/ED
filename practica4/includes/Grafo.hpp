@@ -31,14 +31,16 @@ namespace ed{
           return getNumVertices()==0;
       }
       
-      bool adjacent(Vertice &v, Vertice &u){
+      //Lo suyo es que devuelva un valor float (El valor numerico que corresponda)
+      //Porque al aplicar los algoritmos de floyd nos es útil
+      int adjacent(Vertice &v, Vertice &u){
           int labelv = v.getLabel();
           int labelu = u.getLabel();
-          
-          if(_matriz[u][v]==1 || _matriz[v][u]==1){
-              return true;
+          //Aqui habra que controlar si es dirigido o no? 
+          if(_matriz[u][v]!=0 || _matriz[v][u]==!=0){
+              return _matriz[u][v];
           }
-          else return false;
+          else return -1;
       }
       
       void addVertex(Vertice &v){
