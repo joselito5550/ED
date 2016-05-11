@@ -6,6 +6,9 @@ namespace ed{
         std::vector<Vertice> _v;
         int **_matriz;
         bool _dirigido;
+        
+        int _currVertices;
+        int _currLados;
         int _numVertices;
         int _numLados;         
       public: 
@@ -36,6 +39,10 @@ namespace ed{
               return true;
           }
           else return false;
+      }
+      
+      void addVertex(Vertice &v){
+          _v.push_back(v);
       }
      
     };
