@@ -1,152 +1,162 @@
 /*!
    \file heap.cpp
    \brief Implementation of the heap function
-   \author "Your name"
-   \date "DD"/"Month"/"Year"
+   \author Omar Sotillo Franco
+   \date 22/04/2016
  */
 #ifndef __HEAP_CPP_
 #define __HEAP_CPP_
 #include "../include/all.hpp"
 
+// Constructor
 Heap::Heap() {
   this->setNumberOfElements(0);
 }
 
+// Setting the number of elements
 void Heap::setNumberOfElements(int aux) {
   this->numberOfElements_ = aux;
 }
 
+// Getting the number of elements
 int Heap::getNumberOfElements() {
   return this->numberOfElements_;
 }
 
+// Is list empty
 bool Heap::isEmpty() const {
   return v_.empty();
 }
 
+// Getting the top donor
 Donor Heap::top() const {
-  if (numberOfElements_ != 0) return v_.front();
+  if (numberOfElements_ != 0) return v_.front();  // If elements return the
+                                                  // front of the heap
   else {
     Donor d("No", "", "", true);
     return d;
   }
 }
 
+// Inserting a donor into the system
 void Heap::insert(const Donor& auxDonor) {
-  // Si no hay elementos
+  // If no elements found
   if (numberOfElements_ == 0) {
-    // Elemento raiz
     v_.push_back(auxDonor);
     numberOfElements_++;
   }
 
-  // Si hay elementos
+  // If elements
   else {
     std::vector<Donor>::iterator it = v_.end();
 
-    // Lo insertamos al final
+    // First we insert it at the end
     v_.insert(it, auxDonor);
     int n = numberOfElements_;
 
-    // Mientras que el hijo sea menor que el padre lo vamos intercambiando
+    // While the child is smaller than the father lets swap them
     while (v_[((n - 1) / 2)].getDonations() > v_[n].getDonations()) {
-      // hacemos el intercambio
       std::swap(v_[n], v_[(n - 1) / 2]);
-
-      // Volvemos a observar el nuevo padre
-      n = ((n - 1) / 2);
+      n = ((n - 1) / 2); // Changing the father
     }
     numberOfElements_++;
   }
 }
 
 void Heap::deleteTop()    {
-  if(numberOfElements_!=0){
-    //El ultimo elemento lo ponemos de raiz, y hundimos
-    int n = 0;
+  if (numberOfElements_ != 0) {
+    int  n           = 0;
     bool posicionado = false;
     numberOfElements_--;
-    std::swap(v_[0],v_[numberOfElements_]);
+    std::swap(v_[0], v_[numberOfElements_]);
 
-    //Borramos el ultimo elemento una vez hemos hecho el intercambio
     std::vector<Donor>::iterator it = v_.end();
     v_.erase(it);
     Donor aux;
-    int hijo_menor; //Guardaremos la posicion del hijo
+    int   smaller_son;
+    int rightson;
+    int leftson;
 
-    int hijo_derecho;
-    int hijo_izquierdo;
+    while (n < numberOfElements_ && !posicionado) {
+      // Initiating son
+      rightson   = right_son(n);
+      leftson = left_son(n);
 
-    //Mientras que no nos pasemos y no este aun colocado el elemento en su posicion
-    while(n<numberOfElements_ && !posicionado){
-      //Con posicionado controlamos si tiene algun hijo menor aun o ya hemos encontrado su posicion
-      hijo_derecho = right_son(n);
-      hijo_izquierdo = left_son(n);
-      //Si existen los dos hijos
-      if(hijo_derecho<numberOfElements_ && hijo_izquierdo<numberOfElements_){
-          //Comprobamos que hijo es el menor
-        if(v_[hijo_derecho].getDonations()<v_[hijo_izquierdo].getDonations()){
-        hijo_menor = right_son(n);
+      // Both sides completed
+      if ((rightson < numberOfElements_) &&
+          (leftson < numberOfElements_)) {
+        // Lets find who is bigger or smaller
+        if (v_[rightson].getDonations() <
+            v_[leftson].getDonations()) {
+          smaller_son = right_son(n);
         }
-        else if(v_[hijo_derecho].getDonations()>v_[hijo_izquierdo].getDonations()){
-        hijo_menor = left_son(n);
+        else if (v_[rightson].getDonations() >
+                 v_[leftson].getDonations()) {
+          smaller_son = left_son(n);
         }
-        else if(v_[hijo_derecho].getDonations()==v_[hijo_izquierdo].getDonations()){
-          hijo_menor = left_son(n);
+        else if (v_[rightson].getDonations() ==
+                 v_[leftson].getDonations()) {
+          smaller_son = left_son(n);
         }
-        if(v_[hijo_menor].getDonations() < v_[n].getDonations()){
-        //Intercambiamos
-        std::swap(v_[hijo_menor],v_[n]);
-        n = hijo_menor;
+
+        if (v_[smaller_son].getDonations() < v_[n].getDonations()) {
+          // Swapping them
+          std::swap(v_[smaller_son], v_[n]);
+          n = smaller_son;
         }
-        else{
-        posicionado = true;
+        else {
+          posicionado = true;
         }
       }
-      //si solo existe el hijo derecho
-      else if(hijo_derecho<numberOfElements_ && hijo_izquierdo>=numberOfElements_){
-        if(v_[hijo_derecho].getDonations() < v_[n].getDonations()){
-            std::swap(v_[hijo_derecho],v_[n]);
-            n = hijo_derecho;
-            posicionado = true;
+
+      // Only right side
+      else if ((rightson < numberOfElements_) &&
+               (leftson >= numberOfElements_)) {
+        if (v_[rightson].getDonations() < v_[n].getDonations()) {
+          std::swap(v_[rightson], v_[n]);
+          n           = rightson;
+          posicionado = true;
         }
-        else{
-            posicionado = true;
+        else {
+          posicionado = true;
         }
       }
-      //si solo existe el hijo izquierdo
-      else if(hijo_derecho>=numberOfElements_ && hijo_izquierdo<numberOfElements_){
-          if(v_[hijo_izquierdo].getDonations() < v_[n].getDonations()){
-              std::swap(v_[hijo_izquierdo],v_[n]);
-              posicionado = true;
-          }
-          else{
-              posicionado = true;
-          }
+
+      // Only left side
+      else if ((rightson >= numberOfElements_) &&
+               (leftson < numberOfElements_)) {
+        if (v_[leftson].getDonations() < v_[n].getDonations()) {
+          std::swap(v_[leftson], v_[n]);
+          posicionado = true;
+        }
+        else {
+          posicionado = true;
+        }
       }
       else posicionado = true;
     }
   }
 }
 
+// Delete all the heap
 void Heap::deleteHeap() {
   int n = numberOfElements_;
 
-  for (int i = 0; i < n; i++) {
+  for (int i = 0; i < n; i++) { // Looping throug the heap
     deleteTop();
   }
 }
 
-void Heap::printDonors(){
+// Printing all std vector donors
+void Heap::printDonors() {
   int n = numberOfElements_;
 
   for (int i = 0; i < n; i++) {
     v_[i].printDonor();
   }
-
 }
 
-
+// Save current heap to a file
 void Heap::saveToFile()   {
   std::ofstream f;
   Donor aux;
@@ -154,7 +164,7 @@ void Heap::saveToFile()   {
   f.open("../files/donors.txt");
 
   if (f.fail()) {
-    std::cout << "Error al abrir el fichero";
+    std::cout << "Error opening the file";
   }
 
   for (int i = 0; i < numberOfElements_; i++) {
@@ -165,28 +175,29 @@ void Heap::saveToFile()   {
   f.close();
 }
 
+// take from a file all current heap
 void Heap::loadFromFile() {
   std::ifstream f;
 
   std::string line;
-  std::string apellido, name, group, rh_aux, donaciones;
+  std::string surname, name, group, rh_aux, donations;
   bool rh;
 
   f.open("../files/donors.txt");
 
-  if (f.fail()) std::cout << "Error al abrir el fichero";
+  if (f.fail()) std::cout << "Error";
   else {
     while (getline(f, line)) {
       Donor aux;
       std::stringstream line_aux(line);
-      getline(line_aux, apellido,   ';');
+      getline(line_aux, surname,   ';');
       getline(line_aux, name,       ';');
       getline(line_aux, group,      ';');
       getline(line_aux, rh_aux,     ';');
-      getline(line_aux, donaciones, ';');
+      getline(line_aux, donations, ';');
 
       aux.setName(name);
-      aux.setSurname(apellido);
+      aux.setSurname(surname);
       aux.setBloodType(group);
 
       if (rh_aux == "1") {
@@ -196,7 +207,7 @@ void Heap::loadFromFile() {
         rh = false;
       }
       aux.setRhFactor(rh);
-      aux.setDonations(atoi(donaciones.c_str()));
+      aux.setDonations(atoi(donations.c_str()));
       aux.printDonor();
       insert(aux);
     }
