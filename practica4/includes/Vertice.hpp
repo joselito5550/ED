@@ -1,3 +1,5 @@
+#ifndef __VERTICE__
+#define __VERTICE__
 #include "librerias.hpp"
 
 namespace ed{
@@ -30,3 +32,5 @@ namespace ed{
 
 	};
 }
+
+#endif
