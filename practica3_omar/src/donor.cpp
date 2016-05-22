@@ -171,10 +171,6 @@ Donor& Donor::operator=(const Donor& copiedDonor)    {
   this->setBloodType(copiedDonor.getBloodType());
   this->setRhFactor(copiedDonor.getRhFactor());
   this->setDonations(copiedDonor.getDonations());
-<<<<<<< HEAD
-=======
-
->>>>>>> b78470a7eb276dff7efa3ab2e384db85e1756951
   return *this;
 }
 
