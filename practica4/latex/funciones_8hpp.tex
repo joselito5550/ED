@@ -1,0 +1,55 @@
+\hypertarget{funciones_8hpp}{}\section{includes/funciones.hpp File Reference}
+\label{funciones_8hpp}\index{includes/funciones.\+hpp@{includes/funciones.\+hpp}}
+
+
+Fichero de funciones que utilizan el grafo.  
+
+
+{\ttfamily \#include \char`\"{}librerias.\+hpp\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Grafo.\+hpp\char`\"{}}\\*
+{\ttfamily \#include $<$iostream$>$}\\*
+{\ttfamily \#include $<$string$>$}\\*
+{\ttfamily \#include $<$fstream$>$}\\*
+{\ttfamily \#include $<$ctype.\+h$>$}\\*
+Include dependency graph for funciones.\+hpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{funciones_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=337pt]{funciones_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \hyperlink{namespaceed}{ed}
+\begin{DoxyCompactList}\small\item\em Espacio de nombres ed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+Grafo $\ast$ \hyperlink{namespaceed_a564e754c90ffdcd64910fad4d2e3a2bf}{ed\+::cargar\+Fichero} (std\+::string file\+\_\+name)
+\begin{DoxyCompactList}\small\item\em Funcion para cargar el grafo desde un fichero pasado por parametro. \end{DoxyCompactList}\item 
+void \hyperlink{namespaceed_adccb5659f086f7308fc2a87653ae5490}{ed\+::mostrar\+Grafo} (Grafo $\ast$grafo)
+\begin{DoxyCompactList}\small\item\em Funcion que muestra el grafo por pantalla. \end{DoxyCompactList}\item 
+void \hyperlink{namespaceed_a5f0ef37f4003571c0d06cd5ed1113939}{ed\+::camino\+Minimo} (Grafo $\ast$grafo, int $\ast$$\ast$matriz\+\_\+recorridos, Vertice \&origen, Vertice \&destino)
+\begin{DoxyCompactList}\small\item\em Funcion que calcula el camino minimo entre dos vertices. \end{DoxyCompactList}\item 
+int \hyperlink{namespaceed_a6d0e98c85a44d58e0cc6560de8dc51d1}{ed\+::\+Suma\+Distancias} (Grafo $\ast$grafo, double $\ast$$\ast$matriz\+\_\+distancias, Vertice v)
+\begin{DoxyCompactList}\small\item\em Funcion que muestra la suma de distancias a cada vertice tomando como origen el vertice pasado por parametro. \end{DoxyCompactList}\item 
+void \hyperlink{namespaceed_a81f41376971c7b12ebf614903df91cd2}{ed\+::\+Vertice\+Menor\+Suma} (Grafo $\ast$grafo, double $\ast$$\ast$matriz\+\_\+distancias)
+\begin{DoxyCompactList}\small\item\em Funcion que muestra el vertice cuya suma de distancias es menor. \end{DoxyCompactList}\item 
+void \hyperlink{namespaceed_af547530c0f015ed298c59837343a9b5e}{ed\+::algoritmo\+\_\+floyd} (Grafo $\ast$\&grafo, double $\ast$$\ast$\&matriz\+\_\+distancias, int $\ast$$\ast$\&matriz\+\_\+recorridos)
+\begin{DoxyCompactList}\small\item\em Funcion que aplica el algoritmo de floyd al grafo pasado por parametro. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Fichero de funciones que utilizan el grafo. 
+
+\begin{DoxyAuthor}{Author}
+Jose Manuel Marquez Matarin 
+\end{DoxyAuthor}

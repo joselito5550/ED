@@ -1,0 +1,208 @@
+\hypertarget{classed_1_1Grafo}{}\section{ed\+:\+:Grafo Class Reference}
+\label{classed_1_1Grafo}\index{ed\+::\+Grafo@{ed\+::\+Grafo}}
+
+
+{\ttfamily \#include $<$Grafo.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{Indent}{\bf Constructor}\par
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Grafo} (int tam=0, bool dirigido=true)\hypertarget{classed_1_1Grafo_a9f9d0776db7767ea5ff92113ead337fb}{}\label{classed_1_1Grafo_a9f9d0776db7767ea5ff92113ead337fb}
+
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf Observadores}\par
+\begin{DoxyCompactItemize}
+\item 
+const int \hyperlink{classed_1_1Grafo_a8a1e1c5f1986990b8245a4884a72bf67}{get\+Num\+Vertices} ()
+\begin{DoxyCompactList}\small\item\em Devolver el valor de \+\_\+num\+Vertices. \end{DoxyCompactList}\item 
+const int \hyperlink{classed_1_1Grafo_a0124bed42b9a3f9770b39204b5d80573}{get\+Num\+Lados} ()
+\begin{DoxyCompactList}\small\item\em Devolver el valor de \+\_\+num\+Lados. \end{DoxyCompactList}\item 
+bool \hyperlink{classed_1_1Grafo_ad9647cbb0b06eaac62cfc90ef858205a}{is\+Directed} ()
+\begin{DoxyCompactList}\small\item\em Devolver el valor de \+\_\+dirigido. \end{DoxyCompactList}\item 
+bool \hyperlink{classed_1_1Grafo_a45e4e80219294abe6d4d7f33c2be9ae9}{is\+Empty} ()
+\begin{DoxyCompactList}\small\item\em Saber si esta vacio el grafo. \end{DoxyCompactList}\item 
+double \hyperlink{classed_1_1Grafo_a27ec9a3643117687016748d94df1095d}{adjacent} (\hyperlink{classed_1_1Vertice}{Vertice} \&v, \hyperlink{classed_1_1Vertice}{Vertice} \&u)
+\begin{DoxyCompactList}\small\item\em Devolver el valor de la matriz para esos dos vertices. \end{DoxyCompactList}\item 
+\hyperlink{classed_1_1Vertice}{Vertice} \hyperlink{classed_1_1Grafo_a0e5a24737604824659a2fce1ba5d8421}{curr\+Vertex} ()
+\begin{DoxyCompactList}\small\item\em Devuelve el vertice apuntado por el cursor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf Modificadores}\par
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classed_1_1Grafo_a1afde82a425b7606205d17d88809c4f4}{add\+Vertex} (\hyperlink{classed_1_1Vertice}{Vertice} \&v)
+\begin{DoxyCompactList}\small\item\em Añade un vertice al grafo. \end{DoxyCompactList}\item 
+void \hyperlink{classed_1_1Grafo_a2a9c0aa77bcd7202fb4755f505504bfc}{add\+Edge} (\hyperlink{classed_1_1Vertice}{Vertice} \&v, \hyperlink{classed_1_1Vertice}{Vertice} \&u, double peso)
+\begin{DoxyCompactList}\small\item\em Añade un lado al grafo. \end{DoxyCompactList}\item 
+void \hyperlink{classed_1_1Grafo_ac238e5105d66c721f2d8a9a726ff9735}{search\+Vertex} (std\+::string \&data)
+\begin{DoxyCompactList}\small\item\em Posiciona el cursor sobre el vertice con el valor data. \end{DoxyCompactList}\item 
+void \hyperlink{classed_1_1Grafo_a48ef6791a21a78a8bf84bdb146bf5428}{search\+Vertex\+Label} (int \&label)
+\begin{DoxyCompactList}\small\item\em Posiciona el cursor sobre el \hyperlink{classed_1_1Vertice}{Vertice} con la etiqueta label. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+
+
+\subsection{Detailed Description}
+Clase grafo. 
+
+\subsection{Member Function Documentation}
+\index{ed\+::\+Grafo@{ed\+::\+Grafo}!add\+Edge@{add\+Edge}}
+\index{add\+Edge@{add\+Edge}!ed\+::\+Grafo@{ed\+::\+Grafo}}
+\subsubsection[{\texorpdfstring{add\+Edge(\+Vertice \&v, Vertice \&u, double peso)}{addEdge(Vertice &v, Vertice &u, double peso)}}]{\setlength{\rightskip}{0pt plus 5cm}void ed\+::\+Grafo\+::add\+Edge (
+\begin{DoxyParamCaption}
+\item[{{\bf Vertice} \&}]{v, }
+\item[{{\bf Vertice} \&}]{u, }
+\item[{double}]{peso}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classed_1_1Grafo_a2a9c0aa77bcd7202fb4755f505504bfc}{}\label{classed_1_1Grafo_a2a9c0aa77bcd7202fb4755f505504bfc}
+
+
+Añade un lado al grafo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & \hyperlink{classed_1_1Vertice}{Vertice} \\
+\hline
+{\em u} & \hyperlink{classed_1_1Vertice}{Vertice} \\
+\hline
+{\em peso} & double \\
+\hline
+\end{DoxyParams}
+\index{ed\+::\+Grafo@{ed\+::\+Grafo}!add\+Vertex@{add\+Vertex}}
+\index{add\+Vertex@{add\+Vertex}!ed\+::\+Grafo@{ed\+::\+Grafo}}
+\subsubsection[{\texorpdfstring{add\+Vertex(\+Vertice \&v)}{addVertex(Vertice &v)}}]{\setlength{\rightskip}{0pt plus 5cm}void ed\+::\+Grafo\+::add\+Vertex (
+\begin{DoxyParamCaption}
+\item[{{\bf Vertice} \&}]{v}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classed_1_1Grafo_a1afde82a425b7606205d17d88809c4f4}{}\label{classed_1_1Grafo_a1afde82a425b7606205d17d88809c4f4}
+
+
+Añade un vertice al grafo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & \hyperlink{classed_1_1Vertice}{Vertice} \\
+\hline
+\end{DoxyParams}
+\index{ed\+::\+Grafo@{ed\+::\+Grafo}!adjacent@{adjacent}}
+\index{adjacent@{adjacent}!ed\+::\+Grafo@{ed\+::\+Grafo}}
+\subsubsection[{\texorpdfstring{adjacent(\+Vertice \&v, Vertice \&u)}{adjacent(Vertice &v, Vertice &u)}}]{\setlength{\rightskip}{0pt plus 5cm}double ed\+::\+Grafo\+::adjacent (
+\begin{DoxyParamCaption}
+\item[{{\bf Vertice} \&}]{v, }
+\item[{{\bf Vertice} \&}]{u}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classed_1_1Grafo_a27ec9a3643117687016748d94df1095d}{}\label{classed_1_1Grafo_a27ec9a3643117687016748d94df1095d}
+
+
+Devolver el valor de la matriz para esos dos vertices. 
+
+\begin{DoxyReturn}{Returns}
+Valor de la matriz para esos dos vertices 
+\end{DoxyReturn}
+\index{ed\+::\+Grafo@{ed\+::\+Grafo}!curr\+Vertex@{curr\+Vertex}}
+\index{curr\+Vertex@{curr\+Vertex}!ed\+::\+Grafo@{ed\+::\+Grafo}}
+\subsubsection[{\texorpdfstring{curr\+Vertex()}{currVertex()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Vertice} ed\+::\+Grafo\+::curr\+Vertex (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classed_1_1Grafo_a0e5a24737604824659a2fce1ba5d8421}{}\label{classed_1_1Grafo_a0e5a24737604824659a2fce1ba5d8421}
+
+
+Devuelve el vertice apuntado por el cursor. 
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{classed_1_1Vertice}{Vertice} 
+\end{DoxyReturn}
+\index{ed\+::\+Grafo@{ed\+::\+Grafo}!get\+Num\+Lados@{get\+Num\+Lados}}
+\index{get\+Num\+Lados@{get\+Num\+Lados}!ed\+::\+Grafo@{ed\+::\+Grafo}}
+\subsubsection[{\texorpdfstring{get\+Num\+Lados()}{getNumLados()}}]{\setlength{\rightskip}{0pt plus 5cm}const int ed\+::\+Grafo\+::get\+Num\+Lados (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classed_1_1Grafo_a0124bed42b9a3f9770b39204b5d80573}{}\label{classed_1_1Grafo_a0124bed42b9a3f9770b39204b5d80573}
+
+
+Devolver el valor de \+\_\+num\+Lados. 
+
+\begin{DoxyReturn}{Returns}
+Valor de \+\_\+num\+Lados 
+\end{DoxyReturn}
+\index{ed\+::\+Grafo@{ed\+::\+Grafo}!get\+Num\+Vertices@{get\+Num\+Vertices}}
+\index{get\+Num\+Vertices@{get\+Num\+Vertices}!ed\+::\+Grafo@{ed\+::\+Grafo}}
+\subsubsection[{\texorpdfstring{get\+Num\+Vertices()}{getNumVertices()}}]{\setlength{\rightskip}{0pt plus 5cm}const int ed\+::\+Grafo\+::get\+Num\+Vertices (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classed_1_1Grafo_a8a1e1c5f1986990b8245a4884a72bf67}{}\label{classed_1_1Grafo_a8a1e1c5f1986990b8245a4884a72bf67}
+
+
+Devolver el valor de \+\_\+num\+Vertices. 
+
+\begin{DoxyReturn}{Returns}
+Valor de \+\_\+num\+Vertices 
+\end{DoxyReturn}
+\index{ed\+::\+Grafo@{ed\+::\+Grafo}!is\+Directed@{is\+Directed}}
+\index{is\+Directed@{is\+Directed}!ed\+::\+Grafo@{ed\+::\+Grafo}}
+\subsubsection[{\texorpdfstring{is\+Directed()}{isDirected()}}]{\setlength{\rightskip}{0pt plus 5cm}bool ed\+::\+Grafo\+::is\+Directed (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classed_1_1Grafo_ad9647cbb0b06eaac62cfc90ef858205a}{}\label{classed_1_1Grafo_ad9647cbb0b06eaac62cfc90ef858205a}
+
+
+Devolver el valor de \+\_\+dirigido. 
+
+\begin{DoxyReturn}{Returns}
+Valor de \+\_\+dirigido 
+\end{DoxyReturn}
+\index{ed\+::\+Grafo@{ed\+::\+Grafo}!is\+Empty@{is\+Empty}}
+\index{is\+Empty@{is\+Empty}!ed\+::\+Grafo@{ed\+::\+Grafo}}
+\subsubsection[{\texorpdfstring{is\+Empty()}{isEmpty()}}]{\setlength{\rightskip}{0pt plus 5cm}bool ed\+::\+Grafo\+::is\+Empty (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classed_1_1Grafo_a45e4e80219294abe6d4d7f33c2be9ae9}{}\label{classed_1_1Grafo_a45e4e80219294abe6d4d7f33c2be9ae9}
+
+
+Saber si esta vacio el grafo. 
+
+\begin{DoxyReturn}{Returns}
+True si esta vacio, false si no lo esta 
+\end{DoxyReturn}
+\index{ed\+::\+Grafo@{ed\+::\+Grafo}!search\+Vertex@{search\+Vertex}}
+\index{search\+Vertex@{search\+Vertex}!ed\+::\+Grafo@{ed\+::\+Grafo}}
+\subsubsection[{\texorpdfstring{search\+Vertex(std\+::string \&data)}{searchVertex(std::string &data)}}]{\setlength{\rightskip}{0pt plus 5cm}void ed\+::\+Grafo\+::search\+Vertex (
+\begin{DoxyParamCaption}
+\item[{std\+::string \&}]{data}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classed_1_1Grafo_ac238e5105d66c721f2d8a9a726ff9735}{}\label{classed_1_1Grafo_ac238e5105d66c721f2d8a9a726ff9735}
+
+
+Posiciona el cursor sobre el vertice con el valor data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & std\+::string \\
+\hline
+\end{DoxyParams}
+\index{ed\+::\+Grafo@{ed\+::\+Grafo}!search\+Vertex\+Label@{search\+Vertex\+Label}}
+\index{search\+Vertex\+Label@{search\+Vertex\+Label}!ed\+::\+Grafo@{ed\+::\+Grafo}}
+\subsubsection[{\texorpdfstring{search\+Vertex\+Label(int \&label)}{searchVertexLabel(int &label)}}]{\setlength{\rightskip}{0pt plus 5cm}void ed\+::\+Grafo\+::search\+Vertex\+Label (
+\begin{DoxyParamCaption}
+\item[{int \&}]{label}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classed_1_1Grafo_a48ef6791a21a78a8bf84bdb146bf5428}{}\label{classed_1_1Grafo_a48ef6791a21a78a8bf84bdb146bf5428}
+
+
+Posiciona el cursor sobre el \hyperlink{classed_1_1Vertice}{Vertice} con la etiqueta label. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em label} & int \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+includes/\hyperlink{Grafo_8hpp}{Grafo.\+hpp}\end{DoxyCompactItemize}
