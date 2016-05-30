@@ -21,6 +21,6 @@
 #include <sstream>
 #include "macros.hpp"
 #include "Grafo.hpp"
-#include "Lado.hpp"
 #include "Vertice.hpp"
+#include "funciones.hpp"
 #endif

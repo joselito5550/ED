@@ -1,0 +1,164 @@
+\hypertarget{namespaceed}{}\section{ed Namespace Reference}
+\label{namespaceed}\index{ed@{ed}}
+
+
+Espacio de nombres ed.  
+
+
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classed_1_1Grafo}{Grafo}
+\item 
+class \hyperlink{classed_1_1Vertice}{Vertice}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classed_1_1Grafo}{Grafo} $\ast$ \hyperlink{namespaceed_a564e754c90ffdcd64910fad4d2e3a2bf}{cargar\+Fichero} (std\+::string file\+\_\+name)
+\begin{DoxyCompactList}\small\item\em Funcion para cargar el grafo desde un fichero pasado por parametro. \end{DoxyCompactList}\item 
+void \hyperlink{namespaceed_adccb5659f086f7308fc2a87653ae5490}{mostrar\+Grafo} (\hyperlink{classed_1_1Grafo}{Grafo} $\ast$grafo)
+\begin{DoxyCompactList}\small\item\em Funcion que muestra el grafo por pantalla. \end{DoxyCompactList}\item 
+void \hyperlink{namespaceed_a5f0ef37f4003571c0d06cd5ed1113939}{camino\+Minimo} (\hyperlink{classed_1_1Grafo}{Grafo} $\ast$grafo, int $\ast$$\ast$matriz\+\_\+recorridos, \hyperlink{classed_1_1Vertice}{Vertice} \&origen, \hyperlink{classed_1_1Vertice}{Vertice} \&destino)
+\begin{DoxyCompactList}\small\item\em Funcion que calcula el camino minimo entre dos vertices. \end{DoxyCompactList}\item 
+int \hyperlink{namespaceed_a6d0e98c85a44d58e0cc6560de8dc51d1}{Suma\+Distancias} (\hyperlink{classed_1_1Grafo}{Grafo} $\ast$grafo, double $\ast$$\ast$matriz\+\_\+distancias, \hyperlink{classed_1_1Vertice}{Vertice} v)
+\begin{DoxyCompactList}\small\item\em Funcion que muestra la suma de distancias a cada vertice tomando como origen el vertice pasado por parametro. \end{DoxyCompactList}\item 
+void \hyperlink{namespaceed_a81f41376971c7b12ebf614903df91cd2}{Vertice\+Menor\+Suma} (\hyperlink{classed_1_1Grafo}{Grafo} $\ast$grafo, double $\ast$$\ast$matriz\+\_\+distancias)
+\begin{DoxyCompactList}\small\item\em Funcion que muestra el vertice cuya suma de distancias es menor. \end{DoxyCompactList}\item 
+void \hyperlink{namespaceed_af547530c0f015ed298c59837343a9b5e}{algoritmo\+\_\+floyd} (\hyperlink{classed_1_1Grafo}{Grafo} $\ast$\&grafo, double $\ast$$\ast$\&matriz\+\_\+distancias, int $\ast$$\ast$\&matriz\+\_\+recorridos)
+\begin{DoxyCompactList}\small\item\em Funcion que aplica el algoritmo de floyd al grafo pasado por parametro. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Espacio de nombres ed. 
+
+\subsection{Function Documentation}
+\index{ed@{ed}!algoritmo\+\_\+floyd@{algoritmo\+\_\+floyd}}
+\index{algoritmo\+\_\+floyd@{algoritmo\+\_\+floyd}!ed@{ed}}
+\subsubsection[{\texorpdfstring{algoritmo\+\_\+floyd(\+Grafo $\ast$\&grafo, double $\ast$$\ast$\&matriz\+\_\+distancias, int $\ast$$\ast$\&matriz\+\_\+recorridos)}{algoritmo_floyd(Grafo *&grafo, double **&matriz_distancias, int **&matriz_recorridos)}}]{\setlength{\rightskip}{0pt plus 5cm}void ed\+::algoritmo\+\_\+floyd (
+\begin{DoxyParamCaption}
+\item[{{\bf Grafo} $\ast$\&}]{grafo, }
+\item[{double $\ast$$\ast$\&}]{matriz\+\_\+distancias, }
+\item[{int $\ast$$\ast$\&}]{matriz\+\_\+recorridos}
+\end{DoxyParamCaption}
+)}\hypertarget{namespaceed_af547530c0f015ed298c59837343a9b5e}{}\label{namespaceed_af547530c0f015ed298c59837343a9b5e}
+
+
+Funcion que aplica el algoritmo de floyd al grafo pasado por parametro. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em grafo} & \hyperlink{classed_1_1Grafo}{Grafo} \\
+\hline
+{\em matriz\+\_\+distancias} & double \\
+\hline
+{\em matriz\+\_\+recorridos} & int \\
+\hline
+\end{DoxyParams}
+\index{ed@{ed}!camino\+Minimo@{camino\+Minimo}}
+\index{camino\+Minimo@{camino\+Minimo}!ed@{ed}}
+\subsubsection[{\texorpdfstring{camino\+Minimo(\+Grafo $\ast$grafo, int $\ast$$\ast$matriz\+\_\+recorridos, Vertice \&origen, Vertice \&destino)}{caminoMinimo(Grafo *grafo, int **matriz_recorridos, Vertice &origen, Vertice &destino)}}]{\setlength{\rightskip}{0pt plus 5cm}void ed\+::camino\+Minimo (
+\begin{DoxyParamCaption}
+\item[{{\bf Grafo} $\ast$}]{grafo, }
+\item[{int $\ast$$\ast$}]{matriz\+\_\+recorridos, }
+\item[{{\bf Vertice} \&}]{origen, }
+\item[{{\bf Vertice} \&}]{destino}
+\end{DoxyParamCaption}
+)}\hypertarget{namespaceed_a5f0ef37f4003571c0d06cd5ed1113939}{}\label{namespaceed_a5f0ef37f4003571c0d06cd5ed1113939}
+
+
+Funcion que calcula el camino minimo entre dos vertices. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em grafo} & \hyperlink{classed_1_1Grafo}{Grafo} \\
+\hline
+{\em matriz\+\_\+recorridos} & int \\
+\hline
+{\em origen} & \hyperlink{classed_1_1Vertice}{Vertice} \\
+\hline
+{\em destino} & \hyperlink{classed_1_1Vertice}{Vertice} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPostcond}{Postcondition}
+Se debera mostrar por pantalla el camino minimo entre los dos vertices pasados 
+\end{DoxyPostcond}
+\index{ed@{ed}!cargar\+Fichero@{cargar\+Fichero}}
+\index{cargar\+Fichero@{cargar\+Fichero}!ed@{ed}}
+\subsubsection[{\texorpdfstring{cargar\+Fichero(std\+::string file\+\_\+name)}{cargarFichero(std::string file_name)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Grafo}$\ast$ ed\+::cargar\+Fichero (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{file\+\_\+name}
+\end{DoxyParamCaption}
+)}\hypertarget{namespaceed_a564e754c90ffdcd64910fad4d2e3a2bf}{}\label{namespaceed_a564e754c90ffdcd64910fad4d2e3a2bf}
+
+
+Funcion para cargar el grafo desde un fichero pasado por parametro. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+\_\+name} & std\+::string \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{classed_1_1Grafo}{Grafo} $\ast$ puntero al grafo creado 
+\end{DoxyReturn}
+\index{ed@{ed}!mostrar\+Grafo@{mostrar\+Grafo}}
+\index{mostrar\+Grafo@{mostrar\+Grafo}!ed@{ed}}
+\subsubsection[{\texorpdfstring{mostrar\+Grafo(\+Grafo $\ast$grafo)}{mostrarGrafo(Grafo *grafo)}}]{\setlength{\rightskip}{0pt plus 5cm}void ed\+::mostrar\+Grafo (
+\begin{DoxyParamCaption}
+\item[{{\bf Grafo} $\ast$}]{grafo}
+\end{DoxyParamCaption}
+)}\hypertarget{namespaceed_adccb5659f086f7308fc2a87653ae5490}{}\label{namespaceed_adccb5659f086f7308fc2a87653ae5490}
+
+
+Funcion que muestra el grafo por pantalla. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em grafo} & \hyperlink{classed_1_1Grafo}{Grafo} \\
+\hline
+\end{DoxyParams}
+\index{ed@{ed}!Suma\+Distancias@{Suma\+Distancias}}
+\index{Suma\+Distancias@{Suma\+Distancias}!ed@{ed}}
+\subsubsection[{\texorpdfstring{Suma\+Distancias(\+Grafo $\ast$grafo, double $\ast$$\ast$matriz\+\_\+distancias, Vertice v)}{SumaDistancias(Grafo *grafo, double **matriz_distancias, Vertice v)}}]{\setlength{\rightskip}{0pt plus 5cm}int ed\+::\+Suma\+Distancias (
+\begin{DoxyParamCaption}
+\item[{{\bf Grafo} $\ast$}]{grafo, }
+\item[{double $\ast$$\ast$}]{matriz\+\_\+distancias, }
+\item[{{\bf Vertice}}]{v}
+\end{DoxyParamCaption}
+)}\hypertarget{namespaceed_a6d0e98c85a44d58e0cc6560de8dc51d1}{}\label{namespaceed_a6d0e98c85a44d58e0cc6560de8dc51d1}
+
+
+Funcion que muestra la suma de distancias a cada vertice tomando como origen el vertice pasado por parametro. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em grafo} & \hyperlink{classed_1_1Grafo}{Grafo} \\
+\hline
+{\em matriz\+\_\+distancias} & double \\
+\hline
+{\em v} & \hyperlink{classed_1_1Vertice}{Vertice} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int suma de distancias 
+\end{DoxyReturn}
+\index{ed@{ed}!Vertice\+Menor\+Suma@{Vertice\+Menor\+Suma}}
+\index{Vertice\+Menor\+Suma@{Vertice\+Menor\+Suma}!ed@{ed}}
+\subsubsection[{\texorpdfstring{Vertice\+Menor\+Suma(\+Grafo $\ast$grafo, double $\ast$$\ast$matriz\+\_\+distancias)}{VerticeMenorSuma(Grafo *grafo, double **matriz_distancias)}}]{\setlength{\rightskip}{0pt plus 5cm}void ed\+::\+Vertice\+Menor\+Suma (
+\begin{DoxyParamCaption}
+\item[{{\bf Grafo} $\ast$}]{grafo, }
+\item[{double $\ast$$\ast$}]{matriz\+\_\+distancias}
+\end{DoxyParamCaption}
+)}\hypertarget{namespaceed_a81f41376971c7b12ebf614903df91cd2}{}\label{namespaceed_a81f41376971c7b12ebf614903df91cd2}
+
+
+Funcion que muestra el vertice cuya suma de distancias es menor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em grafo} & \hyperlink{classed_1_1Grafo}{Grafo} \\
+\hline
+{\em matriz\+\_\+distancias} & double \\
+\hline
+\end{DoxyParams}
