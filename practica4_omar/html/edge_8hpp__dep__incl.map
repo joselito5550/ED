@@ -1,0 +1,10 @@
+<map id="lib/edge.hpp" name="lib/edge.hpp">
+<area shape="rect" id="node2" href="$graph__matrix_8hpp.html" title="Graph class. " alt="" coords="225,80,364,107"/>
+<area shape="rect" id="node4" href="$all_8hpp.html" title="Including all libraries in the project. " alt="" coords="251,229,356,256"/>
+<area shape="rect" id="node3" href="$algorithms_8hpp.html" title="algorithms implementation " alt="" coords="99,155,223,181"/>
+<area shape="rect" id="node9" href="$in__out_8hpp.html" title="io of the app " alt="" coords="299,155,397,181"/>
+<area shape="rect" id="node5" href="$algorithms_8cpp_source.html" title="src/algorithms.cpp" alt="" coords="5,304,133,331"/>
+<area shape="rect" id="node6" href="$graph__matrix_8cpp_source.html" title="src/graph_matrix.cpp" alt="" coords="159,304,303,331"/>
+<area shape="rect" id="node7" href="$in__out_8cpp_source.html" title="src/in_out.cpp" alt="" coords="327,304,431,331"/>
+<area shape="rect" id="node8" href="$main_8cpp_source.html" title="src/main.cpp" alt="" coords="455,304,552,331"/>
+</map>

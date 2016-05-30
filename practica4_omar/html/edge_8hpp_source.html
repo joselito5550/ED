@@ -1,0 +1,182 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.7"/>
+<title>Práctica4: Fichero Fuente lib/edge.hpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Práctica4
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.7 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Página&#160;principal</span></a></li>
+      <li><a href="annotated.html"><span>Clases</span></a></li>
+      <li class="current"><a href="files.html"><span>Archivos</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Lista&#160;de&#160;archivos</span></a></li>
+      <li><a href="globals.html"><span>Miembros&#160;de&#160;los&#160;ficheros</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Todo</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Clases</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Archivos</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Funciones</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>&apos;defines&apos;</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_97aefd0d527b934f1d99a682da8fe6a9.html">lib</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">edge.hpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="edge_8hpp.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#ifndef __EDGE_HPP__</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#define __EDGE_HPP__</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="vertex_8hpp.html">vertex.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;../include/libraries.hpp&quot;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">namespace </span>edi {</div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="classedi_1_1Edge.html">   18</a></span>&#160;<span class="keyword">class </span><a class="code" href="classedi_1_1Edge.html">Edge</a> {</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="classedi_1_1Edge.html#acfdf9e3c358f38904922ab8781c29a9f">   21</a></span>&#160;  <span class="keywordtype">float</span>  <a class="code" href="classedi_1_1Edge.html#acfdf9e3c358f38904922ab8781c29a9f">_data</a>;   </div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="classedi_1_1Edge.html#abf079aefcc4c1b8076e3e058659026d2">   22</a></span>&#160;  <a class="code" href="classedi_1_1Vertex.html">Vertex</a> <a class="code" href="classedi_1_1Edge.html#abf079aefcc4c1b8076e3e058659026d2">_first</a>;  </div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="classedi_1_1Edge.html#aeb65683607fff713da1ddd791c6e1273">   23</a></span>&#160;  <a class="code" href="classedi_1_1Vertex.html">Vertex</a> <a class="code" href="classedi_1_1Edge.html#aeb65683607fff713da1ddd791c6e1273">_second</a>; </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="classedi_1_1Edge.html#afe9a654743dce5982f3ae611899ac20c">   31</a></span>&#160;  <span class="keyword">const</span> <span class="keywordtype">float</span>&amp; <a class="code" href="classedi_1_1Edge.html#afe9a654743dce5982f3ae611899ac20c">getData</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="keyword">  </span>{</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classedi_1_1Edge.html#acfdf9e3c358f38904922ab8781c29a9f">_data</a>;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  }</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="classedi_1_1Edge.html#aa5397d73c8f574107d0d5f894ea76957">   40</a></span>&#160;  <span class="keyword">const</span> <a class="code" href="classedi_1_1Vertex.html">Vertex</a>&amp; <a class="code" href="classedi_1_1Edge.html#aa5397d73c8f574107d0d5f894ea76957">first</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keyword">  </span>{</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classedi_1_1Edge.html#abf079aefcc4c1b8076e3e058659026d2">_first</a>;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  }</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="classedi_1_1Edge.html#aa545cce56b29c213e3eb4d2021c2c1c2">   49</a></span>&#160;  <span class="keyword">const</span> <a class="code" href="classedi_1_1Vertex.html">Vertex</a>&amp; <a class="code" href="classedi_1_1Edge.html#aa545cce56b29c213e3eb4d2021c2c1c2">second</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="keyword">  </span>{</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classedi_1_1Edge.html#aeb65683607fff713da1ddd791c6e1273">_second</a>;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  }</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
+<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="classedi_1_1Edge.html#aa4e3c3020eac39e526e440e515259126">   58</a></span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="classedi_1_1Edge.html#aa4e3c3020eac39e526e440e515259126">has</a>(<span class="keyword">const</span> <a class="code" href="classedi_1_1Vertex.html">Vertex</a>&amp; u)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="keyword">  </span>{</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keywordflow">return</span> u == <a class="code" href="classedi_1_1Edge.html#aa5397d73c8f574107d0d5f894ea76957">first</a>() or u == <a class="code" href="classedi_1_1Edge.html#aa545cce56b29c213e3eb4d2021c2c1c2">second</a>();</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  }</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
+<div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="classedi_1_1Edge.html#a7fd7131daa7fff92342bc4ca8442235e">   68</a></span>&#160;  <span class="keyword">const</span> <a class="code" href="classedi_1_1Vertex.html">Vertex</a>&amp; <a class="code" href="classedi_1_1Edge.html#a7fd7131daa7fff92342bc4ca8442235e">other</a>(<span class="keyword">const</span> <a class="code" href="classedi_1_1Vertex.html">Vertex</a>&amp; u)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="keyword">  </span>{</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    assert(<a class="code" href="classedi_1_1Edge.html#aa4e3c3020eac39e526e440e515259126">has</a>(u));</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordflow">if</span> (u == <a class="code" href="classedi_1_1Edge.html#aa5397d73c8f574107d0d5f894ea76957">first</a>()) <span class="keywordflow">return</span> <a class="code" href="classedi_1_1Edge.html#aa545cce56b29c213e3eb4d2021c2c1c2">second</a>();</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classedi_1_1Edge.html#aa5397d73c8f574107d0d5f894ea76957">first</a>();</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  }</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div>
+<div class="line"><a name="l00081"></a><span class="lineno"><a class="line" href="classedi_1_1Edge.html#a37b8246b5c7f5ecf0e44ec89b92c8f56">   81</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classedi_1_1Edge.html#a37b8246b5c7f5ecf0e44ec89b92c8f56">setData</a>(<span class="keyword">const</span> <span class="keywordtype">float</span>&amp; data)</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;  {</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <a class="code" href="classedi_1_1Edge.html#acfdf9e3c358f38904922ab8781c29a9f">_data</a> = data;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  }</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;</div>
+<div class="line"><a name="l00090"></a><span class="lineno"><a class="line" href="classedi_1_1Edge.html#add3c3d74af84f7c841e35fc4cdc18b92">   90</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classedi_1_1Edge.html#add3c3d74af84f7c841e35fc4cdc18b92">setFirst</a>(<span class="keyword">const</span> <a class="code" href="classedi_1_1Vertex.html">Vertex</a>&amp; <a class="code" href="classedi_1_1Edge.html#aa5397d73c8f574107d0d5f894ea76957">first</a>)</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;  {</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <a class="code" href="classedi_1_1Edge.html#abf079aefcc4c1b8076e3e058659026d2">_first</a> = <a class="code" href="classedi_1_1Edge.html#aa5397d73c8f574107d0d5f894ea76957">first</a>;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;  }</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;</div>
+<div class="line"><a name="l00099"></a><span class="lineno"><a class="line" href="classedi_1_1Edge.html#a23168fba337f88426b776b9b00e21ce4">   99</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classedi_1_1Edge.html#a23168fba337f88426b776b9b00e21ce4">setSecond</a>(<span class="keyword">const</span> <a class="code" href="classedi_1_1Vertex.html">Vertex</a>&amp; <a class="code" href="classedi_1_1Edge.html#aa545cce56b29c213e3eb4d2021c2c1c2">second</a>)</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;  {</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <a class="code" href="classedi_1_1Edge.html#aeb65683607fff713da1ddd791c6e1273">_second</a> = <a class="code" href="classedi_1_1Edge.html#aa545cce56b29c213e3eb4d2021c2c1c2">second</a>;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;  }</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;</div>
+<div class="line"><a name="l00108"></a><span class="lineno"><a class="line" href="classedi_1_1Edge.html#ab1bbb20a4ea2c016acd11a40376a3ffe">  108</a></span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="classedi_1_1Edge.html#ab1bbb20a4ea2c016acd11a40376a3ffe">operator==</a>(<span class="keyword">const</span> <a class="code" href="classedi_1_1Edge.html">Edge</a>&amp; e)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;<span class="keyword">  </span>{</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <span class="keywordflow">return</span> e.<a class="code" href="classedi_1_1Edge.html#aa5397d73c8f574107d0d5f894ea76957">first</a>() == <a class="code" href="classedi_1_1Edge.html#aa5397d73c8f574107d0d5f894ea76957">first</a>() and e. <a class="code" href="classedi_1_1Edge.html#aa545cce56b29c213e3eb4d2021c2c1c2">second</a>() == <a class="code" href="classedi_1_1Edge.html#aa545cce56b29c213e3eb4d2021c2c1c2">second</a>();</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;  }</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;};</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;} <span class="comment">// namespace ed</span></div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;<span class="preprocessor">#endif // ifndef __EDGE_HPP__</span></div>
+<div class="ttc" id="classedi_1_1Edge_html_add3c3d74af84f7c841e35fc4cdc18b92"><div class="ttname"><a href="classedi_1_1Edge.html#add3c3d74af84f7c841e35fc4cdc18b92">edi::Edge::setFirst</a></div><div class="ttdeci">void setFirst(const Vertex &amp;first)</div><div class="ttdoc">Set of data. </div><div class="ttdef"><b>Definition:</b> <a href="edge_8hpp_source.html#l00090">edge.hpp:90</a></div></div>
+<div class="ttc" id="classedi_1_1Edge_html_aa4e3c3020eac39e526e440e515259126"><div class="ttname"><a href="classedi_1_1Edge.html#aa4e3c3020eac39e526e440e515259126">edi::Edge::has</a></div><div class="ttdeci">bool has(const Vertex &amp;u) const </div><div class="ttdoc">Return if it has vertex. </div><div class="ttdef"><b>Definition:</b> <a href="edge_8hpp_source.html#l00058">edge.hpp:58</a></div></div>
+<div class="ttc" id="classedi_1_1Edge_html_afe9a654743dce5982f3ae611899ac20c"><div class="ttname"><a href="classedi_1_1Edge.html#afe9a654743dce5982f3ae611899ac20c">edi::Edge::getData</a></div><div class="ttdeci">const float &amp; getData() const </div><div class="ttdoc">Get of data. </div><div class="ttdef"><b>Definition:</b> <a href="edge_8hpp_source.html#l00031">edge.hpp:31</a></div></div>
+<div class="ttc" id="classedi_1_1Edge_html_abf079aefcc4c1b8076e3e058659026d2"><div class="ttname"><a href="classedi_1_1Edge.html#abf079aefcc4c1b8076e3e058659026d2">edi::Edge::_first</a></div><div class="ttdeci">Vertex _first</div><div class="ttdef"><b>Definition:</b> <a href="edge_8hpp_source.html#l00022">edge.hpp:22</a></div></div>
+<div class="ttc" id="classedi_1_1Vertex_html"><div class="ttname"><a href="classedi_1_1Vertex.html">edi::Vertex</a></div><div class="ttdoc">Class vertex. </div><div class="ttdef"><b>Definition:</b> <a href="vertex_8hpp_source.html#l00017">vertex.hpp:17</a></div></div>
+<div class="ttc" id="vertex_8hpp_html"><div class="ttname"><a href="vertex_8hpp.html">vertex.hpp</a></div><div class="ttdoc">vertex class of the app </div></div>
+<div class="ttc" id="classedi_1_1Edge_html_a23168fba337f88426b776b9b00e21ce4"><div class="ttname"><a href="classedi_1_1Edge.html#a23168fba337f88426b776b9b00e21ce4">edi::Edge::setSecond</a></div><div class="ttdeci">void setSecond(const Vertex &amp;second)</div><div class="ttdoc">Set of second vertex. </div><div class="ttdef"><b>Definition:</b> <a href="edge_8hpp_source.html#l00099">edge.hpp:99</a></div></div>
+<div class="ttc" id="classedi_1_1Edge_html_ab1bbb20a4ea2c016acd11a40376a3ffe"><div class="ttname"><a href="classedi_1_1Edge.html#ab1bbb20a4ea2c016acd11a40376a3ffe">edi::Edge::operator==</a></div><div class="ttdeci">bool operator==(const Edge &amp;e) const </div><div class="ttdoc">Operator comparison. </div><div class="ttdef"><b>Definition:</b> <a href="edge_8hpp_source.html#l00108">edge.hpp:108</a></div></div>
+<div class="ttc" id="classedi_1_1Edge_html_aa5397d73c8f574107d0d5f894ea76957"><div class="ttname"><a href="classedi_1_1Edge.html#aa5397d73c8f574107d0d5f894ea76957">edi::Edge::first</a></div><div class="ttdeci">const Vertex &amp; first() const </div><div class="ttdoc">Get of fisrt vertex. </div><div class="ttdef"><b>Definition:</b> <a href="edge_8hpp_source.html#l00040">edge.hpp:40</a></div></div>
+<div class="ttc" id="classedi_1_1Edge_html"><div class="ttname"><a href="classedi_1_1Edge.html">edi::Edge</a></div><div class="ttdoc">Edge class. </div><div class="ttdef"><b>Definition:</b> <a href="edge_8hpp_source.html#l00018">edge.hpp:18</a></div></div>
+<div class="ttc" id="classedi_1_1Edge_html_aeb65683607fff713da1ddd791c6e1273"><div class="ttname"><a href="classedi_1_1Edge.html#aeb65683607fff713da1ddd791c6e1273">edi::Edge::_second</a></div><div class="ttdeci">Vertex _second</div><div class="ttdef"><b>Definition:</b> <a href="edge_8hpp_source.html#l00023">edge.hpp:23</a></div></div>
+<div class="ttc" id="classedi_1_1Edge_html_aa545cce56b29c213e3eb4d2021c2c1c2"><div class="ttname"><a href="classedi_1_1Edge.html#aa545cce56b29c213e3eb4d2021c2c1c2">edi::Edge::second</a></div><div class="ttdeci">const Vertex &amp; second() const </div><div class="ttdoc">Get of last vertex. </div><div class="ttdef"><b>Definition:</b> <a href="edge_8hpp_source.html#l00049">edge.hpp:49</a></div></div>
+<div class="ttc" id="classedi_1_1Edge_html_acfdf9e3c358f38904922ab8781c29a9f"><div class="ttname"><a href="classedi_1_1Edge.html#acfdf9e3c358f38904922ab8781c29a9f">edi::Edge::_data</a></div><div class="ttdeci">float _data</div><div class="ttdef"><b>Definition:</b> <a href="edge_8hpp_source.html#l00021">edge.hpp:21</a></div></div>
+<div class="ttc" id="classedi_1_1Edge_html_a7fd7131daa7fff92342bc4ca8442235e"><div class="ttname"><a href="classedi_1_1Edge.html#a7fd7131daa7fff92342bc4ca8442235e">edi::Edge::other</a></div><div class="ttdeci">const Vertex &amp; other(const Vertex &amp;u) const </div><div class="ttdoc">Return the other vertex. </div><div class="ttdef"><b>Definition:</b> <a href="edge_8hpp_source.html#l00068">edge.hpp:68</a></div></div>
+<div class="ttc" id="classedi_1_1Edge_html_a37b8246b5c7f5ecf0e44ec89b92c8f56"><div class="ttname"><a href="classedi_1_1Edge.html#a37b8246b5c7f5ecf0e44ec89b92c8f56">edi::Edge::setData</a></div><div class="ttdeci">void setData(const float &amp;data)</div><div class="ttdoc">Set of data. </div><div class="ttdef"><b>Definition:</b> <a href="edge_8hpp_source.html#l00081">edge.hpp:81</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado el Lunes, 30 de Mayo de 2016 19:30:50 para Práctica4 por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.7
+</small></address>
+</body>
+</html>

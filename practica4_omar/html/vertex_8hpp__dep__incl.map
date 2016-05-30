@@ -1,0 +1,11 @@
+<map id="lib/vertex.hpp" name="lib/vertex.hpp">
+<area shape="rect" id="node2" href="$graph__matrix_8hpp.html" title="Graph class. " alt="" coords="159,155,297,181"/>
+<area shape="rect" id="node3" href="$algorithms_8hpp.html" title="algorithms implementation " alt="" coords="19,229,143,256"/>
+<area shape="rect" id="node4" href="$all_8hpp.html" title="Including all libraries in the project. " alt="" coords="251,304,356,331"/>
+<area shape="rect" id="node10" href="$edge_8hpp.html" title="Edge of a graph. " alt="" coords="266,80,357,107"/>
+<area shape="rect" id="node9" href="$in__out_8hpp.html" title="io of the app " alt="" coords="168,229,267,256"/>
+<area shape="rect" id="node5" href="$algorithms_8cpp_source.html" title="src/algorithms.cpp" alt="" coords="5,379,133,405"/>
+<area shape="rect" id="node6" href="$graph__matrix_8cpp_source.html" title="src/graph_matrix.cpp" alt="" coords="159,379,303,405"/>
+<area shape="rect" id="node7" href="$in__out_8cpp_source.html" title="src/in_out.cpp" alt="" coords="327,379,431,405"/>
+<area shape="rect" id="node8" href="$main_8cpp_source.html" title="src/main.cpp" alt="" coords="455,379,552,405"/>
+</map>
